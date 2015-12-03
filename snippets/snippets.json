@@ -1,0 +1,7889 @@
+{
+  "ae.appintent": {
+    "prefix": "ae-appintent",
+    "description": "本应用被其他应用调起来时，收到相关数据的回调",
+    "body": [
+      "appintent"
+    ]
+  },
+  "ae.batterylow": {
+    "prefix": "ae-batterylow",
+    "description": "设备电池电量低",
+    "body": [
+      "batterylow"
+    ]
+  },
+  "ae.batterystatus": {
+    "prefix": "ae-batterystatus",
+    "description": "设备电池状态改变事件，如电量变化或正在充电",
+    "body": [
+      "batterystatus"
+    ]
+  },
+  "ae.keyback": {
+    "prefix": "ae-keyback",
+    "description": "设备back键被点击事件，仅Android平台有效",
+    "body": [
+      "keyback"
+    ]
+  },
+  "ae.keymenu": {
+    "prefix": "ae-keymenu",
+    "description": "设备menu键被点击事件，仅Android平台有效",
+    "body": [
+      "keymenu"
+    ]
+  },
+  "ae.noticeclicked": {
+    "prefix": "ae-noticeclicked",
+    "description": "状态栏通知被用户点击后的回调",
+    "body": [
+      "noticeclicked"
+    ]
+  },
+  "ae.offline": {
+    "prefix": "ae-offline",
+    "description": "监听设备断开网络的事件",
+    "body": [
+      "offline"
+    ]
+  },
+  "ae.online": {
+    "prefix": "ae-online",
+    "description": "监听设备连接到网络的事件",
+    "body": [
+      "online"
+    ]
+  },
+  "ae.pause": {
+    "prefix": "ae-pause",
+    "description": "应用进入后台事件",
+    "body": [
+      "pause"
+    ]
+  },
+  "ae.resume": {
+    "prefix": "ae-resume",
+    "description": "应用从后台回到前台事件",
+    "body": [
+      "resume"
+    ]
+  },
+  "ae.scrolltobottom": {
+    "prefix": "ae-scrolltobottom",
+    "description": "Window或者Frame页面滑动到底部事件",
+    "body": [
+      "scrolltobottom"
+    ]
+  },
+  "ae.shake": {
+    "prefix": "ae-shake",
+    "description": "设备摇动事件",
+    "body": [
+      "shake"
+    ]
+  },
+  "ae.smartupdatefinish": {
+    "prefix": "ae-smartupdatefinish",
+    "description": "云修复使用静默修复时，更新完毕事件",
+    "body": [
+      "smartupdatefinish"
+    ]
+  },
+  "ae.swipedown": {
+    "prefix": "ae-swipedown",
+    "description": "Window或者Frame的页面全局向下轻扫事件",
+    "body": [
+      "swipedown"
+    ]
+  },
+  "ae.swipeleft": {
+    "prefix": "ae-swipeleft",
+    "description": "Window或者Frame的页面全局向左轻扫事件",
+    "body": [
+      "swipeleft"
+    ]
+  },
+  "ae.swiperight": {
+    "prefix": "ae-swiperight",
+    "description": "Window或者Frame的页面全局向右轻扫事件",
+    "body": [
+      "swiperight"
+    ]
+  },
+  "ae.swipeup": {
+    "prefix": "ae-swipeup",
+    "description": "Window或者Frame的页面全局向上轻扫事件",
+    "body": [
+      "swipeup"
+    ]
+  },
+  "ae.tap": {
+    "prefix": "ae-tap",
+    "description": "Window或者Frame的页面全局单击事件",
+    "body": [
+      "tap"
+    ]
+  },
+  "ae.viewappear": {
+    "prefix": "ae-viewappear",
+    "description": "Window显示到屏幕的事件",
+    "body": [
+      "viewappear"
+    ]
+  },
+  "ae.viewdisappear": {
+    "prefix": "ae-viewdisappear",
+    "description": "Window离开屏幕的事件",
+    "body": [
+      "viewdisappear"
+    ]
+  },
+  "api.actionSheet": {
+    "prefix": "api-actionSheet",
+    "description": "底部弹出框",
+    "body": [
+      "api.actionSheet({",
+      "\ttitle: '${1:title}',",
+      "\tcancelTitle: '${2:cancelTitle}',",
+      "\tdestructiveTitle: '${3:destructivetitle}',",
+      "\tbuttons: ['1', '2', '3']",
+      "},function(ret,err){",
+      "\tapi.alert({",
+      "\t\tmsg: '你刚点击了'+ret.buttonIndex",
+      "\t});",
+      "});"
+    ]
+  },
+  "api.addEventListener": {
+    "prefix": "api-addEventListener",
+    "description": "监听事件，支持系统事件和自定义事件",
+    "body": [
+      "api.addEventListener({",
+      "\tname: '${1:eventType}'",
+      "}, function(ret, err){",
+      "\tapi.alert({msg: 'eventType'});",
+      "});"
+    ]
+  },
+  "api.ajax": {
+    "prefix": "api-ajax",
+    "description": "跨域异步请求，支持文件上传",
+    "body": [
+      "api.ajax({",
+      "\turl: '${1:ajax_url}',",
+      "\tmethod: '${2:post}',",
+      "\ttimeout: ${3:30},",
+      "\tdataType: '${4:json}',",
+      "\treturnAll:${5:false}",
+      "},function(ret,err){",
+      "\tif (ret) {",
+      "\t\t${6:// TODO }",
+      "\t} else {",
+      "\t\tapi.alert({",
+      "\t\t\tmsg:('错误码：'+err.code+'；错误信息：'+err.msg+'网络状态码：'+err.statusCode)",
+      "\t\t});",
+      "\t};",
+      "});"
+    ]
+  },
+  "api.alert": {
+    "prefix": "api-alert",
+    "description": "带一个按钮的对话框",
+    "body": [
+      "api.alert({",
+      "\ttitle: '${1:title}', ",
+      "\tmsg: '${2:msg_content}'",
+      "});"
+    ]
+  },
+  "api.animation": {
+    "prefix": "api-animation",
+    "description": "frame动画，支持平移，缩放，旋转和透明度变化",
+    "body": [
+      "api.animation({",
+      "\tname: '${1:frame_name}',",
+      "\tdelay: ${2:1000},",
+      "\tduration: ${3:3000},",
+      "\tcurve: '${4:ease_in}',",
+      "\trepeatCount: ${5:2},",
+      "\tautoreverse: ${6:true},",
+      "\talpha: ${7:0.6},",
+      "\ttranslation:{",
+      "\t\tx: ${8:0},",
+      "\t\ty: ${9:100},",
+      "\t\tz: ${10:0}",
+      "\t}, ",
+      "\tscale:{",
+      "\t\tx: ${11:1.2},",
+      "\t\ty: ${12:1},",
+      "\t\tz: ${13:1}",
+      "\t},",
+      "\trotation:{",
+      "\t\tdegree:${14:45},",
+      "\t\tx: ${15:0},",
+      "\t\ty: ${16:0},",
+      "\t\tz: ${17:1}",
+      "\t}",
+      "}, function() {",
+      "\tapi.alert({msg: '动画结束'});",
+      "});"
+    ]
+  },
+  "api.appId": {
+    "prefix": "api-appId",
+    "description": "应用的ID，可以在网站控制台概览里面查看",
+    "body": [
+      "api.appId"
+    ]
+  },
+  "api.appInstalled": {
+    "prefix": "api-appInstalled",
+    "description": "判断设备上面是否已安装指定应用",
+    "body": [
+      "var appBundle = '';",
+      "if (api.systemType == 'ios'){",
+      "\tappBundle = '${1:ios_scheme}';",
+      "} else {",
+      "\tappBundle = '${2:android_scheme}';",
+      "}",
+      "api.appInstalled({",
+      "\tappBundle: appBundle",
+      "},function(ret,err){",
+      "\tif (ret.installed) {",
+      "\t} else {",
+      "",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.appName": {
+    "prefix": "api-appName",
+    "description": "应用在桌面显示名称",
+    "body": [
+      "api.appName"
+    ]
+  },
+  "api.appParam": {
+    "prefix": "api-appParam",
+    "description": "当应用被第三方应用打开时，传递过来的参数",
+    "body": [
+      "api.appParam"
+    ]
+  },
+  "api.appVersion": {
+    "prefix": "api-appVersion",
+    "description": "应用版本号",
+    "body": [
+      "api.appVersion"
+    ]
+  },
+  "api.bringFrameToFront": {
+    "prefix": "api-bringFrameToFront",
+    "description": "调整frame到前面",
+    "body": [
+      "api.bringFrameToFront({",
+      "\tfrom:'${1:from_frame_name}',",
+      "\tto:'${2:to_frame_name}'",
+      "});"
+    ]
+  },
+  "api.cacheDir": {
+    "prefix": "api-cacheDir",
+    "description": "cache://协议对应的真实目录",
+    "body": [
+      "api.cacheDir"
+    ]
+  },
+  "api.call": {
+    "prefix": "api-call",
+    "description": "拨打电话或进行faceTime",
+    "body": [
+      "api.call({",
+      "\ttype: '${1:call_type}',",
+      "\tnumber: '${2:number}'",
+      "});"
+    ]
+  },
+  "api.cancelAjax": {
+    "prefix": "api-cancelAjax",
+    "description": "取消异步请求",
+    "body": [
+      "api.cancelAjax({",
+      "\ttag: '${1:tag_name}'",
+      "});"
+    ]
+  },
+  "api.cancelDownload": {
+    "prefix": "api-cancelDownload",
+    "description": "取消文件下载",
+    "body": [
+      "api.cancelDownload({",
+      "\turl: '${1:url}'",
+      "});"
+    ]
+  },
+  "api.cancelNotification": {
+    "prefix": "api-cancelNotification",
+    "description": "取消本应用弹出到状态栏的某个或所有通知",
+    "body": [
+      "api.cancelNotification({",
+      "\tid: ${1:notification_id}",
+      "});"
+    ]
+  },
+  "api.clearCache": {
+    "prefix": "api-clearCache",
+    "description": "清除缓存，包括下载的文件、拍照临时文件、网页缓存文件等，清除时可能需要消耗一定时间",
+    "body": [
+      "api.clearCache();"
+    ]
+  },
+  "api.closeFrame": {
+    "prefix": "api-closeFrame",
+    "description": "关闭frame",
+    "body": [
+      "api.closeFrame({",
+      "\tname: '${1:frame_name}'",
+      "});"
+    ]
+  },
+  "api.closeFrameGroup": {
+    "prefix": "api-closeFrameGroup",
+    "description": "关闭frame组",
+    "body": [
+      "api.closeFrameGroup({",
+      "\tname: '${1:group_name}'",
+      "});"
+    ]
+  },
+  "api.closePopoverWin": {
+    "prefix": "api-closePopoverWin",
+    "description": "关闭整个弹出层窗口，只iPad上面有效",
+    "body": [
+      "api.closePopoverWin();"
+    ]
+  },
+  "api.closeSlidPane": {
+    "prefix": "api-closeSlidPane",
+    "description": "当SlidPane处于左或右侧滑状态时，将其收起",
+    "body": [
+      "api.closeSlidPane();"
+    ]
+  },
+  "api.closeToWin": {
+    "prefix": "api-closeToWin",
+    "description": "关闭到指定window",
+    "body": [
+      "api.closeToWin({",
+      "\tname: '${1:window_name}',",
+      "\tanimation: {",
+      "\t\ttype: 'flip',",
+      "\t\tsubType: 'from_bottom',",
+      "\t\tduration: 500",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.closeWidget": {
+    "prefix": "api-closeWidget",
+    "description": "关闭指定widget",
+    "body": [
+      "api.closeWidget({",
+      "\tid: '${1:widgetid}',",
+      "\tretData: {'${2:key}':'${3:value}'},",
+      "\tanimation: {",
+      "\t\ttype: '${4:flip}',",
+      "\t\tsubType: '${5:from_bottom}',",
+      "\t\tduration: ${6:500}",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.closeWin": {
+    "prefix": "api-closeWin",
+    "description": "关闭window",
+    "body": [
+      "api.closeWin({",
+      "\tname: '${1:win_name}'",
+      "});"
+    ]
+  },
+  "api.confirm": {
+    "prefix": "api-confirm",
+    "description": "带两个或三个按钮的confirm对话框",
+    "body": [
+      "api.confirm({",
+      "\ttitle: '${1:title}',",
+      "\tmsg: '${2:msg}',",
+      "\tbuttons:['确定', '取消']",
+      "},function(ret,err){",
+      "\tif(ret.buttonIndex == 1){",
+      "\t\tapi.alert({msg: '点击了确定'});",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.connectionType": {
+    "prefix": "api-connectionType",
+    "description": "当前网络连接类型，如2g、3g、4g、wifi",
+    "body": [
+      "api.connectionType"
+    ]
+  },
+  "api.deviceId": {
+    "prefix": "api-deviceId",
+    "description": "设备唯一标识",
+    "body": [
+      "api.deviceId"
+    ]
+  },
+  "api.deviceModel": {
+    "prefix": "api-deviceModel",
+    "description": "设备型号",
+    "body": [
+      "api.deviceModel"
+    ]
+  },
+  "api.deviceName": {
+    "prefix": "api-deviceName",
+    "description": "设备名称",
+    "body": [
+      "api.deviceName"
+    ]
+  },
+  "api.deviceToken": {
+    "prefix": "api-deviceToken",
+    "description": "iOS中用于推送的Token，若未从系统获取到则返回空字符串",
+    "body": [
+      "api.deviceToken"
+    ]
+  },
+  "api.download": {
+    "prefix": "api-download",
+    "description": "下载文件",
+    "body": [
+      "api.download({",
+      "\turl: '${1:url}',",
+      "\tsavePath: 'fs://${2:file_name}',",
+      "\treport: ${3:true},",
+      "\tcache: ${4:true},",
+      "\tallowResume: ${5:true}",
+      "},function(ret,err){",
+      "\tif (ret) {",
+      "\t\tvar value = ('文件大小：'+ret.fileSize+'；下载进度：'+ret.percent+'；下载状态'+ret.state+'存储路径: '+ret.savePath);",
+      "\t} else{",
+      "\t\tvar value = err.msg;",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.execscript": {
+    "prefix": "api-execscript",
+    "description": "在指定window或者frame中执行脚本",
+    "body": [
+      "api.execScript({",
+      "\tname:'${1:window_name}',",
+      "\tframeName: '${2:frame_name}',",
+      "\tscript:'${3:func}();'",
+      "});"
+    ]
+  },
+  "api.frameHeight": {
+    "prefix": "api-frameHeight",
+    "description": "frame高度",
+    "body": [
+      "api.frameHeight"
+    ]
+  },
+  "api.frameName": {
+    "prefix": "api-frameName",
+    "description": "frame名称",
+    "body": [
+      "api.frameName"
+    ]
+  },
+  "api.frameWidth": {
+    "prefix": "api-frameWidth",
+    "description": "frame宽度",
+    "body": [
+      "api.frameWidth"
+    ]
+  },
+  "api.fsDir": {
+    "prefix": "api-fsDir",
+    "description": "fs://协议对应地真实目录",
+    "body": [
+      "api.fsDir"
+    ]
+  },
+  "api.fullScreen": {
+    "prefix": "api-fullScreen",
+    "description": "应用是否全屏，只支持iOS",
+    "body": [
+      "api.fullScreen"
+    ]
+  },
+  "api.getCacheSize": {
+    "prefix": "api-getCacheSize",
+    "description": "获取缓存占用空间大小，缓存包括下载的缓存文件、拍照临时文件以及网页缓存文件等，计算可能需要花费一些时间",
+    "body": [
+      "api.getCacheSize(function(ret, err) {",
+      "\tvar size = ret.size;",
+      "});"
+    ]
+  },
+  "api.getFreeDiskSpace": {
+    "prefix": "api-getFreeDiskSpace",
+    "description": "获取剩余存储空间大小",
+    "body": [
+      "api.getFreeDiskSpace(function(ret, err){",
+      "\tvar size = ret.size;",
+      "});"
+    ]
+  },
+  "api.getLocation": {
+    "prefix": "api-getLocation",
+    "description": "获取位置信息",
+    "body": [
+      "api.getLocation(function(ret, err){",
+      "\tif(ret.status){",
+      "\t\tvar lat = ret.latitude;",
+      "\t\tvar lon = ret.longitude;",
+      "\t\tvar time = ret.timestamp;",
+      "\t\tvar str = '经度：'+ lon +'\\n';",
+      "\t\tstr += '纬度：'+ lat +'\\n';",
+      "\t\tstr += '更新时间：'+ time;",
+      "\t\tapi.alert({msg:str});",
+      "\t} else{",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.getPicture": {
+    "prefix": "api-getPicture",
+    "description": "通过系统相册或拍照获取图片和视频",
+    "body": [
+      "api.getPicture({",
+      "\tsourceType: '${1:source_type}',",
+      "\tencodingType: '${2:encoding_type}',",
+      "\tmediaValue: '${3:media_type}',",
+      "\tdestinationType: '${4:destination_type}',",
+      "\tallowEdit: ${5:true},",
+      "\tquality: ${6:50},",
+      "\ttargetWidth: ${7:100},",
+      "\ttargetHeight: ${8:100},",
+      "\tsaveToPhotoAlbum: ${9:false}",
+      "}, function(ret, err){ ",
+      "\tif (ret) {",
+      "\t\tapi.alert({msg:ret.data});",
+      "\t} else{",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.getPrefs": {
+    "prefix": "api-getPrefs",
+    "description": "获取偏好设置值",
+    "body": [
+      "api.getPrefs({",
+      "\tkey: '${1:prefs_key}'",
+      "}, function(ret, err){",
+      "\tvar v = ret.value;",
+      "\tif ( v === '' ) {",
+      "\t\t// 不存在该变量",
+      "\t} else {",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.hideProgress": {
+    "prefix": "api-hideProgress",
+    "description": "隐藏进度提示框",
+    "body": [
+      "api.hideProgress();"
+    ]
+  },
+  "api.historyBack": {
+    "prefix": "api-historyBack",
+    "description": "历史记录后退一页",
+    "body": [
+      "api.historyBack(function(ret, err){",
+      "\tif(ret.status) {",
+      "\t\talert('历史回退');",
+      "\t} else {",
+      "\t\tapi.closeWidget();",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.historyForward": {
+    "prefix": "api-historyForward",
+    "description": "历史记录前进一页",
+    "body": [
+      "api.historyForward(function(ret, err) {",
+      "\tif(ret.status) {",
+      "\t\talert('前进成功');",
+      "\t} else {",
+      "\t\talert('前进失败');",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.imageCache": {
+    "prefix": "api-imageCache",
+    "description": "图片缓存",
+    "body": [
+      "api.imageCache({",
+      "\turl: '${1:url}'",
+      "}, function(ret, err){",
+      "});"
+    ]
+  },
+  "api.installApp": {
+    "prefix": "api-installApp",
+    "description": "安装应用",
+    "body": [
+      "api.installApp({",
+      "\tappUri: '${1:app_url}'",
+      "});"
+    ]
+  },
+  "api.loadSecureValue": {
+    "prefix": "api-loadSecureValue",
+    "description": "从加密的key.xml文件中读取指定数据",
+    "body": [
+      "api.loadSecureValue({",
+      "\tkey:'${1:key_name}'",
+      "}, function(ret, err) {",
+      "\tvar ${2:value} = ret.value;",
+      "});"
+    ]
+  },
+  "api.lockSlidPane": {
+    "prefix": "api-lockSlidPane",
+    "description": "锁住SlidPane，使其不能跟随手指滑动而移动",
+    "body": [
+      "api.lockSlidPane();"
+    ]
+  },
+  "api.mail": {
+    "prefix": "api-mail",
+    "description": "发送邮件",
+    "body": [
+      "api.mail({",
+      "\trecipients: ['${1:receive_mail}'],",
+      "\tsubject: '${2:mail_title}',",
+      "\tbody: '${3:mail_body}',",
+      "\tattachments: ['${4:attachments_url}']",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\tapi.alert({",
+      "\t\t\tmsg: '发送成功'",
+      "\t\t});",
+      "\t} else{",
+      "\t\tapi.alert({",
+      "\t\t\tmsg: '发送失败'",
+      "\t\t});",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.notification": {
+    "prefix": "api-notification",
+    "description": "向用户发出震动、声音提示、灯光闪烁、状态栏消息等通知，以及闹钟功能",
+    "body": [
+      "api.notification({",
+      "\tnotify: {",
+      "\t\tcontent: '${1:闹铃}'",
+      "\t},",
+      "\talarm: {",
+      "\t\thour: ${2:6},",
+      "\t\tminutes: ${3:30},",
+      "\t\tdaysOfWeek: ${4:[2,3,4,5,6]}",
+      "\t}",
+      "}, function(ret, err){",
+      "\tif(ret && ret.id){",
+      "\t\t",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.openApp-android": {
+    "prefix": "api-openApp-android",
+    "description": "打开手机上其它应用，并且可以传递参数",
+    "body": [
+      "api.openApp({",
+      "\tandroidPkg: '${1:android.intent.action.VIEW}',",
+      "\tmimeType: '${2:text/html}',",
+      "\turi: '${3:http://www.baidu.com}'",
+      "},function(ret,err){",
+      "\tvar msg = JSON.stringify(ret);",
+      "\tapi.alert({",
+      "\t\ttitle: 'openApp',",
+      "\t\tmsg: msg,",
+      "\t\tbuttons: ['确定']",
+      "\t});",
+      "});"
+    ]
+  },
+  "api.openApp-ios": {
+    "prefix": "api-openApp-ios",
+    "description": "打开手机上其它应用，并且可以传递参数",
+    "body": [
+      "api.openApp({",
+      "\tiosUrl: '${1:http://www.baidu.com}',",
+      "\tappParam: {appParam: '${2:param}'}",
+      "},function(ret,err){",
+      "\tvar msg = JSON.stringify(ret);",
+      "\tapi.alert({",
+      "\t\ttitle: 'openApp',",
+      "\t\tmsg: msg,",
+      "\t\tbuttons: ['确定']",
+      "\t})",
+      "});"
+    ]
+  },
+  "api.openContacts": {
+    "prefix": "api-openContacts",
+    "description": "在应用内打开系统通讯录界面选择联系人",
+    "body": [
+      "api.openContacts(function(ret,err){",
+      "\tif(ret.status){",
+      "\t\tvar msg = '姓名:'+ret.name+'--电话:'+ret.phone;",
+      "\t\tapi.alert({msg:msg});",
+      "\t}else{",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t};\t\t\t",
+      "});"
+    ]
+  },
+  "api.openFrame": {
+    "prefix": "api-openFrame",
+    "description": "打开frame",
+    "body": [
+      "api.openFrame({",
+      "\tname: '${1:framename}',",
+      "\turl: '${2:frameurl}',",
+      "\tbounces: ${3:true},",
+      "\trect: {",
+      "\t\tx: ${4:0},",
+      "\t\ty: ${5:0},",
+      "\t\tw: '${6:auto}',",
+      "\t\th: '${7:auto}'",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.openFrameGroup": {
+    "prefix": "api-openFrameGroup",
+    "description": "打开子窗口组",
+    "body": [
+      "api.openFrameGroup({",
+      "\tname: '${1:group_name}',",
+      "\tscrollEnabled: ${2:false},",
+      "\trect: {",
+      "\t\tx:${3:0},",
+      "\t\ty:${4:0},",
+      "\t\tw:${5:'auto'},",
+      "\t\th:${6:'auto'}",
+      "\t},",
+      "\tindex: ${7:0},",
+      "\tframes: [{",
+      "\t\tname: '${8:frame1_name}', ",
+      "\t\turl: '${9:frame1_url}'",
+      "\t},{",
+      "\t\tname: '${10:frame2_name}', ",
+      "\t\turl: '${11:frame2_url}'",
+      "\t}]",
+      "}, function(ret, err){",
+      "\tvar name  = ret.name;",
+      "\tvar index = ret.index;",
+      "});"
+    ]
+  },
+  "api.openPicker": {
+    "prefix": "api-openPicker",
+    "description": "打开时间选择器",
+    "body": [
+      "api.openPicker({",
+      "\ttype: '${1:date_time}',",
+      "\tdate: '${2:2015-04-24 15:45}',",
+      "\ttitle:'${3:title}'",
+      "},function(ret,err){",
+      "\tvar year\t= ret.year;",
+      "\tvar month  = ret.month;",
+      "\tvar day\t= ret.day;",
+      "\tvar hour\t= ret.hour;",
+      "\tvar minute = ret.minute;",
+      "\tif (type == 'date') {",
+      "\t\tvar value = year+'年'+month+'月'+day+'日';",
+      "\t} else if (type == 'time') {",
+      "\t\tvar value = hour+'时'+minute+'分';",
+      "\t} else if (type == 'date_time') {",
+      "\t\tvar value = year+'年'+month+'月'+day+'日'+hour+'时'+minute+'分';",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.openPopoverWin": {
+    "prefix": "api-openPopoverWin",
+    "description": "弹出层是模态的，弹出层后面的界面将不可操作",
+    "body": [
+      "api.openPopoverWin({",
+      "\tname: '${1:window_name}',",
+      "\turl: '${2:window_url}',",
+      "\tbounces: ${3:false},",
+      "\twidth: ${4:400},",
+      "\theight: ${5: 400}",
+      "});"
+    ]
+  },
+  "api.openSlidLayout": {
+    "prefix": "api-openSlidLayout",
+    "body": [
+      "api.openSlidLayout({",
+      "\ttype:'left',",
+      "\tfixedPane:{",
+      "\t\tname: '${1:fixed_frame_name}',",
+      "\t\tbgColor: '${2:#000}',",
+      "\t\turl: '${3:fixed_frame_url}'",
+      "\t},",
+      "\tslidPane:{",
+      "\t\tname: '${4:slide_frame_name}',",
+      "\t\tbgColor: '${5:#0fc}',",
+      "\t\turl: '${6:slide_frame_url}'",
+      "\t},",
+      "\tleftEdge: ${7:60}",
+      "}, function(ret) {",
+      "",
+      "});"
+    ]
+  },
+  "api.openSlidPane": {
+    "prefix": "api-openSlidPane",
+    "description": "向左或右进行侧滑",
+    "body": [
+      "api.openSlidPane({",
+      "\ttype: '${1:left}'",
+      "});"
+    ]
+  },
+  "api.openVideo": {
+    "prefix": "api-openVideo",
+    "description": "打开系统视频播放器",
+    "body": [
+      "api.openVideo({",
+      "\turl: '${1:video_path}'",
+      "});"
+    ]
+  },
+  "api.openWidget": {
+    "prefix": "api-openWidget",
+    "description": "打开Widget，若此widget已经被打开，则会把其调整到最前面显示",
+    "body": [
+      "api.openWidget({",
+      "\tid: '${1:widgetid}',",
+      "\tanimation: {",
+      "\t\ttype: '${2:flip}',",
+      "\t\tsubType: '${3:from_bottom}',",
+      "\t\tduration: ${4:500}",
+      "\t}",
+      "}, function(ret, err){",
+      "\tif(ret){",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.openWin": {
+    "prefix": "api-openWin",
+    "description": "打开window",
+    "body": [
+      "api.openWin({",
+      "\tname: '${1:winname}',",
+      "\turl: '${2:winurl}',",
+      "\tbounces: false,",
+      "\tpageParam: {${3:key} : '${4:value}'}",
+      "});"
+    ]
+  },
+  "api.operator": {
+    "prefix": "api-operator",
+    "description": "运营商名称，若未获取到则返回none",
+    "body": [
+      "api.operator"
+    ]
+  },
+  "api.pageDown": {
+    "prefix": "api-pageDown",
+    "description": "页面向下滚动一页",
+    "body": [
+      "api.pageDown(function(ret,err){",
+      "\tif (!ret.scrolled){",
+      "\t\tapi.alert({",
+      "\t\t\tmsg:'已经滚动到底部了'",
+      "\t\t});",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.pageParam": {
+    "prefix": "api-pageParam",
+    "description": "页面参数",
+    "body": [
+      "api.pageParam"
+    ]
+  },
+  "api.pageUp": {
+    "prefix": "api-pageUp",
+    "description": "页面向上滚动一页",
+    "body": [
+      "api.pageUp(function(ret,err){",
+      "\tif (!ret.scrolled){",
+      "\t\tapi.alert({",
+      "\t\t\tmsg:'已经滚动到顶部了'",
+      "\t\t});",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.parseTapmode": {
+    "prefix": "api-parseTapmode",
+    "description": "解析元素tapmode属性，优化点击事件处理",
+    "body": [
+      "api.parseTapmode();"
+    ]
+  },
+  "api.prompt": {
+    "prefix": "api-prompt",
+    "description": "带两个或三个按钮和输入框的对话框",
+    "body": [
+      "api.prompt({",
+      "\tbuttons: ['${1:确定}', '${2:取消}'],",
+      "\ttitle: '${3:title}',",
+      "\tmsg: '${4:msg_content}',",
+      "\ttext: '${5:text}'",
+      "},function(ret,err){",
+      "\tif(ret.buttonIndex == 1){",
+      "\t\tapi.alert({msg:ret.text});",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.readFile": {
+    "prefix": "api-readFile",
+    "description": "读取文本文件内容",
+    "body": [
+      "api.readFile({",
+      "\tpath: '${1:file_path}'",
+      "}, function(ret, err){",
+      "\tif( ret.status ) {",
+      "\t\tapi.alert({msg:ret.data});",
+      "\t} else {",
+      "\t\tapi.alert({",
+      "\t\t\tmsg: '错误码: '+err.code+'错误信息'+err.msg",
+      "\t\t});",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.refreshHeaderLoadDone": {
+    "prefix": "api-refreshHeaderLoadDone",
+    "description": "通知顶部下拉刷新数据加载完毕，组件会恢复到默认状态",
+    "body": [
+      "api.refreshHeaderLoadDone();"
+    ]
+  },
+  "api.refreshHeaderLoading": {
+    "prefix": "api-refreshHeaderLoading",
+    "description": "设置下拉刷新组件为刷新中状态",
+    "body": [
+      "api.refreshHeaderLoading();"
+    ]
+  },
+  "api.removeEventListener": {
+    "prefix": "api-removeEventListener",
+    "description": "移除事件监听",
+    "body": [
+      "api.removeEventListener({",
+      "\tname: '${1:listener_name}'",
+      "});"
+    ]
+  },
+  "api.removeLaunchView": {
+    "prefix": "api-removeLaunchView",
+    "description": "移除启动图",
+    "body": [
+      "api.removeLaunchView();"
+    ]
+  },
+  "api.removePrefs": {
+    "prefix": "api-removePrefs",
+    "description": "删除偏好设置值",
+    "body": [
+      "api.removePrefs({",
+      "\tkey: '${1:prefs_key}'",
+      "});"
+    ]
+  },
+  "api.require": {
+    "prefix": "api-require",
+    "description": "引入扩展模块",
+    "body": [
+      "api.require('${1}');"
+    ]
+  },
+  "api.saveMediaToAlbum": {
+    "prefix": "api-saveMediaToAlbum",
+    "description": "保存图片和视频到系统相册",
+    "body": [
+      "api.saveMediaToAlbum({",
+      "\tpath: '${1:file_path}'",
+      "},function(ret,err){",
+      "});"
+    ]
+  },
+  "api.screenHeight": {
+    "prefix": "api-screenHeight",
+    "description": "屏幕分辨率高",
+    "body": [
+      "api.screenHeight"
+    ]
+  },
+  "api.screenWidth": {
+    "prefix": "api-screenWidth",
+    "description": "屏幕分辨率宽",
+    "body": [
+      "api.screenWidth"
+    ]
+  },
+  "api.sendEvent": {
+    "prefix": "api-sendEvent",
+    "description": "将任意一个自定义事件广播出去，该事件可在任意页面通过addEventListener监听收到",
+    "body": [
+      "api.sendEvent({",
+      "\tname: '${1:event}',",
+      "\textra: {${2:key}:'${3: value}'}",
+      "});"
+    ]
+  },
+  "api.sendFrameToBack": {
+    "prefix": "api-sendFrameToBack",
+    "description": "调整frame到后面",
+    "body": [
+      "api.sendFrameToBack({",
+      "\tfrom:'${1:from_frame_name}',",
+      "\tto:'${2:to_frame_name}'",
+      "});"
+    ]
+  },
+  "api.setAppiconBadge": {
+    "prefix": "api-setAppiconBadge",
+    "description": "设置应用图标右上角数字",
+    "body": [
+      "api.setAppIconBadge({",
+      "\tbadge: ${1:1}",
+      "});"
+    ]
+  },
+  "api.setFrameAttr": {
+    "prefix": "api-setFrameAttr",
+    "description": "设置frame属性",
+    "body": [
+      "api.setFrameAttr({",
+      "\tname: '${1:frame_name}',",
+      "\trect: {",
+      "\t\tx: ${2:0},",
+      "\t\ty: ${3:0},",
+      "\t\tw: ${4:320},",
+      "\t\th: ${5:480}",
+      "\t},",
+      "\thidden: ${6:true}",
+      "});",
+      ""
+    ]
+  },
+  "api.setFrameGroupAttr": {
+    "prefix": "api-setFrameGroupAttr",
+    "description": "设置frame组属性",
+    "body": [
+      "api.setFrameGroupAttr({",
+      "\tname: '${1:group_name}',",
+      "\thidden: ${2:true}",
+      "});"
+    ]
+  },
+  "api.setFrameGroupIndex": {
+    "prefix": "api-setFrameGroupIndex",
+    "description": "设置frame组当前可见frame",
+    "body": [
+      "api.setFrameGroupIndex({",
+      "\tname: '${1:group_name}',",
+      "\tindex: ${2:0},",
+      "\tscroll: ${3:true}",
+      "});"
+    ]
+  },
+  "api.setFullScreen": {
+    "prefix": "api-setFullScreen",
+    "description": "设置是否全屏",
+    "body": [
+      "api.setFullScreen({",
+      "\tfullScreen:${1:true}",
+      "});"
+    ]
+  },
+  "api.setKeepScreenOn": {
+    "prefix": "api-setKeepScreenOn",
+    "description": "设置是否禁止屏幕休眠",
+    "body": [
+      "api.setKeepScreenOn({",
+      "\tkeepOn: ${1:true}",
+      "});"
+    ]
+  },
+  "api.setPrefs": {
+    "prefix": "api-setPrefs",
+    "description": "设置偏好数据",
+    "body": [
+      "api.setPrefs({",
+      "\tkey: '${1:key}',",
+      "\tvalue: '${2:value}'",
+      "});"
+    ]
+  },
+  "api.setRefreshHeaderInfo": {
+    "prefix": "api-setRefreshHeaderInfo",
+    "description": "显示顶部下拉刷新，此时当前页面会被设为弹动",
+    "body": [
+      "api.setRefreshHeaderInfo({",
+      "\tvisible: ${1:true},",
+      "\tloadingImg: '${2:widget://image/refresh.png}',",
+      "\tbgColor: '${3:#ccc}',",
+      "\ttextColor: '${4:#fff}',",
+      "\ttextDown: '${5:下拉刷新...}',",
+      "\ttextUp: '${6:松开刷新...}',",
+      "\tshowTime: ${7:true},",
+      "}, function(ret, err){",
+      "\t//从服务器加载数据，完成后调用api.refreshHeaderLoadDone()方法恢复组件到默认状态",
+      "});"
+    ]
+  },
+  "api.setScreenOrientation": {
+    "prefix": "api-setScreenOrientation",
+    "description": "设置屏幕旋转方向",
+    "body": [
+      "api.setScreenOrientation({",
+      "\torientation:'${1:landscape_left}'",
+      "});"
+    ]
+  },
+  "api.setScreenSecure": {
+    "prefix": "api-setScreenSecure",
+    "description": "设置是否禁止截屏，只支持Android",
+    "body": [
+      "api.setScreenSecure({",
+      "\tsecure: ${1:true}\t",
+      "});"
+    ]
+  },
+  "api.setStatusBarStyle": {
+    "prefix": "api-setStatusBarStyle",
+    "body": [
+      "api.setStatusBarStyle({",
+      "\tstyle: '${1:light}'",
+      "});"
+    ]
+  },
+  "api.setWinAttr": {
+    "prefix": "api-setWinAttr",
+    "description": "设置window属性",
+    "body": [
+      "api.setWinAttr({",
+      "\thidden: ${1:true}",
+      "});"
+    ]
+  },
+  "api.showFloatBox": {
+    "prefix": "api-showFloatBox",
+    "description": "展示一个悬浮框，浮动在屏幕上，点击时关闭当前widget",
+    "body": [
+      "api.showFloatBox({",
+      "\ticonPath: '${1:icon_path}',",
+      "\tduration: ${2:3000}",
+      "});"
+    ]
+  },
+  "api.showProgress": {
+    "prefix": "api-showProgress",
+    "description": "显示进度提示框",
+    "body": [
+      "api.showProgress({",
+      "\ttitle: '${1: title}',",
+      "\ttext: '${2: text}',",
+      "\tmodal: ${3: true}",
+      "});",
+      ""
+    ]
+  },
+  "api.sms": {
+    "prefix": "api-sms",
+    "description": "调用系统短信界面发送短信，或者后台直接发送短信",
+    "body": [
+      "api.sms({",
+      "\tnumber: ['${1:number}'],",
+      "\ttext: '${2:content}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg: '发送成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg: '发送失败'});",
+      "\t};",
+      "});"
+    ]
+  },
+  "api.startLocation": {
+    "prefix": "api-startLocation",
+    "description": "开始定位",
+    "body": [
+      "api.startLocation({",
+      "\taccuracy: '${1:100m}',",
+      "\tfilter: ${2:1},",
+      "\tautoStop: ${3:true} ",
+      "},function(ret, err){",
+      "\tif(ret.status){",
+      "\t\tvar lat = ret.latitude;",
+      "\t\tvar lon = ret.longitude;",
+      "\t\tvar time = ret.timestamp;",
+      "\t\tvar str = '经度：'+ lon +'\\n';",
+      "\t\tstr += '纬度：'+ lat +'\\n';",
+      "\t\tstr += '更新时间：'+ time;",
+      "\t\tapi.alert({msg:str});",
+      "\t} else{",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.startPlay": {
+    "prefix": "api-startPlay",
+    "description": "开始播放音频",
+    "body": [
+      "api.startPlay({",
+      "\tpath: '${1:music_path}'",
+      "},function(){",
+      "\tapi.alert({msg: '${2:finish play}'});",
+      "});"
+    ]
+  },
+  "api.startRecord": {
+    "prefix": "api-startRecord",
+    "description": "录制amr格式音频",
+    "body": [
+      "api.startRecord({",
+      "\tpath: '${1:file_path}'",
+      "});"
+    ]
+  },
+  "api.startSensor": {
+    "prefix": "api-startSensor",
+    "description": "开启传感器",
+    "body": [
+      "api.startSensor({",
+      "\ttype: '${1:sensor_type}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t} else{",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "api.stopLocation": {
+    "prefix": "api-stopLocation",
+    "description": "停止定位",
+    "body": [
+      "api.stopLocation();"
+    ]
+  },
+  "api.stopPlay": {
+    "prefix": "api-stopPlay",
+    "description": "停止播放音频",
+    "body": [
+      "api.stopPlay();"
+    ]
+  },
+  "api.stopRecord": {
+    "prefix": "api-stopRecord",
+    "description": "停止录音",
+    "body": [
+      "api.stopRecord(function(ret,err){",
+      "\tif (ret) {",
+      "\t\tapi.alert({msg:('文件路径--'+ret.path+';录音时长:'+ret.duration+'s')});",
+      "\t};",
+      "});"
+    ]
+  },
+  "api.stopSensor": {
+    "prefix": "api-stopSensor",
+    "description": "停止传感器",
+    "body": [
+      "api.stopSensor({",
+      "\ttype: '${1:sensor_type}'",
+      "});"
+    ]
+  },
+  "api.systemType": {
+    "prefix": "api-systemType",
+    "description": "系统类型，如ios、android",
+    "body": [
+      "api.systemType"
+    ]
+  },
+  "api.systemVersion": {
+    "prefix": "api-systemVersion",
+    "description": "手机平台的系统版本",
+    "body": [
+      "api.systemVersion"
+    ]
+  },
+  "api.toast": {
+    "prefix": "api-toast",
+    "description": "弹出一个定时自动关闭的提示框",
+    "body": [
+      "api.toast({",
+      "\tmsg: '${1:msg}',",
+      "\tduration: ${2:2000},",
+      "\tlocation: '${3:bottom}'",
+      "});"
+    ]
+  },
+  "api.toLauncher": {
+    "prefix": "api-toLauncher",
+    "description": "回到系统桌面",
+    "body": [
+      "api.toLauncher();"
+    ]
+  },
+  "api.unlockSlidPane": {
+    "prefix": "api-unlockSlidPane",
+    "description": "解锁SlidPane，使其能跟随手指滑动而移动",
+    "body": [
+      "api.unlockSlidPane();"
+    ]
+  },
+  "api.version": {
+    "prefix": "api-version",
+    "description": "引擎版本信息",
+    "body": [
+      "api.version"
+    ]
+  },
+  "api.wgtParam": {
+    "prefix": "api-wgtParam",
+    "description": "widget参数",
+    "body": [
+      "api.wgtParam"
+    ]
+  },
+  "api.wgtRootDir": {
+    "prefix": "api-wgtRootDir",
+    "description": "widget://协议对应的真实目录，即widget网页包的根目录",
+    "body": [
+      "api.wgtRootDir"
+    ]
+  },
+  "api.winHeight": {
+    "prefix": "api-winHeight",
+    "description": "当前window高度",
+    "body": [
+      "api.winHeight"
+    ]
+  },
+  "api.winName": {
+    "prefix": "api-winName",
+    "description": "当前window名称",
+    "body": [
+      "api.winName"
+    ]
+  },
+  "api.winWidth": {
+    "prefix": "api-winWidth",
+    "description": "当前window宽度",
+    "body": [
+      "api.winWidth"
+    ]
+  },
+  "api.writeFile": {
+    "prefix": "api-writeFile",
+    "description": "写入内容到文本文件",
+    "body": [
+      "api.writeFile({",
+      "\tpath: '${1:file_path}',",
+      "\tdata: '${2:data_string}'",
+      "}, function(ret, err){",
+      "\tvar status = ret.status;",
+      "\tif(status){",
+      "\t\tapi.alert({msg:'写入文件成功'});",
+      "\t} else{",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "apijs.addCls": {
+    "prefix": "apijs-addCls",
+    "body": [
+      "\\$api.addCls(${1:el}, '${2:class}');"
+    ]
+  },
+  "apijs.addEvt": {
+    "prefix": "apijs-addEvt",
+    "body": [
+      "\\$api.addEvt(${1:el}, '${2:name}', ${3:fn}, ${4:useCapture});"
+    ]
+  },
+  "apijs.after": {
+    "prefix": "apijs-after",
+    "body": [
+      "\\$api.after(${1:el}, '${2:html}');"
+    ]
+  },
+  "apijs.append": {
+    "prefix": "apijs-append",
+    "body": [
+      "\\$api.append(${1:el}, '${2:html}');"
+    ]
+  },
+  "apijs.attr": {
+    "prefix": "apijs-attr",
+    "body": [
+      "\\$api.attr(${1:el}, '${2:name}', '${3:value}');"
+    ]
+  },
+  "apijs.before": {
+    "prefix": "apijs-before",
+    "body": [
+      "\\$api.before(${1:el}, '${2:html}');"
+    ]
+  },
+  "apijs.byId": {
+    "prefix": "apijs-byId",
+    "body": [
+      "\\$api.byId('${1:id}');"
+    ]
+  },
+  "apijs.clearStorage": {
+    "prefix": "apijs-clearStorage",
+    "body": [
+      "\\$api.clearStorage();"
+    ]
+  },
+  "apijs.closest": {
+    "prefix": "apijs-closest",
+    "body": [
+      "\\$api.closest(${1:el}, ${2:selector});"
+    ]
+  },
+  "apijs.contains": {
+    "prefix": "apijs-contains",
+    "body": [
+      "\\$api.contains(${1:parent}, ${2:el});"
+    ]
+  },
+  "apijs.css": {
+    "prefix": "apijs-css",
+    "body": [
+      "\\$api.css(${1:el}, '${2:css}');"
+    ]
+  },
+  "apijs.cssVal": {
+    "prefix": "apijs-cssVal",
+    "body": [
+      "\\$api.cssVal(${1:el}, '${2:prop}');"
+    ]
+  },
+  "apijs.dom": {
+    "prefix": "apijs-dom",
+    "body": [
+      "\\$api.dom(${1:el}, ${2:selector});"
+    ]
+  },
+  "apijs.domAll": {
+    "prefix": "apijs-domAll",
+    "body": [
+      "\\$api.domAll(${1:el}, ${2:selector});"
+    ]
+  },
+  "apijs.eq": {
+    "prefix": "apijs-eq",
+    "body": [
+      "\\$api.eq(${1:el}, ${2:index});"
+    ]
+  },
+  "apijs.first": {
+    "prefix": "apijs-first",
+    "body": [
+      "\\$api.first(${1:el}, ${2:selector});"
+    ]
+  },
+  "apijs.fixIos7Bar": {
+    "prefix": "apijs-fixIos7Bar",
+    "body": [
+      "\\$api.fixIos7Bar(${1:el});"
+    ]
+  },
+  "apijs.fixStatusBar": {
+    "prefix": "apijs-fixStatusBar",
+    "body": [
+      "\\$api.fixStatusBar(${1:el});"
+    ]
+  },
+  "apijs.get": {
+    "prefix": "apijs-get",
+    "body": [
+      "\\$api.get('${1:url}', ${2:funSuc}, '${3:dataType}');"
+    ]
+  },
+  "apijs.getStorage": {
+    "prefix": "apijs-getStorage",
+    "body": [
+      "\\$api.getStorage('${1:key}');"
+    ]
+  },
+  "apijs.hasCls": {
+    "prefix": "apijs-hasCls",
+    "body": [
+      "\\$api.hasCls(${1:el}, '${2:class}');"
+    ]
+  },
+  "apijs.html": {
+    "prefix": "apijs-html",
+    "body": [
+      "\\$api.html(${1:el}, '${2:html}');"
+    ]
+  },
+  "apijs.isArray": {
+    "prefix": "apijs-isArray",
+    "body": [
+      "\\$api.isArray(${1:obj});"
+    ]
+  },
+  "apijs.isElement": {
+    "prefix": "apijs-isElement",
+    "body": [
+      "\\$api.isElement(${1:obj});"
+    ]
+  },
+  "apijs.isEmptyObject": {
+    "prefix": "apijs-isEmptyObject",
+    "body": [
+      "\\$api.isEmptyObject(${1:obj});"
+    ]
+  },
+  "apijs.jsonToStr": {
+    "prefix": "apijs-jsonToStr",
+    "body": [
+      "\\$api.jsonToStr(${1:json});"
+    ]
+  },
+  "apijs.last": {
+    "prefix": "apijs-last",
+    "body": [
+      "\\$api.last(${1:el}, ${2:selector});"
+    ]
+  },
+  "apijs.next": {
+    "prefix": "apijs-next",
+    "body": [
+      "\\$api.next(${1:el});"
+    ]
+  },
+  "apijs.not": {
+    "prefix": "apijs-not",
+    "body": [
+      "\\$api.not(${1:el}, ${2:selector});"
+    ]
+  },
+  "apijs.offset": {
+    "prefix": "apijs-offset",
+    "body": [
+      "\\$api.offset(${1:el});"
+    ]
+  },
+  "apijs.one": {
+    "prefix": "apijs-one",
+    "body": [
+      "\\$api.one(${1:el}, '${2:name}', ${3:fn}, ${4:useCapture});"
+    ]
+  },
+  "apijs.post": {
+    "prefix": "apijs-post",
+    "body": [
+      "\\$api.post('${1:url}', ${2:data}, ${3:funSuc}, '${4:dataType}');"
+    ]
+  },
+  "apijs.prepend": {
+    "prefix": "apijs-prepend",
+    "body": [
+      "\\$api.prepend(${1:el}, '${2:html}');"
+    ]
+  },
+  "apijs.prev": {
+    "prefix": "apijs-prev",
+    "body": [
+      "\\$api.prev(${1:el});"
+    ]
+  },
+  "apijs.remove": {
+    "prefix": "apijs-remove",
+    "body": [
+      "\\$api.remove(${1:el});"
+    ]
+  },
+  "apijs.removeAttr": {
+    "prefix": "apijs-removeAttr",
+    "body": [
+      "\\$api.removeAttr(${1:el}, '${2:name}');"
+    ]
+  },
+  "apijs.removeCls": {
+    "prefix": "apijs-removeCls",
+    "body": [
+      "\\$api.removeCls(${1:el}, '${2:class}');"
+    ]
+  },
+  "apijs.rmEvt": {
+    "prefix": "apijs-rmEvt",
+    "body": [
+      "\\$api.rmEvt(${1:el}, '${2:name}', ${3:fn}, ${4:useCapture});"
+    ]
+  },
+  "apijs.rmStorage": {
+    "prefix": "apijs-rmStorage",
+    "body": [
+      "\\$api.rmStorage('${1:key}');"
+    ]
+  },
+  "apijs.setStorage": {
+    "prefix": "apijs-setStorage",
+    "body": [
+      "\\$api.setStorage('${1:key}', '${2:value}');"
+    ]
+  },
+  "apijs.strToJson": {
+    "prefix": "apijs-strToJson",
+    "body": [
+      "\\$api.strToJson('${1:str}');"
+    ]
+  },
+  "apijs.text": {
+    "prefix": "apijs-text",
+    "body": [
+      "\\$api.text(${1:el}, '${2:text}');"
+    ]
+  },
+  "apijs.toast": {
+    "prefix": "apijs-toast",
+    "body": [
+      "\\$api.toast('${1:title}', '${2:text}', ${3: time});"
+    ]
+  },
+  "apijs.toggleCls": {
+    "prefix": "apijs-toggleCls",
+    "body": [
+      "\\$api.toggleCls(${1:el}, '${2:class}');"
+    ]
+  },
+  "apijs.trim": {
+    "prefix": "apijs-trim",
+    "body": [
+      "\\$api.trim('${1:str}');"
+    ]
+  },
+  "apijs.trimAll": {
+    "prefix": "apijs-trimAll",
+    "body": [
+      "\\$api.trimAll('${1:str}');"
+    ]
+  },
+  "apijs.val": {
+    "prefix": "apijs-val",
+    "body": [
+      "\\$api.val(${1:el}, '${2:val}');"
+    ]
+  },
+  "apiready": {
+    "prefix": "apiready",
+    "description": "api对象准备完毕",
+    "body": [
+      "apiready = function(){",
+      "\t${1}",
+      "}",
+      "\t"
+    ]
+  },
+  "actionbutton.close": {
+    "prefix": "actionbutton-close",
+    "description": "关闭菜单",
+    "body": [
+      "actionButton.close();"
+    ]
+  },
+  "actionbutton.hide": {
+    "prefix": "actionbutton-hide",
+    "description": "隐藏菜单",
+    "body": [
+      "actionButton.hide();"
+    ]
+  },
+  "actionbutton.open": {
+    "prefix": "actionbutton-open",
+    "description": "打开弹动按钮菜单",
+    "body": [
+      "actionButton.open({",
+      "\tbg: '${1:}',",
+      "\tsize: ${2:80},",
+      "\titems: [{bgColor: '${3:#00CED1}', title: '${4:子标题}', image: '${5:widget://res/actionSheet_icon1.png}'}],",
+      "\tpageControl: {activeColor: '${6:#778899}', inactiveColor: '${7:#DDA0DD}'},",
+      "\tmatrix: {",
+      "\t\trow: ${8:2},",
+      "\t\tcolumn: ${9:3},",
+      "\t\tbottomMargin: ${10:40}",
+      "\t}",
+      "}, function(ret, err){",
+      "\tapi.alert({msg:ret.index});",
+      "});"
+    ]
+  },
+  "actionbutton.show": {
+    "prefix": "actionbutton-show",
+    "description": "显示已隐藏的菜单",
+    "body": [
+      "actionButton.show();"
+    ]
+  },
+  "aliPay.config": {
+    "prefix": "aliPay-config",
+    "description": "配置支付宝信息",
+    "body": [
+      "var subject = '订单名';",
+      "var body = '订单描述';",
+      "var amount = '10.99';",
+      "var tradeNO = '467467655635';",
+      "var notifyURL = 'http://www.apicloud.com';",
+      "aliPay.config({",
+      "  partner: '${1:12345678901234}',",
+      "  seller: '${2:123456789024354}',",
+      "  rsaPriKey: '${3:testKEY}',",
+      "  rsaPubKey: '${4:testKEY}',",
+      "  notifyURL: notifyURL",
+      "}, function(ret, err) {",
+      "  api.alert({",
+      "\ttitle: '支付结果',",
+      "\tmsg: ret.msg,",
+      "\tbuttons: ['确定']",
+      "  });",
+      "});"
+    ]
+  },
+  "aliPay.pay": {
+    "prefix": "aliPay-pay",
+    "description": "调用支付宝客户端支付",
+    "body": [
+      "var subject = '订单名';",
+      "var body = '订单描述';",
+      "var amount = '10.99';",
+      "var tradeNO = '4563548735674';",
+      "var notifyURL = 'http://www.apicloud.com';",
+      "aliPay.pay({",
+      "  subject: subject,",
+      "  body: body,",
+      "  amount: amount,",
+      "  tradeNO: tradeNO",
+      "}, function(ret, err) {",
+      "  api.alert({",
+      "\ttitle: '支付结果',",
+      "\tmsg: ret.msg,",
+      "\tbuttons: ['确定']",
+      "  });",
+      "});"
+    ]
+  },
+  "arcColorPicker.close": {
+    "prefix": "arcColorPicker-close",
+    "description": "关闭取色器",
+    "body": [
+      "arcColorPicker.close();"
+    ]
+  },
+  "arcColorPicker.getColor": {
+    "prefix": "arcColorPicker-getColor",
+    "description": "获取取色器当前的值",
+    "body": [
+      "arcColorPicker.getColor(function(ret, err){",
+      "\talert(ret.value);",
+      "});"
+    ]
+  },
+  "arcColorPicker.hide": {
+    "prefix": "arcColorPicker-hide",
+    "description": "隐藏取色器模块视图",
+    "body": [
+      "arcColorPicker.hide();"
+    ]
+  },
+  "arcColorPicker.open": {
+    "prefix": "arcColorPicker-open",
+    "description": "打开环形取值器",
+    "body": [
+      "arcColorPicker.open();"
+    ]
+  },
+  "arcColorPicker.setColor": {
+    "prefix": "arcColorPicker-setColor",
+    "description": "设置取色器的色值",
+    "body": [
+      "arcColorPicker.setColor({color:'${1:#675732}'});"
+    ]
+  },
+  "arcColorPicker.show": {
+    "prefix": "arcColorPicker-show",
+    "description": "显示已隐藏的取色器模块视图",
+    "body": [
+      "arcColorPicker.show();"
+    ]
+  },
+  "arcmenu.close": {
+    "prefix": "arcmenu-close",
+    "description": "关闭菜单",
+    "body": [
+      "arcMenu.close({id: ${1:1}});"
+    ]
+  },
+  "arcmenu.hide": {
+    "prefix": "arcmenu-hide",
+    "description": "隐藏已打开并显示的菜单",
+    "body": [
+      "arcMenu.hide({id: ${1:1}});"
+    ]
+  },
+  "arcmenu.open": {
+    "prefix": "arcmenu-open",
+    "description": "打开弹动菜单",
+    "body": [
+      "arcMenu.open({",
+      "\ttype: '${1:arc}',",
+      "\tmainMenu: {",
+      "\t\tx: ${2:140},",
+      "\t\ty: ${3:360},",
+      "\t\tw: ${4:50},",
+      "\t\th: ${5:50},",
+      "\t\timg: '${6:widget://res/arcMenue_centerImg.png}',",
+      "\t\timgLight: '${7:widget://res/arcMenue_centerImgLight.png}'",
+      "\t},",
+      "\titems:[{ w: ${8:40}, h: ${9:40}, img: '${10:widget://res/item1.png}', imgLight: '${11: widget://res/item1Light.png'}}],",
+      "\tstartAngle: ${12:0},",
+      "\twholeAngle: ${13:180},",
+      "\tradius: ${14:100},",
+      "\tfixed: ${15:true},",
+      "\tshieldClick: ${16:true}",
+      "}, function(ret,err){",
+      "\tapi.alert({msg:ret.id+'*'+ret.index});",
+      "});"
+    ]
+  },
+  "arcmenu.show": {
+    "prefix": "arcmenu-show",
+    "description": "显示已打开但被隐藏的菜单",
+    "body": [
+      "arcMenu.show({id: ${1:1}});"
+    ]
+  },
+  "arcProgress.close": {
+    "prefix": "arcProgress-close",
+    "description": "关闭圆形进度视图",
+    "body": [
+      "arcProgress.close({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "arcProgress.open": {
+    "prefix": "arcProgress-open",
+    "description": "打开圆形进度条",
+    "body": [
+      "arcProgress.open({\t",
+      "\ttype:'${1:annular}',",
+      "\tcenterX:${2:100},",
+      "\tcenteerY:${3:100},",
+      "\tradius:${4:60},",
+      "\tbgColor:'${5:#C0C0C0}',",
+      "\tpgColor:'${6:#2e8b57}',",
+      "\tloopWidth:${7:3},",
+      "\tfixedOn:'${8:winName}',",
+      "\tfixed:${9:true}",
+      "}, function(ret, err){",
+      "\t\t",
+      "});"
+    ]
+  },
+  "arcProgress.setValue": {
+    "prefix": "arcProgress-setValue",
+    "description": "设置进度值",
+    "body": [
+      "arcProgress.setValue({",
+      "\tid:${1:1},",
+      "\tvalue:${2:0}",
+      "});"
+    ]
+  },
+  "audio.pause": {
+    "prefix": "audio-pause",
+    "description": "暂停播放",
+    "body": [
+      "audio.pause();"
+    ]
+  },
+  "audio.play": {
+    "prefix": "audio-play",
+    "description": "设置音量",
+    "body": [
+      "audio.setVolume({",
+      "\tvolume:${1:0.5}",
+      "});"
+    ]
+  },
+  "audio.setProgress": {
+    "prefix": "audio-setProgress",
+    "description": "设置播放位置",
+    "body": [
+      "audio.setProgress({",
+      "\tprogress:${1:50}",
+      "});"
+    ]
+  },
+  "audio.stop": {
+    "prefix": "audio-stop",
+    "description": "停止播放",
+    "body": [
+      "audio.stop();"
+    ]
+  },
+  "barChart.close": {
+    "prefix": "barChart-close",
+    "description": "关闭柱状图",
+    "body": [
+      "barChart.close({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "barChart.hide": {
+    "prefix": "barChart-hide",
+    "description": "隐藏柱状图视图",
+    "body": [
+      "barChart.hide({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "barChart.open": {
+    "prefix": "barChart-open",
+    "description": "打开柱状图视图",
+    "body": [
+      "barChart.open({",
+      "\tx:${1:0},",
+      "\ty:${2:64},",
+      "\twidth:${3:320},",
+      "\theight:${4:300},",
+      "\tyAxisMax:${5:50},",
+      "\tyAxisStep:${6:10},",
+      "\txAxisMarks:${7:[1,2,3,4,5,6,7,8,9]},",
+      "\tdatas:${8:[10,30,40,5,3,49,55,23]},",
+      "\tid:${9:1}",
+      "},function(ret,err){",
+      "\tapi.alert({msg:ret.index+ret.id});",
+      "});"
+    ]
+  },
+  "barChart.reloadData": {
+    "prefix": "barChart-reloadData",
+    "description": "重新加载数据",
+    "body": [
+      "barChart.reloadData({",
+      "\txAxisMarks:${1:[1,2,3,4,5,6,7,8,9]},",
+      "\tdatas:${2:[15,30,40,5,3,49,55,23]}",
+      "},function(ret,err){",
+      "\tapi.alert({msg:ret.index+ret.id});",
+      "});"
+    ]
+  },
+  "barChart.setFrame": {
+    "prefix": "barChart-setFrame",
+    "description": "重设模块视图的位置大小",
+    "body": [
+      "barChart.setFrame({",
+      "\tx:${1:10},",
+      "\tw:${2:300}",
+      "});"
+    ]
+  },
+  "barChart.show": {
+    "prefix": "barChart-show",
+    "description": "显示柱状图",
+    "body": [
+      "barChart.show({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "bluetooth.cancel": {
+    "prefix": "bluetooth-cancel",
+    "description": "取消蓝牙连接",
+    "body": [
+      "bluetooth.cancel();"
+    ]
+  },
+  "bluetooth.connect": {
+    "prefix": "bluetooth-connect",
+    "description": "打开蓝牙连接",
+    "body": [
+      "bluetooth.connect(function(ret, err) {",
+      "\tvar progress = ret.progress;",
+      "\tvar message = ret.message;",
+      "});"
+    ]
+  },
+  "bluetooth.send": {
+    "prefix": "bluetooth-send",
+    "description": "发送数据",
+    "body": [
+      "bluetooth.send({",
+      "\ttype: ${1:0},",
+      "\tdata: '${2:}'",
+      "});"
+    ]
+  },
+  "bmap.addAnnotations": {
+    "prefix": "bmap-addAnnotations",
+    "description": "在地图上添加标注信息",
+    "body": [
+      "bMap.addAnnotations({",
+      "\tannotations: [{",
+      "\t\tid: ${1:1}, lon: ${2:116.297}, lat: ${3:40.109}",
+      "\t},",
+      "\t{",
+      "\t\tid: ${4:2}, lon: ${5:116.29}, lat: ${6:40.109}",
+      "\t},",
+      "\t{",
+      "\t\tid: ${7:3}, lon: ${8:116.298}, lat: ${9:40.11}",
+      "\t}],",
+      "\ticon: '${10:widget://}',",
+      "\tdraggable: ${11:true}",
+      "}, function(ret){",
+      "\tif(ret){",
+      "\t\talert(ret.id);",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.addArc": {
+    "prefix": "bmap-addArc",
+    "description": "在地图上添加弧形",
+    "body": [
+      "bMap.addArc({",
+      "\tid: ${1:3},",
+      "\tstyles: {",
+      "\t\tborderColor: '${2:#FF0000}',",
+      "\t\tborderWidth: ${3:3}",
+      "\t},",
+      "\tpoints: [{",
+      "\t\tlon: ${4:116.39432327},",
+      "\t\tlat: ${5:39.98963192}",
+      "\t},{",
+      "\t\tlon: ${6:116.49432328},",
+      "\t\tlat: ${7:39.98963192}",
+      "\t},{",
+      "\t\tlon: ${8:116.39432327},",
+      "\t\tlat: ${9:39.88933191}",
+      "\t}]",
+      "});"
+    ]
+  },
+  "bmap.addBillboard": {
+    "prefix": "bmap-addBillboard",
+    "description": "在地图上添加布告牌",
+    "body": [
+      "bMap.addBillboard({",
+      "\tid: ${1:4},",
+      "\tcoords: {",
+      "\t\tlon: ${2:116.233},",
+      "\t\tlat: ${3:39.134}",
+      "\t},",
+      "\tbgImg: '${4:widget://image/bMapTest.png}',",
+      "\tcontent: {",
+      "\t\ttitle: '${5:大标题大标题大标题大标题}',",
+      "\t\tsubTitle: '${6:概述内容概述内容概述内容}',",
+      "\t\tillus: '${7:http://ico.ooopic.com/ajax/iconpng/?id=145044.png}'",
+      "\t},",
+      "\tstyles: {",
+      "\t\ttitleColor: '${8:#000}',",
+      "\t\ttitleSize: ${9:16},",
+      "\t\tsubTitleColor: '${10:#999}',",
+      "\t\tsubTitleSize: ${11:12},",
+      "\t\tillusAlign: '${12:left}'//left/right",
+      "\t}",
+      "}, function(ret){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.addCircle": {
+    "prefix": "bmap-addCircle",
+    "description": "在地图上添加圆形",
+    "body": [
+      "bMap.addCircle({",
+      "\tid: ${1:4},",
+      "\tcenter: {",
+      "\t\tlon: ${2:116.39432327},",
+      "\t\tlat: ${3:39.98963192}",
+      "\t},",
+      "\tradius: ${4:500},",
+      "\tstyles: {",
+      "\t\tborderColor: '${5:#FF0000}',",
+      "\t\tborderWidth: ${6:3},",
+      "\t\tfillColor:'${7:#0000ff}'",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.addEventListener": {
+    "prefix": "bmap-addEventListener",
+    "description": "监听地图相关事件",
+    "body": [
+      "bMap.addEventListener({",
+      "\tname: '${1:longPress}'//longPress/viewChange/click/dbclick",
+      "},function(ret){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.addImg": {
+    "prefix": "bmap-addImg",
+    "description": "在地图上添加图片",
+    "body": [
+      "bMap.addImg({",
+      "\tid: ${1:5},",
+      "\timgPath: '${2:widget://res/over_img.png}',",
+      "\tlbLon: ${3:116.39432327},",
+      "\tlbLat: ${4:39.88933191},",
+      "\trtLon: ${5:116.49432328},",
+      "\trtLat: ${6:39.98963192},",
+      "\topacity: ${7:0.8}//0~1",
+      "});"
+    ]
+  },
+  "bmap.addLine": {
+    "prefix": "bmap-addLine",
+    "description": "在地图上添加折线",
+    "body": [
+      "bMap.addLine({",
+      "\tid: ${1:1},",
+      "\tstyles: {",
+      "\t\tborderColor: '${2:#FF0000}',",
+      "\t\tborderWidth: ${3:3}",
+      "\t },",
+      "\t points: [{",
+      "\t\t lon: ${4:116.39432327},",
+      "\t\t lat: ${5:39.98963192}",
+      "\t },{",
+      "\t\t lon: ${6:116.49432328},",
+      "\t\t lat: ${7:39.98963192}",
+      "\t },{",
+      "\t\t lon: ${8:116.39432327},",
+      "\t\t lat: ${9:39.88933191}",
+      "\t }]",
+      "});"
+    ]
+  },
+  "bmap.addPolygon": {
+    "prefix": "bmap-addPolygon",
+    "description": "在地图上添加多边形",
+    "body": [
+      "bMap.addPolygon({",
+      "\tid: ${1:2},",
+      "\tstyles: {",
+      "\t\tborderColor: '${2:#FF0000}',",
+      "\t\tborderWidth: ${3:3},",
+      "\t\tfillColor: '${4:#0000ff}'",
+      "\t},",
+      "\tpoints: [{",
+      "\t\tlon: ${5:116.39432327},",
+      "\t\tlat: ${6:39.98963192}",
+      "\t},{",
+      "\t\tlon: ${7:116.49432328},",
+      "\t\tlat: ${8:39.98963192}",
+      "\t},{",
+      "\t\tlon: ${9:116.39432327},",
+      "\t\tlat: ${10:39.88933191}",
+      "\t}]",
+      "});"
+    ]
+  },
+  "bmap.autocomplete": {
+    "prefix": "bmap-autocomplete",
+    "description": "根据关键字返回建议搜索关键字，无需调用open接口即可搜索",
+    "body": [
+      "bMap.autocomplete({",
+      "\tkeyword: '${1:北京西站}',",
+      "\tcity: '${2:北京}'",
+      "}, function(ret){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret.results)); ",
+      "\t}else{",
+      "\t\talert(JSON.stringify(err));",
+      "\t}",
+      "}); "
+    ]
+  },
+  "bmap.close": {
+    "prefix": "bmap-close",
+    "description": "关闭百度地图",
+    "body": [
+      "bMap.close();"
+    ]
+  },
+  "bmap.drawBusRoute": {
+    "prefix": "bmap-drawBusRoute",
+    "description": "根据searchBusRoute搜索返回的uid查询线路详情并绘制在地图上",
+    "body": [
+      "bMap.drawBusRoute({",
+      "\tid: ${1:1},",
+      "\tcity: '${2:city}',",
+      "\tuid: '${3:uid}',",
+      "\tnodeShow: ${4:false}",
+      "},function(ret){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}else{",
+      "\t\talert(JSON.stringify(err));",
+      "\t}",
+      "});\t "
+    ]
+  },
+  "bmap.drawRoute": {
+    "prefix": "bmap-drawRoute",
+    "description": "在地图上显示指定路线，调用本接口前，必须保证已经调用过接口open和searchRoute",
+    "body": [
+      "bMap.drawRoute({",
+      "\tid: ${1:1},",
+      "\tindex: ${2:0},",
+      "\tstyles: {",
+      "\t\tstart: {",
+      "\t\t\ticon: '${3:widget://image/bmap_start.png}'",
+      "\t\t},",
+      "\t\tend: {",
+      "\t\t\ticon: '${4:widget://image/bmap_end.png}'",
+      "\t\t}",
+      "\t}",
+      "}, function(ret){",
+      "\tapi.alert({msg:JSON.stringify(ret)});",
+      "});"
+    ]
+  },
+  "bmap.getAnnotationCoords": {
+    "prefix": "bmap-getAnnotationCoords",
+    "description": "获取指定标注的经纬度",
+    "body": [
+      "bMap.getAnnotationCoords({",
+      "\tid: ${1:2}",
+      "}, function(ret){",
+      "\tif(ret){",
+      "\t\tapi.alert({msg:JSON.stringify(ret)});",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.getCoordsFromName": {
+    "prefix": "bmap-getCoordsFromName",
+    "description": "根据地址查找经纬度，无需调用open接口即可使用",
+    "body": [
+      "bMap.getCoordsFromName({",
+      "\tcity: '${1:北京}',",
+      "\taddress: '${2:天安门}'",
+      "},function(ret,err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.getDistance": {
+    "prefix": "bmap-getDistance",
+    "description": "获取地图两点之间的距离，无需调用open接口即可使用",
+    "body": [
+      "bMap.getDistance({",
+      "\tstart: {",
+      "\t\tlon: ${1:106.486654},",
+      "\t\tlat: ${2:29.490295}",
+      "\t},",
+      "\tend: {",
+      "\t\tlon: ${3:106.581515},",
+      "\t\tlat: ${4:29.615467}",
+      "\t}",
+      "},function(ret){",
+      "\tif(ret.status){",
+      "\t\talert(ret.distance);",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.getLocation": {
+    "prefix": "bmap-getLocation",
+    "description": "开始定位，无需调用open接口即可定位",
+    "body": [
+      "bMap.getLocation({",
+      "\taccuracy: '${1:10m}',//10m/100m/1km/3km",
+      "\tautoStop: ${2:true},",
+      "\tfilter: ${3:1}",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.getNameFromCoords": {
+    "prefix": "bmap-getNameFromCoords",
+    "description": "根据经纬度查找地址信息，无需调用open接口即可使用",
+    "body": [
+      "bMap.getNameFromCoords({",
+      "\tlon: ${1:116.384767},",
+      "\tlat: ${2:39.989539}",
+      "},function(ret,err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.getRegion": {
+    "prefix": "bmap-getRegion",
+    "description": "获取地图显示范围（矩形区域）",
+    "body": [
+      "bMap.getRegion(function(ret){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.hide": {
+    "prefix": "bmap-hide",
+    "description": "隐藏百度地图",
+    "body": [
+      "bMap.hide();"
+    ]
+  },
+  "bmap.open": {
+    "prefix": "bmap-open",
+    "description": "打开百度地图",
+    "body": [
+      "bMap.open({",
+      "\trect: {",
+      "\t\tx: ${1:0},",
+      "\t\ty: ${2:0},",
+      "\t\tw: ${3:320},",
+      "\t\th: ${4:300}",
+      "\t},",
+      "\tcenter: {",
+      "\t\tlon: ${5:116.4021310000},",
+      "\t\tlat: ${6:39.9994480000}",
+      "\t},",
+      "\tzoomLevel: ${7:10},//3~18",
+      "\tshowUserLocation: ${8:true},",
+      "\tfixedOn: '${9:}',//winName/frameName",
+      "\tfixed: ${10:true}",
+      "}, function(ret){",
+      "\tif(ret.status){",
+      "\t\talert('地图打开成功');",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.popupBubble": {
+    "prefix": "bmap-popupBubble",
+    "description": "弹出指定标注的气泡",
+    "body": [
+      "bMap.popupBubble({",
+      "\tid: ${1:2}",
+      "});"
+    ]
+  },
+  "bmap.removeAnnotations": {
+    "prefix": "bmap-removeAnnotations",
+    "description": "移除指定id的标注或布告牌",
+    "body": [
+      "bMap.removeAnnotations({",
+      "\tids: [${1:1,3,5,7}]",
+      "});"
+    ]
+  },
+  "bmap.removeBusRoute": {
+    "prefix": "bmap-removeBusRoute",
+    "description": "移除地图上显示的公交、地铁线路",
+    "body": [
+      "bMap.removeBusRoute({",
+      "\tids:[${1:1}]",
+      "});"
+    ]
+  },
+  "bmap.removeEventListener": {
+    "prefix": "bmap-removeEventListener",
+    "description": "停止监听地图相关事件",
+    "body": [
+      "bMap.removeEventListener({",
+      "\tname: '${1:longPress}'//longPress/viewChange/click/dbclick",
+      "});"
+    ]
+  },
+  "bmap.removeOverlay": {
+    "prefix": "bmap-removeOverlay",
+    "description": "移除指定id的覆盖物（addLine、addPolygon、addArc、addCircle、addImg添加的覆盖物）",
+    "body": [
+      "bMap.removeOverlay({",
+      "\tids: [${1:1, 2, 3, 4, 5}]",
+      "});"
+    ]
+  },
+  "bmap.removeRoute": {
+    "prefix": "bmap-removeRoute",
+    "description": "移除指定id的路线",
+    "body": [
+      "bMap.removeRoute({",
+      "\tids: [${1:1, 2, 3}]",
+      "});"
+    ]
+  },
+  "bmap.searchBusRoute": {
+    "prefix": "bmap-searchBusRoute",
+    "description": "根据关键字搜索公交、地铁线路，无需调用open接口即可搜索",
+    "body": [
+      "bMap.searchBusRoute({",
+      "\tcity: '${1:北京}',",
+      "\tline: '${2:110}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}else{",
+      "\t\talert(JSON.stringify(err));",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.searchInBounds": {
+    "prefix": "bmap-searchInBounds",
+    "description": "根据单个关键字在方形区域内搜索兴趣点，无需调用open接口即可搜索",
+    "body": [
+      "bMap.searchInBounds({",
+      "\tkeyword: '${1:图书馆}',",
+      "\tlbLon: ${2:112.47723797622677},",
+      "\tlbLat: ${3:34.556480000000015},",
+      "\trtLon: ${4:109.77539000000002},",
+      "\trtLat: ${5:33.43144},",
+      "\tpageIndex: ${5:0},",
+      "\tpageCapacity: ${6:10}//1~50",
+      "},function(ret,err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}else{",
+      "\t\talert(JSON.stringify(err));",
+      "\t}",
+      "}); "
+    ]
+  },
+  "bmap.searchInCity": {
+    "prefix": "bmap-searchInCity",
+    "description": "根据单个关键字搜索兴趣点，无需调用open接口即可搜索",
+    "body": [
+      "bMap.searchInCity({",
+      "\tcity: '${1:北京}',",
+      "\tkeyword: '${2:学校}',",
+      "\tpageIndex: ${3:0},",
+      "\tpageCapacity: ${4:20}//1~50",
+      "}, function(ret){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret)); ",
+      "\t}else{",
+      "\t\talert(JSON.stringify(err));",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.searchNearby": {
+    "prefix": "bmap-searchNearby",
+    "description": "根据单个关键字在圆形区域内搜索兴趣点，无需调用open接口即可搜索",
+    "body": [
+      "bMap.searchNearby({",
+      "\tkeyword: '${1:KTV}',",
+      "\tlon: ${2:116.384767},",
+      "\tlat: ${3:39.989539},",
+      "\tradius: ${4:2000},",
+      "\tpageIndex: ${5:0},",
+      "\tpageCapacity: ${6:10}//1~50",
+      "}, function(ret,err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}else{",
+      "\t\talert(JSON.stringify(err));",
+      "\t}",
+      "}); "
+    ]
+  },
+  "bmap.searchRoute": {
+    "prefix": "bmap-searchRoute",
+    "description": "搜索路线方案，无需调用open接口即可使用",
+    "body": [
+      "bMap.searchRoute({",
+      "\tid: ${1:1},",
+      "\ttype: '${2:drive}',//transit/drive/walk",
+      "\tpolicy: '${3:ecar_fee_first}',//ecar_fee_first/ecar_dis_first/ecar_time_first/ecar_avoid_jam/ebus_no_subway/ebus_time_first/ebus_transfer_first/ebus_walk_first",
+      "\tstart: {",
+      "\t\tlon: ${4:116.403838},",
+      "\t\tlat: ${5:39.914437}",
+      "\t},",
+      "\tend: {",
+      "\t\tlon: ${6:116.384852},",
+      "\t\tlat: ${7:39.989576}",
+      "\t}",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\tapi.alert({msg:JSON.stringify(ret)});",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.setAnnotationCoords": {
+    "prefix": "bmap-setAnnotationCoords",
+    "description": "设置某个已添加标注的经纬度",
+    "body": [
+      "bMap.setAnnotationCoords({",
+      "\tid: ${1:2},",
+      "\tlon: ${2:116.39},",
+      "\tlat: ${3:40.209}",
+      "});"
+    ]
+  },
+  "bmap.setBubble": {
+    "prefix": "bmap-setBubble",
+    "description": "设置点击标注时弹出的气泡信息",
+    "body": [
+      "bMap.setBubble({",
+      "\tid: ${1:2},",
+      "\tbgImg: '${2:widget://res/bubble_bg.png}',",
+      "\tcontent: {",
+      "\t\ttitle: '${3:大标题}',",
+      "\t\tsubTitle: '${4:概述内容}',",
+      "\t\tillus: '${5:http://ico.ooopic.com/ajax/iconpng/?id=145044.png}'",
+      "\t},",
+      "\tstyles: {",
+      "\t\ttitleColor: '${6:#000}',",
+      "\t\ttitleSize: ${7:16},",
+      "\t\tsubTitleColor: '${8:#999}',",
+      "\t\tsubTitleSize: ${9:12},",
+      "\t\tillusAlign: '${10:left}'//left/right",
+      "\t}",
+      "}, function(ret){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.setCenter": {
+    "prefix": "bmap-setCenter",
+    "description": "根据经纬度设置百度地图中心点，此接口可带动画效果",
+    "body": [
+      "bMap.setCenter({",
+      "\tcoords: {",
+      "\t\tlon: ${1:116.404},",
+      "\t\tlat: ${2:39.915}",
+      "\t},",
+      "\tanimation: ${3:false}",
+      "});"
+    ]
+  },
+  "bmap.setMapAttr": {
+    "prefix": "bmap-setMapAttr",
+    "description": "设置百度地图相关属性",
+    "body": [
+      "bMap.setMapAttr({",
+      "\ttype: '${1:standard}',//standard/satellite/trafficOn/trafAndsate",
+      "\tzoomEnable: ${2:true},",
+      "\tscrollEnable: ${3:true}",
+      "});"
+    ]
+  },
+  "bmap.setOverlook": {
+    "prefix": "bmap-setOverlook",
+    "description": "设置百度地图俯视角度，此接口自带动画效果",
+    "body": [
+      "bMap.setOverlook({",
+      "\tdegree: ${1:-30}//-45~0",
+      "});"
+    ]
+  },
+  "bmap.setRegion": {
+    "prefix": "bmap-setRegion",
+    "description": "设置地图显示范围（矩形区域），此接口可带动画效果",
+    "body": [
+      "bMap.setRegion({",
+      "\tlbLon: ${1:116.027143},",
+      "\tlbLat: ${2:39.772348},",
+      "\trtLon: ${3:116.832025},",
+      "\trtLat: ${4:40.126349},",
+      "\tanimation: ${5:true}",
+      "});"
+    ]
+  },
+  "bmap.setRotation": {
+    "prefix": "bmap-setRotation",
+    "description": "设置百度地图旋转角度，此接口自带动画效果",
+    "body": [
+      "bMap.setRotation({",
+      "\tdegree: ${1:30}//-180~180",
+      "});"
+    ]
+  },
+  "bmap.setScaleBar": {
+    "prefix": "bmap-setScaleBar",
+    "description": "设置百度地图比例尺",
+    "body": [
+      "bMap.setScaleBar({",
+      "\tshow: ${1:true},",
+      "\tposition: {",
+      "\t  x: ${2:100},",
+      "\t  y: ${3:100}",
+      "\t}",
+      "});"
+    ]
+  },
+  "bmap.setZoomLevel": {
+    "prefix": "bmap-setZoomLevel",
+    "description": "设置百度地图缩放等级，此接口自带动画效果",
+    "body": [
+      "bMap.setZoomLevel({",
+      "\tlevel: ${1:10}//3~18",
+      "});"
+    ]
+  },
+  "bmap.show": {
+    "prefix": "bmap-show",
+    "description": "显示百度地图",
+    "body": [
+      "bMap.show();"
+    ]
+  },
+  "bmap.showUserLocation": {
+    "prefix": "bmap-showUserLocation",
+    "description": "是否在地图上显示用户位置，会自动移动地图可视区域中心点到用户当前坐标位置，自带地图移动动画效果",
+    "body": [
+      "bMap.showUserLocation({",
+      "\tisShow: ${1:true},",
+      "\ttrackingMode: '${2:none}'//none/follow/compass",
+      "});"
+    ]
+  },
+  "bmap.stopLocation": {
+    "prefix": "bmap-stopLocation",
+    "description": "停止定位",
+    "body": [
+      "bMap.stopLocation();"
+    ]
+  },
+  "bmap.transCoords": {
+    "prefix": "bmap-transCoords",
+    "description": "将其它类型的地理坐标转换为百度坐标。无需调用open接口即可使用",
+    "body": [
+      "bMap.transCoords({",
+      "\ttype: '${1:common}',//gps/common",
+      "\tlon: ${2:116.351},",
+      "\tlat: ${3:39.283},",
+      "\tmcode: '${4:0B:13:25:D7:85:46:0A:67:12:F3:29:88:64:56:63:10:7A:9C:C4:59;com.apicloud.A6985734480360}'//安全码（数字签名+;+包名）",
+      "}, function(ret, err){",
+      "\talert(JSON.stringify(ret));",
+      "});"
+    ]
+  },
+  "bmap.zoomIn": {
+    "prefix": "bmap-zoomIn",
+    "description": "缩小地图，放大视角，放大一级比例尺，此接口自带动画效果",
+    "body": [
+      "bMap.zoomIn();"
+    ]
+  },
+  "bmap.zoomOut": {
+    "prefix": "bmap-zoomOut",
+    "description": "放大地图，缩小视角，缩小一级比例尺，此接口自带动画效果",
+    "body": [
+      "bMap.zoomOut();"
+    ]
+  },
+  "bookReader.brightness": {
+    "prefix": "bookReader-brightness",
+    "description": "获取、设置屏幕亮度",
+    "body": [
+      "bookReader.brightness({",
+      "\tbrightness: ${1:80}",
+      "},function(ret,err){",
+      "\tif(ret.status){",
+      "\t\talert(ret.brightness);",
+      "\t}",
+      "});"
+    ]
+  },
+  "bookReader.close": {
+    "prefix": "bookReader-close",
+    "description": "关闭阅读器",
+    "body": [
+      "bookReader.close();"
+    ]
+  },
+  "bookReader.getBrightness": {
+    "prefix": "bookReader-getBrightness",
+    "description": "获取屏幕亮度",
+    "body": [
+      "bookReader.getBrightness();"
+    ]
+  },
+  "bookReader.getProgress": {
+    "prefix": "bookReader-getProgress",
+    "description": "获取指定文件的阅读进度",
+    "body": [
+      "bookReader.getProgress({",
+      "\t filePath:'${1:path}'",
+      "});"
+    ]
+  },
+  "bookReader.hide": {
+    "prefix": "bookReader-hide",
+    "description": "隐藏阅读器",
+    "body": [
+      "bookReader.hide();"
+    ]
+  },
+  "bookReader.open": {
+    "prefix": "bookReader-open",
+    "description": "打开阅读器",
+    "body": [
+      "bookReader.open({",
+      "\tbg : '${1:#fff}',",
+      "\tanimType : '${2:curl}',",
+      "\tprogress : ${3:80},",
+      "\ttextStyle : {",
+      "\t\tsize : ${4:12},",
+      "\t\tcolor : '${5:#424242}'",
+      "\t},",
+      "\tfilePath : '${6:path}'",
+      "},function(ret, err){",
+      "});"
+    ]
+  },
+  "bookReader.setBrightness": {
+    "prefix": "bookReader-setBrightness",
+    "description": "设置屏幕亮度",
+    "body": [
+      "bookReader.setBrightness(",
+      "\tbrightness:${1:80}",
+      ");"
+    ]
+  },
+  "bookReader.setValue": {
+    "prefix": "bookReader-setValue",
+    "description": "打开阅读器",
+    "body": [
+      "bookReader.setValue({",
+      "\tbg:'${1:#000}',",
+      "\ttextStyle:{",
+      "\t\tcolor:'${2:#fff}',",
+      "\t\tsize:${3:size}",
+      "\t},",
+      "\tanimType : '${4:curl}',",
+      "\tprogress : ${5:100}",
+      "});"
+    ]
+  },
+  "bookReader.show": {
+    "prefix": "bookReader-show",
+    "description": "显示阅读器",
+    "body": [
+      "bookReader.show();"
+    ]
+  },
+  "bubblemenu.close": {
+    "prefix": "bubblemenu-close",
+    "description": "关闭菜单",
+    "body": [
+      "bubbleMenu.close();"
+    ]
+  },
+  "bubblemenu.hide": {
+    "prefix": "bubblemenu-hide",
+    "description": "隐藏菜单",
+    "body": [
+      "bubbleMenu.hide();"
+    ]
+  },
+  "bubblemenu.open": {
+    "prefix": "bubblemenu-open",
+    "description": "打开菜单",
+    "body": [
+      "bubbleMenu.open({",
+      "\tstyle: {",
+      "\t\tbgColor: '${1:#000000}',",
+      "\t\tlightColor: '${2:#009ACD}',",
+      "\t\tborderColor: '${3:#000000}',",
+      "\t\tcutLineColor: '${4:#636363}',",
+      "\t\ttitleColor: '${5:#FFFFFF}'",
+      "\t},",
+      "\tcenterX: ${6:120},",
+      "\tcenterY: ${7:120},",
+      "\tbtnArray: [{title: '${8:按钮一}', length: ${9:65}}]",
+      "}, function(ret,err){",
+      "\tapi.alert({msg:'点击了菜单的第'+ret.index+'个按钮'});",
+      "});"
+    ]
+  },
+  "bubblemenu.show": {
+    "prefix": "bubblemenu-show",
+    "description": "显示菜单",
+    "body": [
+      "bubbleMenu.show();"
+    ]
+  },
+  "button.close": {
+    "prefix": "button-close",
+    "description": "关闭按钮视图",
+    "body": [
+      "button.close({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "button.hide": {
+    "prefix": "button-hide",
+    "description": "隐藏按钮视图",
+    "body": [
+      "button.hide({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "button.open": {
+    "prefix": "button-open",
+    "description": "打开一个按钮视图",
+    "body": [
+      "button.open({",
+      "  bg:{ normal:\"#ff0000\" }",
+      "},function(ret,err){",
+      "\tapi.alert({msg:ret.id});",
+      "});"
+    ]
+  },
+  "button.setFrame": {
+    "prefix": "button-setFrame",
+    "description": "重设模块视图的位置大小",
+    "body": [
+      "button.setFrame({",
+      "\tx:${1:80},",
+      "\tw:${2:45}",
+      "});"
+    ]
+  },
+  "button.setTitle": {
+    "prefix": "button-setTitle",
+    "description": "重设按钮标题",
+    "body": [
+      "button.setTitle({",
+      "\tid:${1:1},",
+      "\ttitle:{normalTitle:\"按钮\"}",
+      "},function(ret,err){",
+      "\tapi.alert({msg:ret.index+ret.id});",
+      "});"
+    ]
+  },
+  "button.show": {
+    "prefix": "button-show",
+    "description": "显示按钮视图",
+    "body": [
+      "button.show({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "cardReader.open": {
+    "prefix": "cardReader-open",
+    "description": "打开信用卡识别器",
+    "body": [
+      "cardReader.open(function(ret,err){",
+      "\tif(ret.status){",
+      "\t\talert(ret.cardNum + ret.expiryMonth + ret.expiryYear + ret.cvv);",
+      "\t} else{",
+      "\t\talert(err.msg);",
+      "\t}",
+      "});"
+    ]
+  },
+  "circularmenu.close": {
+    "prefix": "circularmenu-close",
+    "description": "关闭环形菜单",
+    "body": [
+      "circularMenu.close();"
+    ]
+  },
+  "circularmenu.hide": {
+    "prefix": "circularmenu-hide",
+    "description": "隐藏环形菜单",
+    "body": [
+      "circularMenu.hide();"
+    ]
+  },
+  "circularmenu.open": {
+    "prefix": "circularmenu-open",
+    "description": "打开转盘菜单",
+    "body": [
+      "circularMenu.open({",
+      "\tradius: ${1:150},",
+      "\tcenterBtnRadius: ${2:50},",
+      "\tindicatorPosition: '${3:left}',//left/right/up/down",
+      "\titems: [{",
+      "\t\tnormal: '${4:widget://res/circularMenu2.png}',",
+      "\t\thighlight: '${5:widget://res/circularMenu2light.png}',",
+      "\t\ttitle: '${6:按钮二}',",
+      "\t\ttitleColor: '${7:#FF0000}'",
+      "\t}]",
+      "}, function(ret, err){",
+      "\tvar index = ret.index;",
+      "\tvar pointerIndex = ret.pointerIndex;",
+      "});"
+    ]
+  },
+  "circularmenu.show": {
+    "prefix": "circularmenu-show",
+    "description": "显示已隐藏的环形菜单",
+    "body": [
+      "circularMenu.show();"
+    ]
+  },
+  "citySelector.close": {
+    "prefix": "citySelector-close",
+    "description": "关闭选择器",
+    "body": [
+      "citySelector.close();"
+    ]
+  },
+  "citySelector.hidden": {
+    "prefix": "citySelector-hidden",
+    "description": "<del>隐藏选择器</del>",
+    "body": [
+      "citySelector.hidden();"
+    ]
+  },
+  "citySelector.hide": {
+    "prefix": "citySelector-hide",
+    "description": "隐藏选择器",
+    "body": [
+      "citySelector.hide();"
+    ]
+  },
+  "citySelector.open": {
+    "prefix": "citySelector-open",
+    "description": "打开城市选择器",
+    "body": [
+      "citySelector.open(function(ret,err){",
+      "\tapi.alert({msg:'选了'+ret.city+ret.province+ret.county});",
+      "});"
+    ]
+  },
+  "citySelector.show": {
+    "prefix": "citySelector-show",
+    "description": "显示选择器",
+    "body": [
+      "citySelector.show();"
+    ]
+  },
+  "clipBoard.get": {
+    "prefix": "clipBoard-get",
+    "description": "获取剪切板中的数据",
+    "body": [
+      "clipBoard.get(function(ret, err){",
+      "\tapi.alert({msg:ret.value+\"*\"+ret.type});",
+      "});"
+    ]
+  },
+  "clipBoard.removeListener": {
+    "prefix": "clipBoard-removeListener",
+    "description": "移除剪切板监听",
+    "body": [
+      "clipBoard.removeListener();"
+    ]
+  },
+  "clipBoard.set": {
+    "prefix": "clipBoard-set",
+    "description": "设置剪切板内容",
+    "body": [
+      "clipBoard.set({",
+      "\tvalue: '${1:}'",
+      "}, function(ret, err) {",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({",
+      "\t\t\tmsg: '复制到剪切板成功'",
+      "\t\t});",
+      "\t} else {",
+      "\t\tapi.alert({",
+      "\t\t\tmsg: err.msg",
+      "\t\t});",
+      "\t}",
+      "});"
+    ]
+  },
+  "clipBoard.setListener": {
+    "prefix": "clipBoard-setListener",
+    "description": "设置剪切板监听",
+    "body": [
+      "clipBoard.setListener(function(ret, err){",
+      "\tapi.alert({msg:ret.value+\"*\"+ret.type});",
+      "});"
+    ]
+  },
+  "contacts.add": {
+    "prefix": "contacts-add",
+    "description": "向通讯录添加一个联系人，所有参数不可同时为空。",
+    "body": [
+      "contacts.add({",
+      "\tgroupId: ${1:1},",
+      "\tlastName: '${2:lastname}',",
+      "\tfirstName: '${3:firstname}',",
+      "\tphones: [{",
+      "\t\t'${4:title}': '${5:number}'",
+      "\t}],",
+      "\temail: '${6:email}',",
+      "\tcompany: '${7:company}',",
+      "\ttitle: '${8:job_title}',",
+      "\taddress: {",
+      "\t\tCountry: '${9:contry}',",
+      "\t\tState: '${10:state}',",
+      "\t\tCity: '${11:city}',",
+      "\t\tStreet: '${12:street}',",
+      "\t\tZIP: '${13:zip_code}'",
+      "\t},",
+      "\tnote: '${14:note_content}'",
+      "}, function(ret){",
+      "\tif(ret.status){",
+      "\t\tapi.alert({msg:'添加成功'});",
+      "\t}",
+      "});"
+    ]
+  },
+  "contacts.createGroup": {
+    "prefix": "contacts-createGroup",
+    "description": "创建分组",
+    "body": [
+      "contacts.createGroup({",
+      "\tgroupName: '${1:group_name}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert('分组id为：'+ ret.groupId);",
+      "\t}",
+      "});"
+    ]
+  },
+  "contacts.delete": {
+    "prefix": "contacts-delete",
+    "description": "从通讯录删除一个或多个联系人",
+    "body": [
+      "contacts.delete({",
+      "\tids: [${1:1}, ${2:2}]",
+      "}, function(ret, err){",
+      "\tif(ret.status) {",
+      "\t\tapi.alert({msg:'删除成功'});",
+      "\t}else{",
+      "\t\tapi.alert({msg:'删除失败'});",
+      "\t} ",
+      "});"
+    ]
+  },
+  "contacts.deleteGroup": {
+    "prefix": "contacts-deleteGroup",
+    "description": "删除分组，只删除分组，不删除其中的联系人",
+    "body": [
+      "contacts.deleteGroup({",
+      "\tgroupId: ${1:1} ",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\tapi.alert({msg: '删除分组成功'});",
+      "\t}",
+      "});"
+    ]
+  },
+  "contacts.move": {
+    "prefix": "contacts-move",
+    "description": "根据 id 移动联系人至指定分组",
+    "body": [
+      "contacts.move({",
+      "\tid: ${1:1},",
+      "\tgroupId: ${2:20}",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert('移动分组成功');",
+      "\t}",
+      "});"
+    ]
+  },
+  "contacts.query": {
+    "prefix": "contacts-query",
+    "description": "根据联系人 id 查找联系人",
+    "body": [
+      "contacts.query({",
+      "\tids: [${1:1}, ${2:2}]",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret.contacts));",
+      "\t}",
+      "});"
+    ]
+  },
+  "contacts.queryByGroupId": {
+    "prefix": "contacts-queryByGroupId",
+    "description": "根据分组 id 查找联系人",
+    "body": [
+      "contacts.queryByGroupId({",
+      "\tgroupId: ${1:1}",
+      "},function(ret,err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "contacts.queryByKeyword": {
+    "prefix": "contacts-queryByKeyword",
+    "description": "根据关键字从通讯录查找联系人",
+    "body": [
+      "contacts.queryByKeyword({",
+      "\tkeyword: '${1:keyword}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){\t",
+      "\t\talert(JSON.stringify(ret.contacts));",
+      "\t}else{",
+      "\t\tapi.alert({msg: '获取失败'});",
+      "\t}",
+      "});"
+    ]
+  },
+  "contacts.queryByPage": {
+    "prefix": "contacts-queryByPage",
+    "description": "根据页码查找指定数量的联系人",
+    "body": [
+      "contacts.queryByPage({",
+      "\tcount: ${1:10},",
+      "\tpageIndex: ${2:0}",
+      "}, function(ret){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret.contacts));",
+      "\t\tvar pages = ret.pages;",
+      "\t}",
+      "});"
+    ]
+  },
+  "contacts.queryGroups": {
+    "prefix": "contacts-queryGroups",
+    "description": "获取所有分组信息",
+    "body": [
+      "contacts.queryGroups(function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "contacts.select": {
+    "prefix": "contacts-select",
+    "description": "打开系统通讯录界面，选择单个联系人，返回已选的联系人信息",
+    "body": [
+      "contacts.select(function(ret, err){",
+      "\tif(ret.status){",
+      "\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "contacts.update": {
+    "prefix": "contacts-update",
+    "description": "根据 id 更新通讯录的联系人信息",
+    "body": [
+      "contacts.update(",
+      "\tid: ${1:1},",
+      "\tlastName: '${2:lastname}',",
+      "\tfirstName: '${3:firstname}',",
+      "\tphones: [{",
+      "\t\t'${4:title}': '${5:number}'",
+      "\t}],",
+      "\temail: '${6:email}',",
+      "\tcompany: '${7:company}',",
+      "\ttitle: '${8:job_title}',",
+      "\taddress: {",
+      "\t\tCountry: '${9:contry}',",
+      "\t\tState: '${10:state}',",
+      "\t\tCity: '${11:city}',",
+      "\t\tStreet: '${12:street}',",
+      "\t\tZIP: '${13:zip_code}'",
+      "\t},",
+      "\tnote: '${14:note_content}'",
+      "}, function(ret){",
+      "\tif(ret.status){",
+      "\t\tapi.alert({msg:'修改成功'});",
+      "\t}",
+      "});"
+    ]
+  },
+  "coverFlow.close": {
+    "prefix": "coverFlow-close",
+    "description": "关闭coverFlow",
+    "body": [
+      "coverFlow.close();"
+    ]
+  },
+  "coverFlow.hide": {
+    "prefix": "coverFlow-hide",
+    "description": "隐藏显示的coverFlow视图",
+    "body": [
+      "coverFlow.hide();"
+    ]
+  },
+  "coverFlow.open": {
+    "prefix": "coverFlow-open",
+    "description": "打开coverFlow",
+    "body": [
+      "coverFlow.open({",
+      "\tx:${1:0},",
+      "\ty:${2:64},",
+      "\tw:${3:320},",
+      "\th:${4:300},",
+      "\tbgColor:${5:'#ADD8E6'},",
+      "\tpaths:${6:['widget://res/a1.png','widget://res/a2.png','widget://res/a10.png']}",
+      "},function(ret,err) {",
+      "\talert( JSON.stringify( ret ))",
+      "});"
+    ]
+  },
+  "coverFlow.show": {
+    "prefix": "coverFlow-show",
+    "description": "显示已隐藏的coverFlow视图",
+    "body": [
+      "coverFlow.show();"
+    ]
+  },
+  "db.closeDatabase": {
+    "prefix": "db-closeDatabase",
+    "description": "关闭数据库",
+    "body": [
+      "db.closeDatabase({",
+      "\tname: '${1:database_name}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'数据库关闭成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "db.executeSql": {
+    "prefix": "db-executeSql",
+    "description": "执行sql",
+    "body": [
+      "db.executeSql({",
+      "\tname: '${1:database_name}',",
+      "\tsql: '${2:sql_string}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'执行SQL成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "db.openDatabase": {
+    "prefix": "db-openDatabase",
+    "description": "打开数据库，若数据库不存在则创建数据库",
+    "body": [
+      "db.openDatabase({",
+      "\tname: '${1:database_name}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'数据库打开成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "db.selectSql": {
+    "prefix": "db-selectSql",
+    "description": "查询sql",
+    "body": [
+      "db.selectSql({",
+      "\tname: '${1:database_name}',",
+      "\tsql: '${2:sql_string}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'执行SQL成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "db.transaction": {
+    "prefix": "db-transaction",
+    "description": "执行事务操作语句",
+    "body": [
+      "db.transaction({",
+      "\tname: '${1:database_name}',",
+      "\toperation: '${2:operation_type}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'事务操作成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "docReader.open": {
+    "prefix": "docReader-open",
+    "description": "打开一个文档，文档类型可以是excel，doc，pdf等格式",
+    "body": [
+      "docReader.open({",
+      "\tpath:'${1:path}'",
+      "});"
+    ]
+  },
+  "downloadManager.closeManagerView": {
+    "prefix": "downloadManager-closeManagerView",
+    "description": "关闭下载管理界面",
+    "body": [
+      "downloadManager.closeManagerView();"
+    ]
+  },
+  "downloadManager.enqueue": {
+    "prefix": "downloadManager-enqueue",
+    "description": "开始一个下载",
+    "body": [
+      "downloadManager.enqueue({",
+      "\turl:'${1:url}',",
+      "\tsavePath:'${2:path}',",
+      "\tcache:${3:true},",
+      "\tallowResume:${4:true},",
+      "\ttitle:'${5:title}',",
+      "\tnetworkTypes:'${6:all}'",
+      "},function(ret,err){",
+      "});"
+    ]
+  },
+  "downloadManager.openDownloadedFile": {
+    "prefix": "downloadManager-openDownloadedFile",
+    "description": "打开下载文件",
+    "body": [
+      "downloadManager.openDownloadedFile({",
+      "\tid: '${1:id}'",
+      "},function(ret,err){",
+      "});"
+    ]
+  },
+  "downloadManager.openManagerView": {
+    "prefix": "downloadManager-openManagerView",
+    "description": "打开下载管理界面",
+    "body": [
+      "downloadManager.openManagerView({",
+      "\ttitle: '${1:title}'",
+      "},function(ret){",
+      "});"
+    ]
+  },
+  "downloadManager.pause": {
+    "prefix": "downloadManager-pause",
+    "description": "暂停下载",
+    "body": [
+      "downloadManager.pause({",
+      "\tid: '${1:id}'",
+      "},function(ret,err){",
+      "});"
+    ]
+  },
+  "downloadManager.query": {
+    "prefix": "downloadManager-query",
+    "description": "查询下载状态",
+    "body": [
+      "downloadManager.query({",
+      "\tids: ${1:[]},",
+      "\tstatus: '${2:status}'",
+      "},function(ret,err){",
+      "});"
+    ]
+  },
+  "downloadManager.remove": {
+    "prefix": "downloadManager-remove",
+    "description": "删除下载",
+    "body": [
+      "downloadManager.remove({",
+      "\tids: ${1:[]}",
+      "},function(ret,err){",
+      "});"
+    ]
+  },
+  "downloadManager.resume": {
+    "prefix": "downloadManager-resume",
+    "description": "继续下载",
+    "body": [
+      "downloadManager.resume({",
+      "\tid: '${1:id}'",
+      "},function(ret,err){",
+      "});"
+    ]
+  },
+  "fileBrowser.close": {
+    "prefix": "fileBrowser-close",
+    "description": "关闭文件浏览器",
+    "body": [
+      "fileBrowser.close();"
+    ]
+  },
+  "fileBrowser.open": {
+    "prefix": "fileBrowser-open",
+    "description": "打开文件浏览器",
+    "body": [
+      "fileBrowser.open(function(ret,err) {",
+      "});"
+    ]
+  },
+  "fnscanner.closeView": {
+    "prefix": "fnscanner-closeView",
+    "description": "关闭自定义的二维码/条形码扫描器",
+    "body": [
+      "fnscanner.closeView();"
+    ]
+  },
+  "fnscanner.decodeImg": {
+    "prefix": "fnscanner-decodeImg",
+    "description": "二维码/条形码图片解码",
+    "body": [
+      "fnscanner.decodeImg({",
+      "\tsound: '${1:sound_path}',",
+      "\tpath: '${2:image_path}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\talert(ret.content);",
+      "\t}",
+      "});"
+    ]
+  },
+  "fnscanner.encodeImg": {
+    "prefix": "fnscanner-encodeImg",
+    "description": "将字符串生成二维码/条形码图片",
+    "body": [
+      "fnscanner.encodeImg({",
+      "\ttype: '${1:type}',",
+      "\tcontent: '${2:content}',",
+      "\tsaveToAlbum: ${3:false},",
+      "\tsaveImg: {",
+      "\t\tpath: '${4:image_path}',",
+      "\t\tw: ${5:200},",
+      "\t\th: ${6:200}",
+      "\t}",
+      "}, function(ret, err){",
+      "\tif(ret){",
+      "\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "fnscanner.openScanner": {
+    "prefix": "fnscanner-openScanner",
+    "description": "打开二维码/条码扫描器",
+    "body": [
+      "fnscanner.openScanner({",
+      "\tsound: '${1:sound_path}',",
+      "\tautoLight: ${2:true},",
+      "\tsaveToAlbum: ${3:false},",
+      "\tsaveImg: {",
+      "\t\tpath: '${4:image_path}',",
+      "\t\tw: ${5:200},",
+      "\t\th: ${6:200}",
+      "\t}",
+      "}, function(ret, err){",
+      "\tif(ret){",
+      "\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "fnscanner.openView": {
+    "prefix": "fnscanner-openView",
+    "description": "打开可自定义的二维码/条形码扫描器",
+    "body": [
+      "fnscanner.openView({",
+      "\tsound: '${1:sound_path}',",
+      "\tautoLight: ${2:true},",
+      "\tsaveToAlbum: ${3:false},",
+      "\tsaveImg: {",
+      "\t\tpath: '${4:image_path}',",
+      "\t\tw: ${5:200},",
+      "\t\th: ${6:200}",
+      "\t},",
+      "\trect: {",
+      "\t\tx: ${7:0},",
+      "\t\ty: ${8:0},",
+      "\t\tw: ${9:320},",
+      "\t\th: ${10:480}",
+      "\t}",
+      "}, function(ret, err){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "fnscanner.switchLight": {
+    "prefix": "fnscanner-switchLight",
+    "description": "打开/关闭闪光灯",
+    "body": [
+      "fnscanner.switchLight({",
+      "\tstatus: '${1:on}',",
+      "});"
+    ]
+  },
+  "fs.close": {
+    "prefix": "fs-close",
+    "description": "关闭文件",
+    "body": [
+      "fs.close({",
+      "\tfd: ${1:fd}",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'close操作成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.copyTo": {
+    "prefix": "fs-copyTo",
+    "description": "拷贝文件",
+    "body": [
+      "fs.copyTo({",
+      "\toldPath: '${1:old_path}',",
+      "\tnewPath: '${2:new_path}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'拷贝文件成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.createDir": {
+    "prefix": "fs-createDir",
+    "description": "创建目录",
+    "body": [
+      "fs.createDir({",
+      "\tpath: '${1:dir_path}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'创建目录成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.createFile": {
+    "prefix": "fs-createFile",
+    "description": "创建文件",
+    "body": [
+      "fs.createFile({",
+      "\tpath: '${1:file_path}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'创建文件成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.exist": {
+    "prefix": "fs-exist",
+    "description": "判断文件是否存在",
+    "body": [
+      "fs.exist({",
+      "\tpath: '${1:file_path}'",
+      "},function(ret,err){",
+      "\tif (ret.exist) {",
+      "\t\tif(ret.directory){",
+      "\t\t\tapi.alert({msg:'该路径指向一个文件夹'});",
+      "\t\t}else{",
+      "\t\t\tapi.alert({msg:'该路径指向一个文件'});",
+      "\t\t}",
+      "\t}else {",
+      "\t\tapi.alert({msg:'该路径不存在任何文件'});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.getAttribute": {
+    "prefix": "fs-getAttribute",
+    "description": "获取指定路径下文件的属性",
+    "body": [
+      "fs.getAttribute({",
+      "\tpath: '${1:file_path}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'获取属性成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.moveTo": {
+    "prefix": "fs-moveTo",
+    "description": "移动文件",
+    "body": [
+      "fs.moveTo({",
+      "\toldPath: '${1:old_path}',",
+      "\tnewPath: '${2:new_path}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'移动文件成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.open": {
+    "prefix": "fs-open",
+    "description": "打开文件",
+    "body": [
+      "fs.open({",
+      "\tpath: '${1:file_path}',",
+      "\tflags: '${2:flags_type}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'open操作成功'});",
+      "\t\tvar fd = ret.fd;",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.read": {
+    "prefix": "fs-read",
+    "description": "读取文件",
+    "body": [
+      "fs.read({",
+      "\tfd: ${1:fd},",
+      "\toffset: ${2:0},",
+      "\tlength: ${1:0}",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:ret.data});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.readDir": {
+    "prefix": "fs-readDir",
+    "description": "列出目录",
+    "body": [
+      "fs.readDir({",
+      "\tpath: '${1:dir_path}'",
+      "},function(ret,err){",
+      "\tvar status = ret.status;",
+      "\tif (status) {",
+      "\t\tvar data = ret.data;",
+      "\t\tif (data) {",
+      "\t\t\tvar jsonStr = JSON.stringify(data);",
+      "\t\t\tapi.alert({msg:jsonStr});",
+      "\t\t} else{",
+      "\t\t\tapi.alert({msg:'此目录下为空'});",
+      "\t\t}",
+      "\t}else{",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.readDown": {
+    "prefix": "fs-readDown",
+    "description": "从当前文件句柄当前位置向下读取一页(页的大小如length)数据",
+    "body": [
+      "fs.readDown({",
+      "\tfd: ${1:fd},",
+      "\toffset: ${2:0},",
+      "\tlength: ${3:0}",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:ret.data});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.readUp": {
+    "prefix": "fs-readUp",
+    "description": "从当前文件句柄当前位置向上读取一页(页的大小如length)数据",
+    "body": [
+      "fs.readUp({",
+      "\tfd: ${1:fd},",
+      "\toffset: ${2:0},",
+      "\tlength: ${3:0}",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:ret.data});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.remove": {
+    "prefix": "fs-remove",
+    "description": "删除文件",
+    "body": [
+      "fs.remove({",
+      "\tpath: '${1:file_path}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'删除文件成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.rename": {
+    "prefix": "fs-rename",
+    "description": "重命名",
+    "body": [
+      "fs.rename({",
+      "\toldPath: '${1:old_path}',",
+      "\tnewPath: '${2:new_path}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'重命名成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "fs.write": {
+    "prefix": "fs-write",
+    "description": "写入文件",
+    "body": [
+      "fs.write({",
+      "\tfd: ${1:fd},",
+      "\toffset: ${2:0},",
+      "\tdata: '${3:data_string}'",
+      "},function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'write操作成功'});",
+      "\t}else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "imageBrowser.openImages": {
+    "prefix": "imageBrowser-openImages",
+    "description": "打开文件浏览器",
+    "body": [
+      "imageBrowser.openImages({",
+      "\timageUrls: '${1:urlPath}',",
+      "\tshowList: ${2:true},",
+      "\tactiveIndex: ${3:0}",
+      "});"
+    ]
+  },
+  "imageClip.close": {
+    "prefix": "imageClip-close",
+    "description": "关闭截图",
+    "body": [
+      "imageClip.close();"
+    ]
+  },
+  "imageClip.open": {
+    "prefix": "imageClip-open",
+    "description": "打开图片裁剪",
+    "body": [
+      "imageClip.open({",
+      "\tpath:\"${1:path}\",",
+      "\tx:${2:0},",
+      "\ty:${3:0},",
+      "\tw:${4:320},",
+      "\th:${5:480},",
+      "\tclipRect:{",
+      "\t\tx:${6:0},",
+      "\t\ty:${7:0},",
+      "\t\tw:${8:100},",
+      "\t\th:${9:200},",
+      "\t\tfixation:${10:true}",
+      "\t}",
+      "},function(ret, err){",
+      "});"
+    ]
+  },
+  "imageClip.reset": {
+    "prefix": "imageClip-reset",
+    "description": "重置裁剪区域，恢复到初始打开时的状态",
+    "body": [
+      "imageClip.reset();"
+    ]
+  },
+  "imageClip.save": {
+    "prefix": "imageClip-save",
+    "description": "保存截图到指定位置",
+    "body": [
+      "imageClip.save(function(ret, err){",
+      "});"
+    ]
+  },
+  "imageFilter.compress": {
+    "prefix": "imageFilter-compress",
+    "description": "图片压缩处理",
+    "body": [
+      "imageFilter.compress({",
+      "\timg: \"${1:Path}\",",
+      "\tquality: ${2:0.5},",
+      "\tscale: ${3:1},",
+      "\tsave: {",
+      "\t\talbum: ${4:true},",
+      "\t\timgPath: \"${5:imgPath}\",",
+      "\t\timgName: \"${6:imgName}\"",
+      "\t}",
+      "}, function(ret, err){",
+      "});"
+    ]
+  },
+  "imageFilter.filter": {
+    "prefix": "imageFilter-filter",
+    "description": "设置图片滤镜效果",
+    "body": [
+      "imageFilter.filter({",
+      "\tid:${1:id},",
+      "\ttype:\"${2:type}\"",
+      "}, function(ret, err){",
+      "});"
+    ]
+  },
+  "imageFilter.getAttr": {
+    "prefix": "imageFilter-getAttr",
+    "description": "获取指定路径下的图片信息",
+    "body": [
+      "imageFilter.getAttr({",
+      "\tpath: \"${1:path}\"",
+      "}, function(ret, err){",
+      "});"
+    ]
+  },
+  "imageFilter.open": {
+    "prefix": "imageFilter-open",
+    "description": "打开图片过滤器",
+    "body": [
+      "imageFilter.open ({",
+      "\timgPath: '${1:path}'",
+      "}, function(ret, err){",
+      "});"
+    ]
+  },
+  "imageFilter.save": {
+    "prefix": "imageFilter-save",
+    "description": "保存最终处理结果",
+    "body": [
+      "imageFilter.save(function(ret, err){",
+      "});"
+    ]
+  },
+  "inputField.becomeFirstResponder": {
+    "prefix": "inputField-becomeFirstResponder",
+    "description": "弹出键盘",
+    "body": [
+      "inputField.becomeFirstResponder(function(ret,err){",
+      "\talert( JSON.stringify( ret ))",
+      "});"
+    ]
+  },
+  "inputField.close": {
+    "prefix": "inputField-close",
+    "description": "关闭输入框",
+    "body": [
+      "inputField.close(function(ret,err){",
+      "\talert( JSON.stringify( ret ))",
+      "});"
+    ]
+  },
+  "inputField.configMsg": {
+    "prefix": "inputField-configMsg",
+    "description": "配置当前输入框内的文字",
+    "body": [
+      "inputField.configMsg(function(ret,err){",
+      "\tif(ret.status){",
+      "\t  api.alert({msg:ret.msg });",
+      "\t}",
+      "});"
+    ]
+  },
+  "inputField.getMsg": {
+    "prefix": "inputField-getMsg",
+    "description": "获取当前输入框内的文字",
+    "body": [
+      "inputField.getMsg(function(ret,err){",
+      "\tapi.alert({msg:ret.msg });",
+      "});"
+    ]
+  },
+  "inputField.hide": {
+    "prefix": "inputField-hide",
+    "description": "隐藏输入框，并没有从内存里清除",
+    "body": [
+      "inputField.hide(function(ret,err){",
+      "\talert( JSON.stringify( ret ))",
+      "});"
+    ]
+  },
+  "inputField.insertMsg": {
+    "prefix": "inputField-insertMsg",
+    "description": "向当前输入框内指定位置插入字符串",
+    "body": [
+      "inputField.insertMsg({",
+      "\tmsg:${1:'这里是插入的字符串'}",
+      "});"
+    ]
+  },
+  "inputField.open": {
+    "prefix": "inputField-open",
+    "description": "打开输入框",
+    "body": [
+      "inputField.open({",
+      "\tbgColor:'${1:#708090}',",
+      "\tlineColor:'${2:#C71585}',",
+      "\tfileBgColor:'${3:#90EE90}',",
+      "\tborderColor:'${4:#FFB6C1}',",
+      "\tsendImg:'${5:widget://res/sendImg.png}'",
+      "},function(ret,err) {",
+      "\tapi.alert({title: '输入的内容', msg: ret.msg});",
+      "});"
+    ]
+  },
+  "inputField.resignFirstResponder": {
+    "prefix": "inputField-resignFirstResponder",
+    "description": "隐藏键盘",
+    "body": [
+      "inputField.resignFirstResponder();"
+    ]
+  },
+  "inputField.setInputFieldListener": {
+    "prefix": "inputField-setInputFieldListener",
+    "description": "设置输入框监听",
+    "body": [
+      "inputField.setInputFieldListener(function(ret,err){",
+      "\talert(JSON.stringify(ret) + JSON.stringify(err));",
+      "});"
+    ]
+  },
+  "inputField.setMsg": {
+    "prefix": "inputField-setMsg",
+    "description": "设置输入框内的文字",
+    "body": [
+      "inputField.setMsg({",
+      "\tmsg:\"${1:设置的文字}\"",
+      "},function(ret,err){",
+      "\tif(ret.status){",
+      "\t\tapi.alert({msg:\"设置成功\"});",
+      "\t}",
+      "});"
+    ]
+  },
+  "inputField.setPlaceholder": {
+    "prefix": "inputField-setPlaceholder",
+    "description": "设置占位提示文字",
+    "body": [
+      "inputField.setPlaceholder({",
+      "\tplaceholder:'${1:我是占位提示文字}'",
+      "});"
+    ]
+  },
+  "inputField.show": {
+    "prefix": "inputField-show",
+    "description": "显示输入框",
+    "body": [
+      "inputField.show(function(ret,err){",
+      "\talert( JSON.stringify( ret ))",
+      "});"
+    ]
+  },
+  "lineChart.close": {
+    "prefix": "lineChart-close",
+    "description": "关闭K线图",
+    "body": [
+      "lineChart.close({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "lineChart.hide": {
+    "prefix": "lineChart-hide",
+    "description": "隐藏K线图视图",
+    "body": [
+      "lineChart.hide(${id:1});"
+    ]
+  },
+  "lineChart.open": {
+    "prefix": "lineChart-open",
+    "description": "打开K线图视图",
+    "body": [
+      "lineChart.open({",
+      "\tx:${1:0},",
+      "\ty:${2:64},",
+      "\tw:${3:320},",
+      "\th:${4:300},",
+      "\tyAxis:{\"max\":1000,\"step\":200},",
+      "\txAxis:{",
+      "\t\t\"indexs\":['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月','一月'],",
+      "\t\t\"screenXcount\":7",
+      "\t},",
+      "\tlines:[",
+      "\t\t{'color': '#800080', 'datas':[ 200,400,-300,500,-400,600,400,0,500,-100,800,100],id:1},",
+      "\t\t{'color': '#7FFFAA', 'datas':[ -200,-400,300,-500,400,-600,-400,0,-500,100,-800,-100],id:2}",
+      "\t],",
+      "\tbgColor:'#F0FFFF',",
+      "\tcoorLineColor:'#C0C0C0',",
+      "\tmarkColor:'#051353'",
+      "},function(ret, err) {",
+      "\tapi.alert({msg:ret.status});",
+      "});"
+    ]
+  },
+  "lineChart.show": {
+    "prefix": "lineChart-show",
+    "description": "显示K线图视图",
+    "body": [
+      "lineChart.show();"
+    ]
+  },
+  "listContact.close": {
+    "prefix": "listContact-close",
+    "description": "关闭listContact",
+    "body": [
+      "listContact.close();"
+    ]
+  },
+  "listContact.deleteItem": {
+    "prefix": "listContact-deleteItem",
+    "description": "删除指定索引的数据",
+    "body": [
+      "listContact.deleteItem({",
+      "\tindex:${1:2},",
+      "\tkey:'${2:A}'",
+      "});"
+    ]
+  },
+  "listContact.hide": {
+    "prefix": "listContact-hide",
+    "description": "隐藏listContact列表视图",
+    "body": [
+      "listContact.hide();"
+    ]
+  },
+  "listContact.insertItemItem": {
+    "prefix": "listContact-insertItemItem",
+    "description": "插入指定索引的数据",
+    "body": [
+      "listContact.insertItem({",
+      "\tindex:${1:2},",
+      "\tdata:{",
+      "\t\timg:${3:'http://d.hiphotos.baidu.com/image/pic/item/4d086e061d950a7b29a788c209d162d9f2d3c922.jpg'},",
+      "\t\ttitle:${4:'12:00'},",
+      "\t\tsubTitle:${5:'APICloud粉丝互动会'},",
+      "\t\tremark:${6:'完成'}",
+      "\t}",
+      " });"
+    ]
+  },
+  "listContact.open": {
+    "prefix": "listContact-open",
+    "description": "打开",
+    "body": [
+      "listContact.open({",
+      "\th:${1: 300},",
+      "\trightBtn:[{",
+      "\t\tcolor:${3: '#8B0000'},",
+      "\t\ttitle:${4: '备注'}",
+      "\t}],",
+      "\tdata: {",
+      "\t\tcommon: [{",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\timg: 'http://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}],",
+      "\t\tA: [{",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\timg: 'http://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}, {",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}, {",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}, {",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}, {",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}, {",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}, {",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}, {",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}, {",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}, {",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',",
+      "\t\t\ttitle: '标题'",
+      "\t\t}]",
+      "\t}",
+      "}, function(ret, err) {",
+      "\tapi.alert({",
+      "\t\tmsg: ret.section + \"*\" + ret.index",
+      "\t});",
+      "});"
+    ]
+  },
+  "listContact.refreshItem": {
+    "prefix": "listContact-refreshItem",
+    "description": "刷新指定index条目的数据",
+    "body": [
+      "listContact.refreshItem({",
+      "\tindex:${1:2},",
+      "\tdata: {",
+      "\t\ttitle:${2:'刷新指定下标的标题'}, ",
+      "\t\tsubTitle:${3:'刷新指定下标的子标题'}",
+      "\t}",
+      "});"
+    ]
+  },
+  "listContact.reloadData": {
+    "prefix": "listContact-reloadData",
+    "description": "刷新列表数据",
+    "body": [
+      "listContact.reloadData({",
+      "\tdata:{",
+      "\t\tcommon:[{",
+      "\t\t\tplaceholderImg:${3:'widget://res/listContact.png'},",
+      "\t\t\timg:${4:'http://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg'},",
+      "\t\t\ttitle:${5:'标题'}",
+      "\t\t  }],",
+      "\t\tA:[{",
+      "\t\t\tplaceholderImg:'widget://res/listContact.png',",
+      "\t\t\timg:'http://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',",
+      "\t\t\ttitle:'标题'",
+      "\t\t },{",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',title:'标题'",
+      "\t\t },{",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',title:'标题' ",
+      "\t\t },{",
+      "\t\t\tplaceholderImg:'widget://res/listContact.png',title:'标题'",
+      "\t\t },{",
+      "\t\t\tplaceholderImg:'widget://res/listContact.png',title:'标题'",
+      "\t\t },{",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',title:'标题'",
+      "\t\t },{",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',title:'标题' ",
+      "\t\t },{",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',title:'标题'",
+      "\t\t },{",
+      "\t\t\tplaceholderImg: 'widget://res/listContact.png',title:'标题'",
+      "\t\t },{",
+      "\t\t\tplaceholderImg:'widget://res/listContact.png' ,title:'标题'",
+      "\t\t }]}",
+      "},function(ret,err){",
+      "\tapi.alert({msg:ret.section+\"*\"+ret.index});",
+      "});"
+    ]
+  },
+  "listContact.setRefreshHeader": {
+    "prefix": "listContact-setRefreshHeader",
+    "description": "设置下拉刷新样式",
+    "body": [
+      "listContact.setRefreshHeader({",
+      "\tloadingImg :${1: 'widget://res/listContact_arrow.png'},",
+      "\tbgColor:${2:'#F5F5F5'},",
+      "\ttextColor:${3:'#8E8E8E'},",
+      "\ttextDown:${4:'下拉可以刷新...'},",
+      "\ttextUp:${5:'松开开始刷新...'},",
+      "\tshowTime:${6: true}",
+      "},function(ret,err){",
+      "\t//触发加载事件",
+      "});"
+    ]
+  },
+  "listContact.show": {
+    "prefix": "listContact-show",
+    "description": "显示列表视图",
+    "body": [
+      "listContact.show();"
+    ]
+  },
+  "loadingLabel.close": {
+    "prefix": "loadingLabel-close",
+    "description": "关闭加载标签",
+    "body": [
+      "loadingLabel.close({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "loadingLabel.hide": {
+    "prefix": "loadingLabel-hide",
+    "description": "隐藏加载标签",
+    "body": [
+      "loadingLabel.hide({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "loadingLabel.open": {
+    "prefix": "loadingLabel-open",
+    "description": "打开加载标签",
+    "body": [
+      "loadingLabel.open(function(ret,err){",
+      "\tapi.alert({msg:ret.id});",
+      "});"
+    ]
+  },
+  "loadingLabel.show": {
+    "prefix": "loadingLabel-show",
+    "description": "显示加载标签",
+    "body": [
+      "loadingLabel.show({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "loadingLabel.start": {
+    "prefix": "loadingLabel-start",
+    "description": "开始加载",
+    "body": [
+      "loadingLabel.start({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "loadingLabel.stop": {
+    "prefix": "loadingLabel-stop",
+    "description": "停止加载",
+    "body": [
+      "loadingLabel.stop({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "mam.checkUpdate": {
+    "prefix": "mam-checkUpdate",
+    "description": "检测当前版本是否有更新或者被强制关闭",
+    "body": [
+      "",
+      "mam.checkUpdate(function(ret, err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "model.config": {
+    "prefix": "model-config",
+    "description": "全局函数，配置appKey等应用信息",
+    "body": [
+      "",
+      "model.config({\r",
+      "\tappKey: '${1:appkey}',\r",
+      "\thost: '${2:host}'\r",
+      "});\r"
+    ]
+  },
+  "model.count": {
+    "prefix": "model-count",
+    "description": "根据条件返回对象下满足该条件的总记录数",
+    "body": [
+      "",
+      "model.count({\r",
+      "\tclass: '${1:class}',\r",
+      "\tqid: '${2:qid}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "model.deleteById": {
+    "prefix": "model-deleteById",
+    "description": "根据ID删除对象的一条数据",
+    "body": [
+      "",
+      "model.deleteById({\r",
+      "\tclass: '${1:class}',\r",
+      "\tid: '${2:id}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "model.downloadFile": {
+    "prefix": "model-downloadFile",
+    "description": "下载文件",
+    "body": [
+      "",
+      "model.downloadFile({\r",
+      "\tid: '${1:id}',\r",
+      "\tsavePath: '${2:savePath}',\r",
+      "\treport:${3:report}\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "model.exist": {
+    "prefix": "model-exist",
+    "description": "查询某对象/对象下某行是否存在",
+    "body": [
+      "",
+      "model.exist({\r",
+      "\tclass: '${1:class}',\r",
+      "\tid: '${2:id}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "model.findAll": {
+    "prefix": "model-findAll",
+    "description": "根据条件查找对象中所有符合条件的数据",
+    "body": [
+      "",
+      "model.findAll({\r",
+      "\tclass: '${1:class}',\r",
+      "\tqid: '${2:qid}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "model.findById": {
+    "prefix": "model-findById",
+    "description": "根据ID查找对象的一条数据",
+    "body": [
+      "",
+      "model.findById({\r",
+      "\tclass: '${1:class}',\r",
+      "\tid: '${2:id}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "model.insert": {
+    "prefix": "model-insert",
+    "description": "向对象插入一条数据",
+    "body": [
+      "",
+      "model.insert({\r",
+      "\tclass: '${1:class}',\r",
+      "\tvalue: ${2:valueJson}\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "model.updateById": {
+    "prefix": "model-updateById",
+    "description": "根据ID更新对象的一条数据",
+    "body": [
+      "",
+      "model.updateById({\r",
+      "\tclass: '${1:class}',\r",
+      "\tid: '${2:id}',\r",
+      "\tvalue:${3:valueJson}\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "model.uploadFile": {
+    "prefix": "model-uploadFile",
+    "description": "上传文件到云端file表里面",
+    "body": [
+      "",
+      "model.uploadFile({\r",
+      "\tdata: {\r",
+      "\t\tfile:{\r",
+      "\t\t\t url:'${1:url}',\r",
+      "\t\t\t name:'${2:name}'\r",
+      "\t\t},\r",
+      "\t\tvalues:${3:valueJson}\r",
+      "\t},\r",
+      "\treport: ${4:report}\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "query.asc": {
+    "prefix": "query-asc",
+    "description": "设置查询返回结果按某列正序排列",
+    "body": [
+      "",
+      "query.asc({\r",
+      "\tqid:${1:qid},\r",
+      "\tcolumn:'${2:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.createQuery": {
+    "prefix": "query-createQuery",
+    "description": "创建一个query对象",
+    "body": [
+      "",
+      "query.createQuery(function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "query.desc": {
+    "prefix": "query-desc",
+    "description": "设置查询返回结果按某列倒序排列",
+    "body": [
+      "",
+      "query.desc({\r",
+      "\tqid:${1:qid},\r",
+      "\tcolumn:'${2:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.exceptFields": {
+    "prefix": "query-exceptFields",
+    "description": "设置查询返回除某些字段以外的字段",
+    "body": [
+      "",
+      "query.exceptFields({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:${2:valueArray}\r",
+      "};\r"
+    ]
+  },
+  "query.include": {
+    "prefix": "query-include",
+    "description": "设置查询返回结果中包含pointer指向的对象",
+    "body": [
+      "",
+      "query.include({\r",
+      "\tqid:${1:qid},\r",
+      "\tcolumn:'${2:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.justFields": {
+    "prefix": "query-justFields",
+    "description": "设置查询仅返回需要的字段",
+    "body": [
+      "",
+      "query.justFields({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:${2:valueArray}\r",
+      "};\r"
+    ]
+  },
+  "query.limit": {
+    "prefix": "query-limit",
+    "description": "设置查询返回结果限制为n条",
+    "body": [
+      "",
+      "query.limit({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}'\r",
+      "};\r"
+    ]
+  },
+  "query.skip": {
+    "prefix": "query-skip",
+    "description": "设置查询返回结果中忽略前n条",
+    "body": [
+      "",
+      "query.skip({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereContain": {
+    "prefix": "query-whereContain",
+    "description": "设置查询条件为某列内容中包含某值",
+    "body": [
+      "",
+      "query.whereContain({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereContainAll": {
+    "prefix": "query-whereContainAll",
+    "description": "设置查询条件为某列内容中包含某几个值",
+    "body": [
+      "",
+      "query.whereContainAll({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereEndWith": {
+    "prefix": "query-whereEndWith",
+    "description": "设置查询条件为某列内容以某值结尾",
+    "body": [
+      "",
+      "query.whereEndWith({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereEqual": {
+    "prefix": "query-whereEqual",
+    "description": "设置查询条件为某列等于某值",
+    "body": [
+      "",
+      "query.whereEqual({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereExist": {
+    "prefix": "query-whereExist",
+    "description": "设置查询条件为某列内容不为空",
+    "body": [
+      "",
+      "query.whereExist({\r",
+      "\tqid:${1:qid},\r",
+      "\tcolumn:'${2:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereGreaterThan": {
+    "prefix": "query-whereGreaterThan",
+    "description": "设置查询条件为某列的内容大于某值",
+    "body": [
+      "",
+      "query.whereGreaterThan({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereGreaterThanOrEqual": {
+    "prefix": "query-whereGreaterThanOrEqual",
+    "description": "设置查询条件为某列的内容大于等于某值",
+    "body": [
+      "",
+      "query.whereGreaterThanOrEqual({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereLessThan": {
+    "prefix": "query-whereLessThan",
+    "description": "设置查询条件为某列的内容小于某值",
+    "body": [
+      "",
+      "query.whereLessThan({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereLessThanOrEqual": {
+    "prefix": "query-whereLessThanOrEqual",
+    "description": "设置查询条件为某列的内容小于等于某值",
+    "body": [
+      "",
+      "query.whereLessThanOrEqual({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereLike": {
+    "prefix": "query-whereLike",
+    "description": "设置查询条件为某列内容中包含某值",
+    "body": [
+      "",
+      "query.whereLike({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereNotContain": {
+    "prefix": "query-whereNotContain",
+    "description": "设置查询条件为某列内容中不包含某值",
+    "body": [
+      "",
+      "query.whereNotContain({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereNotEqual": {
+    "prefix": "query-whereNotEqual",
+    "description": "设置查询条件为某列不等于某值",
+    "body": [
+      "",
+      "query.whereNotEqual({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereNotExist": {
+    "prefix": "query-whereNotExist",
+    "description": "设置查询条件为某列内容为空",
+    "body": [
+      "",
+      "query.whereNotExist({\r",
+      "\tqid:${1:qid},\r",
+      "\tcolumn:'${2:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereStartWith": {
+    "prefix": "query-whereStartWith",
+    "description": "设置查询条件为某列内容以某值开头",
+    "body": [
+      "",
+      "query.whereStartWith({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "query.whereUnLike": {
+    "prefix": "query-whereUnLike",
+    "description": "设置查询条件为某列内容中不包含某值",
+    "body": [
+      "",
+      "query.whereUnLike({\r",
+      "\tqid:${1:qid},\r",
+      "\tvalue:'${2:value}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "};\r"
+    ]
+  },
+  "relation.count": {
+    "prefix": "relation-count",
+    "description": "查找对象某关系列下对应的数据总条数",
+    "body": [
+      "",
+      "relation.count({\r",
+      "\tclass:'${1:class}',\r",
+      "\tid:'${2:id}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "relation.deleteAll": {
+    "prefix": "relation-deleteAll",
+    "description": "删除对象某关系列下对应的所有数据",
+    "body": [
+      "",
+      "relation.deleteAll({\r",
+      "\tclass:'${1:class}',\r",
+      "\tid:'${2:id}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "relation.findAll": {
+    "prefix": "relation-findAll",
+    "description": "查找对象某关系列下对应的所有数据",
+    "body": [
+      "",
+      "relation.findAll({\r",
+      "\tclass:'${1:class}',\r",
+      "\tid:'${2:id}',\r",
+      "\tcolumn:'${3:column}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "relation.insert": {
+    "prefix": "relation-insert",
+    "description": "向对象的某关系列下插入一条内容",
+    "body": [
+      "",
+      "relation.insert({\r",
+      "\tclass:'${1:class}',\r",
+      "\tid:'${2:id}',\r",
+      "\tcolumn:'${3:column}',\r",
+      "\tvalue:${4:valueJson}\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "user.login": {
+    "prefix": "user-login",
+    "description": "登录",
+    "body": [
+      "",
+      "user.login({\r",
+      "\tusername:'${1:username}',\r",
+      "\tpassword:'${2:password}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "user.logout": {
+    "prefix": "user-logout",
+    "description": "注销登录",
+    "body": [
+      "",
+      "user.logout(function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "user.register": {
+    "prefix": "user-register",
+    "description": "注册",
+    "body": [
+      "",
+      "user.register({\r",
+      "\tusername:'${1:username}',\r",
+      "\tpassword:'${2:password}',\r",
+      "\temail:'${3:email}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "user.updatePassword": {
+    "prefix": "user-updatePassword",
+    "description": "修改密码",
+    "body": [
+      "",
+      "user.updatePassword({\r",
+      "\tpassword:'${1:password}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "multiSelector.close": {
+    "prefix": "multiSelector-close",
+    "description": "关闭选择器",
+    "body": [
+      "multiSelector.close();"
+    ]
+  },
+  "multiSelector.hidden": {
+    "prefix": "multiSelector-hidden",
+    "description": "<del>隐藏选择器</del>",
+    "body": [
+      "multiSelector.hidden();"
+    ]
+  },
+  "multiSelector.hide": {
+    "prefix": "multiSelector-hide",
+    "description": "隐藏选择器",
+    "body": [
+      "multiSelector.hide();"
+    ]
+  },
+  "multiSelector.open": {
+    "prefix": "multiSelector-open",
+    "description": "打开选择器",
+    "body": [
+      "multiSelector.open({",
+      "\t content:${1:['第一条','第二条']}",
+      "},function(ret,err){",
+      "\talert( JSON.stringify( ret ) )",
+      "});"
+    ]
+  },
+  "multiSelector.setSelect": {
+    "prefix": "multiSelector-setSelect",
+    "description": "设置/取消选中条目",
+    "body": [
+      "multiSelector.setSelect({",
+      "  index:${1:[-1]}",
+      "});"
+    ]
+  },
+  "multiSelector.show": {
+    "prefix": "multiSelector-show",
+    "description": "显示选择器",
+    "body": [
+      "multiSelector.show();"
+    ]
+  },
+  "navigationBar.close": {
+    "prefix": "navigationBar-close",
+    "description": "关闭导航条模块",
+    "body": [
+      "navigationBar.close();"
+    ]
+  },
+  "navigationBar.config": {
+    "prefix": "navigationBar-config",
+    "description": "设置或获取模块配置的值",
+    "body": [
+      "navigationBar.config({",
+      "\tkey:'${1:bgImg}',",
+      "\tvalue:'${2:widget://imgage/navigationBar/bg2.png}'",
+      "},function(ret, err){",
+      "\tif(ret){",
+      "\t\tvar msg = \"属性名称: \" + ret[\"key\"] + \"\\n旧值: \" + ret[\"oldValue\"] + \"\\n新值: \" + ret[\"newValue\"];",
+      "\t\tapi.alert({\"title\": \"提示\", \"msg\": msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "navigationBar.hide": {
+    "prefix": "navigationBar-hide",
+    "description": "隐藏导航条模块",
+    "body": [
+      "navigationBar.hide();"
+    ]
+  },
+  "navigationBar.open": {
+    "prefix": "navigationBar-open",
+    "description": "打开导航条模块",
+    "body": [
+      "navigationBar.open({",
+      "\tx: ${1:0},",
+      "\ty: ${2:0},",
+      "\tw: ${3:320},",
+      "\th: ${4:220},",
+      "\tstyle:'${5:left_to_right}',",
+      "\titemSize:{",
+      "\t\tw: ${6:100},",
+      "\t\th: ${7:100}",
+      "\t},",
+      "\titems: [{",
+      "\t\ttitle:'${8:title0}',",
+      "\t\ttitleSelected:'${9:titleSelected0}',",
+      "\t\tbg:'${10:ffff00}',",
+      "\t\talpha: ${11:0.8},",
+      "\t\tbgSelected:'${12:ff00000}'",
+      "\t}],",
+      "\tselectedIndex:${13:2},",
+      "\tfont: {",
+      "\t\tsize:${14:11},",
+      "\t\tsizeSelected:${15:14},",
+      "\t\tcolor:'${16:ff00000}',",
+      "\t\tcolorSelected:'${17:ffff00}'",
+      "\t},",
+      "\tbg: '${18:00ff00}',",
+      "\talpha: ${19:1.0},",
+      "\tpopItem: {",
+      "\t\tposition: '${20:tail}',",
+      "\t\ttitle:'${21:打开}',",
+      "\t\ttitleSelected: '${22:关闭}',",
+      "\t\tbg:'${23:ffff00}',",
+      "\t\tbgSelected:'${24:ff00000}'",
+      "\t}",
+      "}",
+      "}, function(ret, err){",
+      "\tif(err){",
+      "\t\tapi.alert({title: \"出错了\", msg: err[\"msg\"]});",
+      "\t}else{",
+      "\t\tapi.alert({title: \"提示\", msg: \"您点击了 pop 导航项!\"});",
+      "\t}",
+      "});"
+    ]
+  },
+  "navigationBar.show": {
+    "prefix": "navigationBar-show",
+    "description": "显示导航条模块",
+    "body": [
+      "navigationBar.show();"
+    ]
+  },
+  "navigationMenu.close": {
+    "prefix": "navigationMenu-close",
+    "description": "关闭导航栏菜单模块",
+    "body": [
+      "navigationMenu.close();"
+    ]
+  },
+  "navigationMenu.hide": {
+    "prefix": "navigationMenu-hide",
+    "description": "隐藏导航栏菜单模块",
+    "body": [
+      "navigationMenu.hide();"
+    ]
+  },
+  "navigationMenu.open": {
+    "prefix": "navigationMenu-open",
+    "description": "打开导航菜单模块",
+    "body": [
+      "navigationMenu.open({\t ",
+      "\tbtnInfo:[{",
+      "\t\tnormal:'${1:widget://res/navigationMenu_normal.png}',",
+      "\t\thighlight:'${2:widget://res/navigationMenu_highlight.png}',",
+      "\t\tselected:'${3:widget://res/navigationMenu_selected.png}',",
+      "\t\ttitle:'${4:收藏0}'",
+      "\t},",
+      "\t{",
+      "\t\tnormal:'${5:widget://res/navigationMenu_normal.png}',",
+      "\t\thighlight:'${6:widget://res/navigationMenu_highlight.png}',",
+      "\t\tselected:'${7:widget://res/navigationMenu_selected.png}',",
+      "\t\ttitle:'${8:收藏1}'",
+      "\t}]",
+      "}, function(ret, err){",
+      "\tapi.alert({msg:ret.index});",
+      "});"
+    ]
+  },
+  "navigationMenu.show": {
+    "prefix": "navigationMenu-show",
+    "description": "显示导航栏菜单模块",
+    "body": [
+      "navigationMenu.show();"
+    ]
+  },
+  "netaudio.pause": {
+    "prefix": "netaudio-pause",
+    "description": "暂停播放",
+    "body": [
+      "netAudio.pause();"
+    ]
+  },
+  "netaudio.play": {
+    "prefix": "netaudio-play",
+    "description": "播放网络音频",
+    "body": [
+      "netAudio.play({",
+      "\tpath: '${1:}'//网络音频资源地址",
+      "}, function(ret,err){",
+      "\tvar duration = ret.duration;",
+      "\tvar current = ret.current;",
+      "});"
+    ]
+  },
+  "netaudio.setProgress": {
+    "prefix": "netaudio-setProgress",
+    "description": "设置播放位置",
+    "body": [
+      "netAudio.setProgress({",
+      "\tprogress: ${1:50}//0~100",
+      "});"
+    ]
+  },
+  "netaudio.setVolume": {
+    "prefix": "netaudio-setVolume",
+    "description": "设置音量",
+    "body": [
+      "netAudio.setVolume({",
+      "\tvolume: ${1:0.6}//0~1",
+      "});"
+    ]
+  },
+  "netaudio.stop": {
+    "prefix": "netaudio-stop",
+    "description": "停止播放",
+    "body": [
+      "netAudio.stop();"
+    ]
+  },
+  "panorama.close": {
+    "prefix": "panorama-close",
+    "description": "关闭全景展示视图",
+    "body": [
+      "panorama.close({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "panorama.hide": {
+    "prefix": "panorama-hide",
+    "description": "隐藏全景展示视图",
+    "body": [
+      "panorama.hide({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "panorama.open": {
+    "prefix": "panorama-open",
+    "description": "打开全景展示视图",
+    "body": [
+      "panorama.open({",
+      "\tx:${1:0},",
+      "\ty:${2:64},",
+      "\tw:${3:320},",
+      "\th:${4:300},",
+      "\timgPath:'${5:widget://res/360viewtest.jpg}'",
+      "},function(ret,err){",
+      "\tif(ret.status){",
+      "\t\tapi.alert({msg:'视图的id是'+ret.id});",
+      "\t}else{",
+      "\t\tapi.alert({msg:ret.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "panorama.show": {
+    "prefix": "panorama-show",
+    "description": "显示全景展示视图",
+    "body": [
+      "panorama.show({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "pdfreader.open": {
+    "prefix": "pdfreader-open",
+    "description": "打开一个pdf格式的文档",
+    "body": [
+      "pdfReader.open({",
+      "\tpath: '${1:}'//文件路径",
+      "});"
+    ]
+  },
+  "personalCenter.close": {
+    "prefix": "personalCenter-close",
+    "description": "关闭个人中心",
+    "body": [
+      "personalCenter.close();"
+    ]
+  },
+  "personalCenter.hide": {
+    "prefix": "personalCenter-hide",
+    "description": "隐藏个人中心",
+    "body": [
+      "personalCenter.hide();"
+    ]
+  },
+  "personalCenter.open": {
+    "prefix": "personalCenter-open",
+    "description": "打开个人中心",
+    "body": [
+      "personalCenter.open({",
+      "\timgPath: '${1:imgPath}',",
+      "\tplaceholderImg: '${2:placeholderImg}',",
+      "\tbtnArray: [{",
+      "\t\tbgImg: '${3:bgImg}',",
+      "\t\tselectedImg: '${4:selectedImg}'",
+      "\t}, {",
+      "\t\tbgImg: '${5:bgImg}',",
+      "\t\tselectedImg: '${6:selectedImg}'",
+      "\t}, {",
+      "\t\tbgImg: '${7:bgImg}',",
+      "\t\tselectedImg: '${8:selectedImg}'",
+      "\t}]",
+      "}, function(ret, err) {",
+      "\tapi.alert({",
+      "\t\tmsg: ret.click",
+      "\t});",
+      "});"
+    ]
+  },
+  "personalCenter.setSelect": {
+    "prefix": "personalCenter-setSelect",
+    "description": "设置选中按钮",
+    "body": [
+      "personalCenter.setSelect({",
+      "\tindex: ${1:1}",
+      "});"
+    ]
+  },
+  "personalCenter.show": {
+    "prefix": "personalCenter-show",
+    "description": "显示个人中心",
+    "body": [
+      "personalCenter.show();"
+    ]
+  },
+  "personalCenter.updateValue": {
+    "prefix": "personalCenter-updateValue",
+    "description": "刷新个人中心显示数据",
+    "body": [
+      "personalCenter.updateValue({",
+      "\timgPath: '${1:}',",
+      "\tuserName: '${2:}',",
+      "\tsubTile: '${3:}',",
+      "\tbtnArray: [{",
+      "\t\tcount: '${4:}'",
+      "\t}, {",
+      "\t\tcount: '${5:}'",
+      "\t}, {",
+      "\t\tcount: '${6:}'",
+      "\t}]",
+      "});"
+    ]
+  },
+  "pieChart.close": {
+    "prefix": "pieChart-close",
+    "description": "关闭饼图",
+    "body": [
+      "pieChart.close({",
+      "\tid: ${1:1}",
+      "});"
+    ]
+  },
+  "pieChart.hide": {
+    "prefix": "pieChart-hide",
+    "description": "隐藏饼图",
+    "body": [
+      "pieChart.hide({",
+      "\tid: ${1:1}",
+      "});"
+    ]
+  },
+  "pieChart.open": {
+    "prefix": "pieChart-open",
+    "description": "打开饼图",
+    "body": [
+      "var array = new Array();",
+      "array[0] = {",
+      "\tvalue: 15,",
+      "\tcolor: '#FF6600'",
+      "};",
+      "array[1] = {",
+      "\tvalue: 15,",
+      "\tcolor: '#660099'",
+      "};",
+      "array[2] = {",
+      "\tvalue: 15,",
+      "\tcolor: '#FF33FF'",
+      "};",
+      "array[3] = {",
+      "\tvalue: 15,",
+      "\tcolor: '#66CCFF'",
+      "};",
+      "array[4] = {",
+      "\tvalue: 15,",
+      "\tcolor: '#00CCFF'",
+      "};",
+      "pieChart.open({",
+      "\tx: ${1:200},",
+      "\ty: ${2:250},",
+      "\tradius: ${3:100},",
+      "\ttitle: '${4:标题}',",
+      "\tsubTitle: '${5:子标题}',",
+      "\telements: array",
+      "}, function(ret, err) {",
+      "\tapi.alert({",
+      "\t\tmsg: ret.index + ret.percent",
+      "\t});",
+      "});"
+    ]
+  },
+  "pieChart.reloadData": {
+    "prefix": "pieChart-reloadData",
+    "description": "刷新饼图数据",
+    "body": [
+      "pieChart.reloadData({",
+      "\tparts: [{",
+      "\t\tvalue: '${1:2}',",
+      "\t\tcolor: '${2:#FF6600}'",
+      "\t}, {",
+      "\t\tvalue: '${3:2}',",
+      "\t\tcolor: '${4:#660099}'",
+      "\t}, {",
+      "\t\tvalue: '${5:2}',",
+      "\t\tcolor: '${6:#FF33FF}'",
+      "\t}, {",
+      "\t\tvalue: '${7:2}',",
+      "\t\tcolor: '${8:#66CCFF}'",
+      "\t}, {",
+      "\t\tvalue: '${9:2}',",
+      "\t\tcolor: '${10:#00CCFF}'",
+      "\t}]",
+      "}, function(ret, err) {",
+      "\tapi.alert({",
+      "\t\tmsg: ret.index + ret.id",
+      "\t});",
+      "});"
+    ]
+  },
+  "pieChart.serFrame": {
+    "prefix": "pieChart-serFrame",
+    "description": "重设饼图的位置大小",
+    "body": [
+      "pieChart.setFrame({",
+      "\tx: ${1:10},",
+      "\tw: ${2:300}",
+      "});"
+    ]
+  },
+  "pieChart.show": {
+    "prefix": "pieChart-show",
+    "description": "显示饼图",
+    "body": [
+      "pieChart.show({",
+      "\tid: ${1:1}",
+      "});"
+    ]
+  },
+  "pullMenu.close": {
+    "prefix": "pullMenu-close",
+    "description": "关闭拖拉菜单",
+    "body": [
+      "pullMenu.close();"
+    ]
+  },
+  "pullMenu.hide": {
+    "prefix": "pullMenu-hide",
+    "description": "隐藏拖拉菜单",
+    "body": [
+      "pullMenu.hide();"
+    ]
+  },
+  "pullMenu.open": {
+    "prefix": "pullMenu-open",
+    "description": "打开拖拉菜单模块",
+    "body": [
+      "pullMenu.open({\t",
+      "\ttype:'${1:up}',",
+      "\th:${2:2*api.winHeight/3},",
+      "\tbtnWidth:${3:60},",
+      "\talpha:${4:0.8},",
+      "\tbgColor:'${5:#FFFFFF}',",
+      "\tbtnArray:[",
+      "\t\t{",
+      "\t\t\tnormal:'${6:widget://res/pullMenu_btn1.png}',",
+      "\t\t\thighlight:'${7:widget://res/pullMenu_btn1light.png}'",
+      "\t\t},",
+      "\t\t{",
+      "\t\t\tnormal:'${8:widget://res/navigationMenu_normal.png}',",
+      "\t\t\thighlight:'${9:widget://res/ navigationMenu_highlight.png}'",
+      "\t\t}",
+      "\t]",
+      "}, function(ret, err){",
+      "\t\tapi.alert({msg:ret.index});",
+      "});"
+    ]
+  },
+  "pullMenu.setSelected": {
+    "prefix": "pullMenu-setSelected",
+    "description": "设置按钮选中/取消状态",
+    "body": [
+      "pullMenu.setSelected({\t",
+      "\tindex:${1:2},",
+      "\tselected:${2:true}",
+      "});"
+    ]
+  },
+  "pullMenu.show": {
+    "prefix": "pullMenu-show",
+    "description": "显示拖拉菜单",
+    "body": [
+      "pullMenu.show();"
+    ]
+  },
+  "push.bind": {
+    "prefix": "push-bind",
+    "description": "将来自业务系统的用户信息绑定至推送服务器",
+    "body": [
+      "",
+      "push.bind({\r",
+      "\tuserName:'${1:userName}',\r",
+      "\tuserId:'${2:userId}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "push.joinGroup": {
+    "prefix": "push-joinGroup",
+    "description": "加入（绑定）某个群组",
+    "body": [
+      "",
+      "push.joinGroup({\r",
+      "\tgroupName:'${1:groupName}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "push.leaveGroup": {
+    "prefix": "push-leaveGroup",
+    "description": "退出群组绑定",
+    "body": [
+      "",
+      "push.leaveGroup({\r",
+      "\tgroupName:'${1:groupName}'\r",
+      "},function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "push.removeListener": {
+    "prefix": "push-removeListener",
+    "description": "移除对推送消息的监听",
+    "body": [
+      "",
+      "push.removeListener();\r"
+    ]
+  },
+  "push.setListener": {
+    "prefix": "push-setListener",
+    "description": "注册监听推送消息",
+    "body": [
+      "",
+      "push.setListener(function(ret,err){\r",
+      "\t\r",
+      "});\r"
+    ]
+  },
+  "push.setPreference": {
+    "prefix": "push-setPreference",
+    "description": "推送偏好设置",
+    "body": [
+      "",
+      "push.setPreference({\r",
+      "\tnotify:${1:true},\r",
+      "\tupdateCurrent:${2:false}\r",
+      "});\r"
+    ]
+  },
+  "qq.getUserInfo": {
+    "prefix": "qq-getUserInfo",
+    "description": "获取用户信息",
+    "body": [
+      "qq.getUserInfo(function(ret, err) {",
+      "  if (ret.status) {",
+      "\tapi.alert({",
+      "\t  msg: '获取成功'",
+      "\t});",
+      "  } else {",
+      "\tapi.alert({",
+      "\t  msg: err.msg",
+      "\t});",
+      "  }",
+      "});"
+    ]
+  },
+  "qq.installed": {
+    "prefix": "qq-installed",
+    "description": "判断当前设备是否安装了QQ客户端",
+    "body": [
+      "qq.installed(function(ret,err){",
+      "\tif(ret.status){",
+      "\t\tapi.alert({msg: \"安装\"});",
+      "\t}else{",
+      "\t\tapi.alert({msg: \"没有安装\"});",
+      "\t} ",
+      "});"
+    ]
+  },
+  "qq.login": {
+    "prefix": "qq-login",
+    "description": "登陆qq",
+    "body": [
+      "qq.login(function(ret, err) {",
+      "  api.alert({",
+      "\ttitle: 'id和token',",
+      "\tmsg: ret.openId + ret.accessToken",
+      "  });",
+      "});"
+    ]
+  },
+  "qq.logout": {
+    "prefix": "qq-logout",
+    "description": "登出qq",
+    "body": [
+      "qq.logout(function(ret, err) {",
+      "  if (ret.status) {",
+      "\tapi.alert({",
+      "\t  msg: '登出成功'",
+      "\t});",
+      "  } else {",
+      "\tapi.alert({",
+      "\t  msg: err.msg",
+      "\t});",
+      "  }",
+      "});"
+    ]
+  },
+  "qq.shareImage": {
+    "prefix": "qq-shareImage",
+    "description": "分享图片（本地）到好友",
+    "body": [
+      "qq.shareImage({",
+      "  title: '${1:test}',",
+      "  description: '${2:testd}',",
+      "  imgPath: '${3:}'",
+      "});"
+    ]
+  },
+  "qq.shareMusic": {
+    "prefix": "qq-shareMusic",
+    "description": "分享音乐到空间/好友",
+    "body": [
+      "qq.shareMusic({",
+      "  url: '${1:}',",
+      "  title: '${2:桔子香水}',",
+      "  description: '${3:任贤齐}',",
+      "  imgUrl: '${4:}'",
+      "});"
+    ]
+  },
+  "qq.shareNews": {
+    "prefix": "qq-shareNews",
+    "description": "分享新闻到空间/好友",
+    "body": [
+      "qq.shareNews({",
+      "  url: '${1:}',",
+      "  title: '${2:新闻分享}',",
+      "  description: '${3:新闻描述}',",
+      "  imgUrl: '${4:}'",
+      "});"
+    ]
+  },
+  "qq.shareText": {
+    "prefix": "qq-shareText",
+    "description": "分享纯文本到好友",
+    "body": [
+      "qq.shareText({",
+      "  text: '${1:testtext}'",
+      "});"
+    ]
+  },
+  "qq.shareVideo": {
+    "prefix": "qq-shareVideo",
+    "description": "分享视频到空间/好友",
+    "body": [
+      "qq.shareVideo({",
+      "  url: '${1:}',",
+      "  title: '${2:视频}',",
+      "  description: '${3:王力宏}',",
+      "  imgUrl: '${4:}'",
+      "});"
+    ]
+  },
+  "screenclip.cancel": {
+    "prefix": "screenclip-cancel",
+    "description": "取消截图",
+    "body": [
+      "screenClip.cancel();"
+    ]
+  },
+  "screenclip.open": {
+    "prefix": "screenclip-open",
+    "description": "打开一个pdf格式的文档",
+    "body": [
+      "screenClip.open({",
+      "\tbg: '${1:#FFFFFF}',",
+      "\tcutFrame: {",
+      "\t\tx: ${2:10},",
+      "\t\ty: ${3:128},",
+      "\t\tw: ${4:300},",
+      "\t\th: ${5:300},",
+      "\t\tborderColor: '${6:#696969}',",
+      "\t\tborderWidth: ${7:2},",
+      "\t\ttipsSize: ${8:12},",
+      "\t\ttipsPosition: '${9:center}',//center/right_up/right_down/left_up/left_down/center_up/center_down/right_center/left_center",
+      "\t\ttipsColor: '${10:#696969}'",
+      "\t}",
+      "}, function(ret, err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'截图完成'});",
+      "\t} else{",
+      "\t\tapi.alert({msg:err.code});",
+      "\t}",
+      "});"
+    ]
+  },
+  "screenclip.save": {
+    "prefix": "screenclip-save",
+    "description": "保存截图到指定位置，若未调用open接口则直接截取全屏",
+    "body": [
+      "screenClip.save({",
+      "\talbum: ${1:false},//是否保存到相册",
+      "\timgPath: '${2:}',//保存的图片路径，若路径不存在文件夹则创建此目录，不传则不保存",
+      "\timgName: '${3:}',//保存的图片名字，不传则不保存，支持png和jpg格式，若不指定格式，则默认png",
+      "}, function(ret, err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'保存完成'});",
+      "\t} else{",
+      "\t\tapi.alert({msg:err.code});",
+      "\t}",
+      "});"
+    ]
+  },
+  "screenclip.screenShot": {
+    "prefix": "screenclip-screenShot",
+    "description": "截屏",
+    "body": [
+      "screenClip.screenShot({",
+      "\talbum: ${1:false},//是否保存到相册",
+      "\timgPath: '${2:}',//保存的图片路径，若路径不存在文件夹则创建此目录，不传则不保存",
+      "\timgName: '${3:}',//保存的图片名字，不传则不保存，支持png和jpg格式，若不指定格式，则默认png",
+      "}, function(ret, err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'保存完成'});",
+      "\t} else{",
+      "\t\tapi.alert({msg:err.code});",
+      "\t}",
+      "});"
+    ]
+  },
+  "scrollRotation.close": {
+    "prefix": "scrollRotation-close",
+    "description": "关闭图片旋转联播器",
+    "body": [
+      "scrollRotation.close();"
+    ]
+  },
+  "scrollRotation.hide": {
+    "prefix": "scrollRotation-hide",
+    "description": "隐藏图片旋转联播器",
+    "body": [
+      "scrollRotation.hide();"
+    ]
+  },
+  "scrollRotation.open": {
+    "prefix": "scrollRotation-open",
+    "description": "打开图片旋转联播器模块",
+    "body": [
+      "scrollRotation.open({\t",
+      "\tx: ${1:0},",
+      "\ty: ${2:0},",
+      "\tw: ${3:320},",
+      "\th: ${4:220},",
+      "\titems:[",
+      "\t\t{",
+      "\t\t\timgPath:'${5:widget://res/scrollRotation.png}',",
+      "\t\t\ttitle:'${6:标题}',",
+      "\t\t\tfontColor:'${7:#ffffff}',",
+      "\t\t\tfontSize:${8:13}",
+      "\t\t}",
+      "\t],",
+      "\tcornerRadius:${9:0},",
+      "\tintervalTime:${10:1},",
+      "\tpageControl:{",
+      "\t\tnormalColor:'${11:#ffffff}',",
+      "\t\tselectedColor:'${12:#DA70D6}',",
+      "\t\theightPercent:${13:50}",
+      "\t},",
+      "\tfixedOn:'${14:api.winName}',",
+      "\tfixed:${15:true}",
+      "}, function(ret, err){",
+      "\t\tif(ret.click){",
+      "\t\tapi.alert({msg:ret.index});",
+      "\t}",
+      "});"
+    ]
+  },
+  "scrollRotation.show": {
+    "prefix": "scrollRotation-show",
+    "description": "显示图片旋转联播器",
+    "body": [
+      "scrollRotation.show();"
+    ]
+  },
+  "shakeView.close": {
+    "prefix": "shakeView-close",
+    "description": "关闭视图",
+    "body": [
+      "shakeView.close();"
+    ]
+  },
+  "shakeView.hide": {
+    "prefix": "shakeView-hide",
+    "description": "隐藏视图",
+    "body": [
+      "shakeView.hide();"
+    ]
+  },
+  "shakeView.open": {
+    "prefix": "shakeView-open",
+    "description": "打开摇一摇视图",
+    "body": [
+      "shakeView.open({",
+      "\tx: ${1:0},",
+      "\ty: ${2:0},",
+      "\tw: ${3:320},",
+      "\th: ${4:480},",
+      "\ttype: '${5:up_down}',",
+      "\timg: {",
+      "\t\tleftUp: '${6:left_up_image_path}',",
+      "\t\trightDown: '${7:right_down_image_path}',",
+      "\t\tbg: '${8:bg_image_path}'",
+      "\t},",
+      "\tfixed: ${9:true},",
+      "\tfixedOn: '${10:fixedOn}'",
+      "});"
+    ]
+  },
+  "shakeView.shake": {
+    "prefix": "shakeView-shake",
+    "description": "触发摇一摇事件",
+    "body": [
+      "shakeView.shake({",
+      "\tanim: {",
+      "\t\ttime: ${1:3},",
+      "\t\tpercent: ${2:50},",
+      "\t\tisShake: ${3:true},",
+      "\t\tsound: '${4:sound_path}'",
+      "\t}",
+      "});"
+    ]
+  },
+  "shakeView.show": {
+    "prefix": "shakeView-show",
+    "description": "显示视图",
+    "body": [
+      "shakeView.show();"
+    ]
+  },
+  "sideMenu.close": {
+    "prefix": "sideMenu-close",
+    "description": "关闭边框弹出菜单",
+    "body": [
+      "sideMenu.close({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "sideMenu.hide": {
+    "prefix": "sideMenu-hide",
+    "description": "隐藏边框弹出菜单",
+    "body": [
+      "sideMenu.hide({id:${1:1}});"
+    ]
+  },
+  "sideMenu.open": {
+    "prefix": "sideMenu-open",
+    "description": "打开边框弹出菜单",
+    "body": [
+      "sideMenu.open({\t",
+      "\ttype:${1:0},",
+      "\tstartPosition:${2:20},",
+      "\tbtnHeight:${3:60},",
+      "\ttrajectoryColor:${4:10},",
+      "\tbtnArray:[",
+      "\t\t{",
+      "\t\t\ticon:'${5:image_path}',",
+      "\t\t\tbgImg:'${6:image_path}'",
+      "\t\t}",
+      "\t],",
+      "\tfixedOn:'${7:api.winName}',",
+      "\tclickHide:${8:true}",
+      "}, function(ret, err){",
+      "\t\tapi.alert({msg:'点击了菜单id为'+ret.id+'的第'+ret.index+'个按钮'});",
+      "});"
+    ]
+  },
+  "sideMenu.show": {
+    "prefix": "sideMenu-show",
+    "description": "显示边框弹出菜单",
+    "body": [
+      "sideMenu.show({",
+      "\tid:${1:1}",
+      "});"
+    ]
+  },
+  "slider.close": {
+    "prefix": "slider-close",
+    "description": "关闭slider",
+    "body": [
+      "slider.close({",
+      "\tid: ${1:1}",
+      "});"
+    ]
+  },
+  "slider.hide": {
+    "prefix": "slider-hide",
+    "description": "隐藏slider",
+    "body": [
+      "slider.hide({",
+      "\tid: ${1:1}",
+      "});"
+    ]
+  },
+  "slider.lock": {
+    "prefix": "slider-lock",
+    "description": "锁定slider的值",
+    "body": [
+      "slider.lock({",
+      "\tid: ${1:1},",
+      "\tlock: ${2:true}",
+      "});"
+    ]
+  },
+  "slider.open": {
+    "prefix": "slider-open",
+    "description": "打开slider",
+    "body": [
+      "slider.open({",
+      "\tx: ${1:30},",
+      "\ty: ${2:104},",
+      "\twidth: ${3:260},",
+      "\theight: ${4:6},",
+      "\tbgImg: \"${5:}\",",
+      "\tselectedBgImg: \"${6:}\",",
+      "\tbarW: ${7:30},",
+      "\tbarH: ${8:20},",
+      "\tbarImg: \"${9:}\",",
+      "\tbubbleW: ${10:60},",
+      "\tbubbleH: ${11:40},",
+      "\tbubbleImg: \"${12:}\",",
+      "\tminValue: ${13:0},",
+      "\tmaxValue: ${14:100},",
+      "\tdefValue: ${15:30}",
+      "}, function(ret, err) {",
+      "\tif (ret.touchCancel) {",
+      "\t\tapi.alert({",
+      "\t\t\tmsg: ret.value",
+      "\t\t});",
+      "\t} else {",
+      "\t\tret.value;",
+      "\t}",
+      "});"
+    ]
+  },
+  "slider.setValue": {
+    "prefix": "slider-setValue",
+    "description": "设置slider的值",
+    "body": [
+      "slider.setValue({",
+      "\tid: ${1:1},",
+      "\tvalue: ${2:51}",
+      "});"
+    ]
+  },
+  "slider.show": {
+    "prefix": "slider-show",
+    "description": "显示slider",
+    "body": [
+      "slider.show({",
+      "\tid: ${1:1}",
+      "});"
+    ]
+  },
+  "socketmanager.closeSocket": {
+    "prefix": "socketmanager-closeSocket",
+    "description": "关闭socket连接",
+    "body": [
+      "socketManager.closeSocket({",
+      "\tsid: '${1:1}'",
+      "}, function(ret, err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'关闭成功'});",
+      "\t} else{",
+      "\t\tapi.alert({msg:'error'});",
+      "\t}",
+      "});"
+    ]
+  },
+  "socketmanager.createSocket": {
+    "prefix": "socketmanager-createSocket",
+    "description": "创建socket并进行连接，连接状态以及接收到数据都通过回调返回",
+    "body": [
+      "socketManager.createSocket({",
+      "\ttype: '${1:tcp}',//tcp/udp",
+      "\thost: '${2:192.168.1.100}',",
+      "\tport: ${3:8282},",
+      "\ttimeout: ${4:5},",
+      "\tbufferSize: ${5:16},",
+      "\tcharset: '${6:utf-8}',",
+      "\treturnBase64: ${7:false}",
+      "}, function(ret, err){",
+      "\tif (ret) {",
+      "\t\tvar state = ret.state;",
+      "\t\tvar sid = ret.sid;",
+      "\t\tvar data = ret.data;",
+      "\t\tvar stateStr = '';",
+      "\t\tif (101 === state) {",
+      "\t\t\tstateStr = '创建成功';",
+      "\t\t} else if(102 === state){",
+      "\t\t\tstateStr = '连接成功';",
+      "\t\t} else if(103 === state){",
+      "\t\t\tstateStr = '收到消息';",
+      "\t\t} else if(201 === state){",
+      "\t\t\tstateStr = '创建失败';",
+      "\t\t} else if(202 === state){",
+      "\t\t\tstateStr = '连接失败';",
+      "\t\t} else if(203 === state){",
+      "\t\t\tstateStr = '异常断开';",
+      "\t\t} else if(204 === state){",
+      "\t\t\tstateStr = '正常断开';",
+      "\t\t} else if(205 === state){",
+      "\t\t\tstateStr = '发生未知错误';",
+      "\t\t}",
+      "\t\tvar msg = 'sid: '+sid+'\\nstate: '+stateStr+'\\ndata: '+(data?data:'');",
+      "\t\tapi.alert({msg:msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "socketmanager.write": {
+    "prefix": "socketmanager-write",
+    "description": "往某个socket写入数据",
+    "body": [
+      "socketManager.write({",
+      "\tsid: '${1:1}',",
+      "\tdata: '${2:你好}',",
+      "\tbase64: ${3:false},",
+      "}, function(ret, err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'发送成功'});",
+      "\t} else{",
+      "\t\tapi.alert({msg:'error'});",
+      "\t}",
+      "});"
+    ]
+  },
+  "stackMenu.close": {
+    "prefix": "stackMenu-close",
+    "description": "关闭dock管理器",
+    "body": [
+      "stackMenu.close();"
+    ]
+  },
+  "stackMenu.hide": {
+    "prefix": "stackMenu-hide",
+    "description": "隐藏dock管理器",
+    "body": [
+      "stackMenu.hide();"
+    ]
+  },
+  "stackMenu.open": {
+    "prefix": "stackMenu-open",
+    "description": "打开dock管理器",
+    "body": [
+      "stackMenu.open({\t",
+      "\tstartX: ${1:120},",
+      "\tstartY: ${2:api.winHeight-70},",
+      "\titemSize:${3:50},",
+      "\tdirection:'${4:right_up}',",
+      "\ttitleColor:'${5:#8b3e2f}',",
+      "\titems:[",
+      "\t\t{",
+      "\t\t\ticon:'${6:标题一}',",
+      "\t\t\tbgImg:'${7:imagePath}'",
+      "\t\t}",
+      "\t]",
+      "}, function(ret, err){",
+      "\t\tret.index;",
+      "});"
+    ]
+  },
+  "stackMenu.show": {
+    "prefix": "stackMenu-show",
+    "description": "显示dock管理器",
+    "body": [
+      "stackMenu.show();"
+    ]
+  },
+  "tabBar.close": {
+    "prefix": "tabBar-close",
+    "description": "关闭底部导航条",
+    "body": [
+      "tabBar.close();"
+    ]
+  },
+  "tabBar.hide": {
+    "prefix": "tabBar-hide",
+    "description": "隐藏底部导航条",
+    "body": [
+      "tabBar.hide();"
+    ]
+  },
+  "tabBar.open": {
+    "prefix": "tabBar-open",
+    "description": "打开底部导航条",
+    "body": [
+      "tabBar.open({",
+      "\th:${1:40},\t",
+      "\tbgImg:'${2:widget://res/tabBar_bg.png}',",
+      "\tselectImg:'${3:widget://res/selecte_tabBar.png}',",
+      "\tperScreenBtn: ${4:5},",
+      "\tselecteIndex:${5:1},",
+      "\titems:[",
+      "\t\t{",
+      "\t\t\ttitle:'${6:item1}',",
+      "\t\t\thighlight:'${7:imagePath}',",
+      "\t\t\tselected:'${8:imagePath}',",
+      "\t\t\tcolor:'${9:#ffffff}',",
+      "\t\t\tselectedTitleColor:'${10:#000000}',",
+      "\t\t\timg:'${11:widget://res/tabBar_item1.png}',",
+      "\t\t\tbadge:'${12:3}'",
+      "\t\t}",
+      "\t],",
+      "\tfixedOn:'${14:api.winName}',",
+      "\tclickHide:${15:true}",
+      "}, function(ret, err){",
+      "\t\tapi.alert({msg:ret.index});",
+      "});"
+    ]
+  },
+  "tabBar.setBadge": {
+    "prefix": "tabBar-setBadge",
+    "description": "设置按钮左上角的badge标注",
+    "body": [
+      "tabBar.setBadge({",
+      "\tindex:${1:3},\t",
+      "\tbadge:'${2:4}'",
+      "});"
+    ]
+  },
+  "tabBar.setSelect": {
+    "prefix": "tabBar-setSelect",
+    "description": "设置选中按钮",
+    "body": [
+      "tabBar.setSelect({",
+      "\tindex:${1:3}",
+      "});"
+    ]
+  },
+  "tabBar.show": {
+    "prefix": "tabBar-show",
+    "description": "显示底部导航条",
+    "body": [
+      "tabBar.show();"
+    ]
+  },
+  "tabBarMenu.close": {
+    "prefix": "tabBarMenu-close",
+    "description": "关闭底部导航菜单",
+    "body": [
+      "tabBarMenu.close();"
+    ]
+  },
+  "tabBarMenu.hide": {
+    "prefix": "tabBarMenu-hide",
+    "description": "隐藏底部导航菜单",
+    "body": [
+      "tabBarMenu.hide();"
+    ]
+  },
+  "tabBarMenu.hideMenu": {
+    "prefix": "tabBarMenu-hideMenu",
+    "description": "隐藏弹出菜单",
+    "body": [
+      "tabBarMenu.hideMenu();"
+    ]
+  },
+  "tabBarMenu.open": {
+    "prefix": "tabBarMenu-open",
+    "description": "打开应用底部导航菜单模块",
+    "body": [
+      "tabBarMenu.open({",
+      "\tdefaultBarSelect:${1:0},\t",
+      "\tautoLayout:${2:true},",
+      "\tbarConfig:[",
+      "\t\t{",
+      "\t\t\tbgImg:'${3:widget://image/tabBarMenu/tabbar_bg.png}'",
+      "\t\t}",
+      "\t],",
+      "\tbarItems:[",
+      "\t\t{",
+      "\t\t\ttitle:'${4:动态}',",
+      "\t\t\tbgImg:'${5:widget://image/tabBarMenu/tabbar_icon_auth.png}',",
+      "\t\t\tbgImgClick:'${6:widget://image/tabBarMenu/tabbar_icon_auth_click.png}'",
+      "\t\t}",
+      "\t],",
+      "\tbarItemConfig:[",
+      "\t\t{",
+      "\t\t\ttitleColor:'${7:#ffffff}',",
+      "\t\t\ttitleSelectColor:'${8:#ffffff}',",
+      "\t\t\tfontSize:${9:11},",
+      "\t\t\ttextMarginTop:${10:41},",
+      "\t\t\tprimaryItem:${11:2}",
+      "\t\t}",
+      "\t],",
+      "\tmenuItems:[",
+      "\t\t{",
+      "\t\t\ttitle:'${12:说说}',",
+      "\t\t\tbgImg:'${13:widget://image/tabBarMenu/tabbar_btn_popup_talk.png}',",
+      "\t\t\tbgImgClick:'${14:widget://image/tabBarMenu/tabbar_btn_popup_talk_click.png}'",
+      "\t\t}",
+      "\t],",
+      "\tmenuItemConfig:[",
+      "\t\t{",
+      "\t\t\ttitleColor:'${15:#ffffff}',",
+      "\t\t\ttitleSelectColor:'${16:#ffffff}',",
+      "\t\t\tfontSize:${17:11},",
+      "\t\t\ttextMarginTop:${18:90}",
+      "\t\t}",
+      "\t],",
+      "\tmenuConfig:[",
+      "\t\t{",
+      "\t\t\tcoverBgColor:'${19:#000000}',",
+      "\t\t\tcoverAlpha:${20:0.8},",
+      "\t\t\trows:${21:4}",
+      "\t\t}",
+      "\t]",
+      "}, function(ret, err){",
+      "\t\tif(ret){",
+      "\t\tvar item = ret.item;",
+      "\t\tif(\"menu \" == item.type){",
+      "\t\t\ttabBarMenu.hideMenu();",
+      "\t\t}",
+      "\t\tapi.alert({title: \"提示\", msg: \"您点击了 \" + item.type + \" 上,第 \" + item.index + \" 个按钮!\", buttons: [\"确定\"]});",
+      "\t}",
+      "});"
+    ]
+  },
+  "tabBarMenu.removeBadge": {
+    "prefix": "tabBarMenu-removeBadge",
+    "description": "设置徽章",
+    "body": [
+      "tabBarMenu.removeBadge({",
+      "\ttype:'${1:bar}',",
+      "\tindex:${2:3}",
+      "});"
+    ]
+  },
+  "tabBarMenu.setBadge": {
+    "prefix": "tabBarMenu-setBadge",
+    "description": "设置徽章",
+    "body": [
+      "tabBarMenu.setBadge({",
+      "\titem:[",
+      "\t\ttype:'${1:bar}',",
+      "\t\tindex:${2:0}",
+      "\t],",
+      "\ttitle:'${3:NEW}',",
+      "\ttype:'${4:right}',",
+      "\tbgColor:'${5:#ff0000}',",
+      "\ttitleColor:'${6:#ffffff}',",
+      "\tfontSize:${7:11},",
+      "\tmarginTop:${8:17}",
+      "});"
+    ]
+  },
+  "tabBarMenu.setBarSelect": {
+    "prefix": "tabBarMenu-setBarSelect",
+    "description": "模拟点击标签栏按钮",
+    "body": [
+      "tabBarMenu.setBarSelect({",
+      "\tindex:${1:3}",
+      "});"
+    ]
+  },
+  "tabBarMenu.show": {
+    "prefix": "tabBarMenu-show",
+    "description": "显示底部导航菜单",
+    "body": [
+      "tabBarMenu.show();"
+    ]
+  },
+  "tabBarMenu.showMenu": {
+    "prefix": "tabBarMenu-showMenu",
+    "description": "显示弹出菜单",
+    "body": [
+      "tabBarMenu.showMenu();"
+    ]
+  },
+  "timeSelector.close": {
+    "prefix": "timeSelector-close",
+    "description": "关闭时间选择器",
+    "body": [
+      "timeSelector.close();"
+    ]
+  },
+  "timeSelector.hide": {
+    "prefix": "timeSelector-hide",
+    "description": "隐藏时间选择器",
+    "body": [
+      "timeSelector.hide();"
+    ]
+  },
+  "timeSelector.open": {
+    "prefix": "timeSelector-open",
+    "description": "打开时间选择器",
+    "body": [
+      "timeSelector.open({",
+      "\tx: ${1:0},",
+      "\ty: ${2:64},",
+      "\twidth: ${3:320},",
+      "\theight: ${4:250}",
+      "}, function(ret, err) {",
+      "\tvar hour = ret.hour;",
+      "\tvar minit = ret.minit;",
+      "});"
+    ]
+  },
+  "timeSelector.set": {
+    "prefix": "timeSelector-set",
+    "description": "设置时间选择器时间",
+    "body": [
+      "timeSelector.set({",
+      "\thour: ${1:20},",
+      "\tminute: ${2:25}",
+      "});"
+    ]
+  },
+  "timeSelector.show": {
+    "prefix": "timeSelector-show",
+    "description": "显示时间选择器",
+    "body": [
+      "timeSelector.show();"
+    ]
+  },
+  "touchID.verify": {
+    "prefix": "touchID-verify",
+    "description": "弹出验证界面，验证用户指纹",
+    "body": [
+      "touchID.verify(function(ret, err) {",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({",
+      "\t\t\tmsg: \"验证通过\"",
+      "\t\t});",
+      "\t} else {",
+      "\t\tif (ret.index == 0) {",
+      "\t\t\tapi.alert({",
+      "\t\t\t\tmsg: \"用户选择手动输入\"",
+      "\t\t\t});",
+      "\t\t} else if (ret.index == 1) {",
+      "\t\t\tapi.alert({",
+      "\t\t\t\tmsg: \"用户取消验证\"",
+      "\t\t\t});",
+      "\t\t} else if (ret.index == 2) {",
+      "\t\t\tapi.alert({",
+      "\t\t\t\tmsg: \"验证三次失败\"",
+      "\t\t\t});",
+      "\t\t} else if (ret.index == 3) {",
+      "\t\t\tapi.alert({",
+      "\t\t\t\tmsg: \"多长验证失败请锁定手机\"",
+      "\t\t\t});",
+      "\t\t} else {",
+      "\t\t\tapi.alert({",
+      "\t\t\t\tmsg: \"验证失败，未知错误\"",
+      "\t\t\t});",
+      "\t\t}",
+      "\t}",
+      "});"
+    ]
+  },
+  "trans.decodeImgToBase64": {
+    "prefix": "trans-decodeImgToBase64",
+    "description": "将图片转换为base64字符串",
+    "body": [
+      "trans.decodeImgToBase64({",
+      "\timgPath: '${1:fs://1.png}'",
+      "}, function(ret, err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:ret.base64Str});",
+      "\t} else{",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "trans.parse": {
+    "prefix": "trans-parse",
+    "description": "将xml文件或数据解析成JSON对象",
+    "body": [
+      "trans.parse({",
+      "\tpath:'${1:fs://1.xml}'",
+      "}, function(ret,err){",
+      "\tif (ret) {",
+      "\t\tapi.alert({msg:'解析成功'});",
+      "\t} else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "trans.saveImage": {
+    "prefix": "trans-saveImage",
+    "description": "将base64字符串保存为图片",
+    "body": [
+      "trans.saveImage({",
+      "\tbase64Str: '${1:testStr}',",
+      "\talbum: ${2:false},",
+      "\timgPath: '${3:apicloud.png}',",
+      "\timgName: '${4:apicloud.png}'",
+      "}, function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'解析成功'});",
+      "\t} else {",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "tuberBar.bringToFront": {
+    "prefix": "tuberBar-bringToFront",
+    "description": "将已经打开的模块置为最上层显示",
+    "body": [
+      "tuberBar.bringToFront();"
+    ]
+  },
+  "tuberBar.close": {
+    "prefix": "tuberBar-close",
+    "description": "关闭底部导航条模块",
+    "body": [
+      "tuberBar.close();"
+    ]
+  },
+  "tuberBar.hide": {
+    "prefix": "tuberBar-hide",
+    "description": "隐藏底部导航条模块",
+    "body": [
+      "tuberBar.hide();"
+    ]
+  },
+  "tuberBar.open": {
+    "prefix": "tuberBar-open",
+    "description": "打开底部导航条模块",
+    "body": [
+      "tuberBar.open({",
+      "\tbg:'${1:widget://res/tuberBar_bg.png}',\t",
+      "\th:${2:60},",
+      "\tselectedIndex:${3:2},",
+      "\tbuttons:[",
+      "\t\t{",
+      "\t\t\tframe:{",
+      "\t\t\t\t w:${4:20},",
+      "\t\t\t\t h:${5:20}",
+      "\t\t\t},",
+      "\t\t\tnormal:'${6:widget://image/tabBar_bg.png}',",
+      "\t\t\thighlight:'${7:widget://image/tabBar_bg.png}',",
+      "\t\t\tselected:'${8:widget://image/tabBar_bg.png}',",
+      "\t\t\ttitle:'${9:buttons1}',",
+      "\t\t\ttitleColor:'${10:#696969}',",
+      "\t\t\ttitleSize:'${11:12}',",
+      "\t\t\ttitleNormal:'${12:#696969}',",
+      "\t\t\ttitleLight:'${13:#696969}',",
+      "\t\t\ttitleSelected:'${14:#696969}',",
+      "\t\t}",
+      "\t]",
+      "}, function(ret, err){",
+      "\t\talert(JSON.stringify(ret) + JSON.stringify(err));",
+      "});"
+    ]
+  },
+  "tuberBar.setBadge": {
+    "prefix": "tuberBar-setBadge",
+    "description": "设置徽章",
+    "body": [
+      "tuberBar.setBadge({",
+      "\tindex:${1:3},",
+      "\tbadge:'${2:说明}'",
+      "});"
+    ]
+  },
+  "tuberBar.setSelected": {
+    "prefix": "tuberBar-setSelected",
+    "description": "设置选中按钮",
+    "body": [
+      "tuberBar.setSelected({",
+      "\tindex:${1:3}",
+      "});"
+    ]
+  },
+  "tuberBar.show": {
+    "prefix": "tuberBar-show",
+    "description": "显示底部导航条模块",
+    "body": [
+      "tuberBar.show();"
+    ]
+  },
+  "uicalendar.close": {
+    "prefix": "uicalendar-close",
+    "description": "关闭日历",
+    "body": [
+      "uicalendar.close();"
+    ]
+  },
+  "uicalendar.hide": {
+    "prefix": "uicalendar-hide",
+    "description": "隐藏日历",
+    "body": [
+      "uicalendar.hide();"
+    ]
+  },
+  "uicalendar.nextMonth": {
+    "prefix": "uicalendar-nextMonth",
+    "description": "显示下个月",
+    "body": [
+      "uicalendar.nextMonth(function(ret){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "uicalendar.nextYear": {
+    "prefix": "uicalendar-nextYear",
+    "description": "显示下一年",
+    "body": [
+      "uicalendar.nextYear(function(ret){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "uicalendar.open": {
+    "prefix": "uicalendar-open",
+    "description": "打开日历",
+    "body": [
+      "uicalendar.open({",
+      "\trect: {",
+      "\t\tx: ${1:0},",
+      "\t\ty: ${2:0},",
+      "\t\tw: ${3:320},",
+      "\t\th: ${4:480}",
+      "\t},",
+      "\tstyles: {",
+      "\t\tbg: '${5:bg_color}',",
+      "\t\tweek: {",
+      "\t\t\tweekdayColor: '${6:color}',",
+      "\t\t\tweekendColor: '${7:color}',",
+      "\t\t\tsize: ${8:12}",
+      "\t},",
+      "\t\tdate: {",
+      "\t\t\tcolor: '${9:color}',",
+      "\t\t\tselectedColor: '${10:color}',",
+      "\t\t\tselectedBg: '${11:color}',",
+      "\t\t\tsize: ${12:12}",
+      "\t\t},",
+      "\t\ttoday: {",
+      "\t\t\tcolor: '${13:color}',",
+      "\t\t\tbg: '${14:color}'",
+      "\t\t},",
+      "\t\tspecialDate: {",
+      "\t\t\tcolor: '${15:color}',",
+      "\t\t\tbg: '${16:bg}'",
+      "\t\t}",
+      "\t},",
+      "\tspecialDate: [{",
+      "\t\tdate: '${17:2015-06-01}'",
+      "\t}],",
+      "\tswitchMode: '${18:mode_type}'",
+      "}, function(ret, err){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "uicalendar.prevMonth": {
+    "prefix": "uicalendar-prevMonth",
+    "description": "显示上个月",
+    "body": [
+      "uicalendar.prevMonth(function(ret,err){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}  ",
+      "});"
+    ]
+  },
+  "uicalendar.prevYear": {
+    "prefix": "uicalendar-prevYear",
+    "description": "显示上一年",
+    "body": [
+      "uicalendar.prevYear(function(ret){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "uicalendar.setDate": {
+    "prefix": "uicalendar-setDate",
+    "description": "设置指定日期",
+    "body": [
+      "uicalendar.setDate({",
+      "\tdate: '${1:2015-8-8}'",
+      "},function(ret){",
+      "\tif(ret.status){",
+      "\t\talert(\"设置指定日期\");",
+      "\t}",
+      "});"
+    ]
+  },
+  "uicalendar.show": {
+    "prefix": "uicalendar-show",
+    "description": "显示日历",
+    "body": [
+      "uicalendar.show();"
+    ]
+  },
+  "uichatbox.addEventListener": {
+    "prefix": "uichatbox-addEventListener",
+    "description": "事件监听",
+    "body": [
+      "uichatbox.addEventListener({",
+      "\ttarget: '${1:target}',",
+      "\tname: '${2:name}'",
+      "}, function(ret,err){",
+      "\tapi.alert({msg: '按下了录音按钮'});",
+      "});"
+    ]
+  },
+  "uichatbox.close": {
+    "prefix": "uichatbox-close",
+    "description": "关闭聊天输入框",
+    "body": [
+      "uichatbox.close();"
+    ]
+  },
+  "uichatbox.closeKeyboard": {
+    "prefix": "uichatbox-closeKeyboard",
+    "description": "收起键盘",
+    "body": [
+      "uichatbox.closeKeyboard();"
+    ]
+  },
+  "uichatbox.hide": {
+    "prefix": "uichatbox-hide",
+    "description": "隐藏聊天输入框",
+    "body": [
+      "uichatbox.hide();"
+    ]
+  },
+  "uichatbox.insertValue": {
+    "prefix": "uichatbox-insertValue",
+    "description": "向聊天输入框的指定位置插入内容",
+    "body": [
+      "uichatbox.insertValue({",
+      "\tindex: ${1:10},",
+      "\tmsg: '${2:msg}'",
+      "});"
+    ]
+  },
+  "uichatbox.open": {
+    "prefix": "uichatbox-open",
+    "description": "打开聊天输入框",
+    "body": [
+      "uichatbox.open({",
+      "\tplaceholder: '${1:placeholder}',",
+      "\tmaxRows: ${2:4},",
+      "\temotionPath: '${3:emotion_path}',",
+      "\ttexts: {",
+      "\t\trecordBtn: {",
+      "\t\t\tnormalTitle: '${4:normal_title}',",
+      "\t\t\tactiveTitle: '${5:active_title}'",
+      "\t\t}",
+      "\t},",
+      "\tstyles: {",
+      "\t\tinputBar: {",
+      "\t\t\tborderColor: '${6:border_color}',",
+      "\t\t\tbgColor: '${7:bg_color}'",
+      "\t\t},",
+      "\t\tinputBox: {",
+      "\t\t\tborderColor: '${8:border_color}',",
+      "\t\t\tbgColor: '${9:bg_color}'",
+      "\t\t},",
+      "\t\temotionBtn: {",
+      "\t\t\tnormalImg: '${10:emotion_button_path}'",
+      "\t\t},",
+      "\t\textrasBtn: {",
+      "\t\t\tnormalImg: '${11:extras_button_path}'",
+      "\t\t},",
+      "\t\tkeyboardBtn: {",
+      "\t\t\tnormalImg: '${12:keyboard_button_path}'",
+      "\t\t},",
+      "\t\tspeechBtn: {",
+      "\t\t\tnormalImg: '${13:speech_button_path}'",
+      "\t\t},",
+      "\t\trecordBtn: {",
+      "\t\t\tnormalBg: '${14:normal_bg}',",
+      "\t\t\tactiveBg: '${15:active_bg}',",
+      "\t\t\tcolor: '${16:color}',",
+      "\t\t\tsize: ${17:14}",
+      "\t\t},",
+      "\t\tindicator: {",
+      "\t\t\ttarget: '${18:target}',",
+      "\t\t\tcolor: '${19:color}',",
+      "\t\t\tactiveColor: '${20:active_color}'",
+      "\t\t}",
+      "\t},",
+      "\textras: {",
+      "\t\ttitleSize: ${21:10},",
+      "\t\ttitleColor: '${22:title_color}',",
+      "\t\tbtns: [{",
+      "\t\t\ttitle: '${23:title}',",
+      "\t\t\tnormalImg: '${24:normal_image_path}',",
+      "\t\t\tactiveImg: '${25:active_image_path}'",
+      "\t\t}]",
+      "\t}",
+      "}, function(ret){",
+      "\t//点击附加功能面板",
+      "\tif(ret.eventType == 'clickExtras'){",
+      "\t\talert(\"用户点击了第\"+ ret.index +\"个按钮\");",
+      "\t}",
+      "\t//点击发送按钮",
+      "\tif(ret.eventType == 'send'){",
+      "\t\talert('输入的内容是：'+ ret.msg);",
+      "\t}",
+      "});"
+    ]
+  },
+  "uichatbox.popupKeyboard": {
+    "prefix": "uichatbox-popupKeyboard",
+    "description": "弹出键盘",
+    "body": [
+      "uichatbox.popupKeyboard();"
+    ]
+  },
+  "uichatbox.setPlaceholder": {
+    "prefix": "uichatbox-setPlaceholder",
+    "description": "重设聊天输入框的占位提示文本",
+    "body": [
+      "uichatbox.setPlaceholder({",
+      "\tplaceholder: '${1:placeholder}'",
+      "});"
+    ]
+  },
+  "uichatbox.show": {
+    "prefix": "uichatbox-show",
+    "description": "显示聊天输入框",
+    "body": [
+      "uichatbox.show();"
+    ]
+  },
+  "uichatbox.value-get": {
+    "prefix": "uichatbox-value-get",
+    "description": "获取输入框的值",
+    "body": [
+      "uichatbox.value(function(ret, err){",
+      "\tif(ret.status){",
+      "\t\tapi.alert({msg: ${1:ret.msg}});",
+      "\t}",
+      "});"
+    ]
+  },
+  "uichatbox.value-set": {
+    "prefix": "uichatbox-value-set",
+    "description": "设置输入框的值",
+    "body": [
+      "uichatbox.value({",
+      "\tmsg: '${1:set_content}'",
+      "});"
+    ]
+  },
+  "uicitylist.close": {
+    "prefix": "uicitylist-close",
+    "description": "关闭城市列表",
+    "body": [
+      "uicitylist.close();"
+    ]
+  },
+  "uicitylist.hide": {
+    "prefix": "uicitylist-hide",
+    "description": "隐藏城市列表",
+    "body": [
+      "uicitylist.hide();"
+    ]
+  },
+  "uicitylist.open": {
+    "prefix": "uicitylist-open",
+    "description": "打开城市列表模块",
+    "body": [
+      "uicitylist.open({",
+      "\trect: {",
+      "\t\tx: ${1:0},",
+      "\t\ty: ${2:0},",
+      "\t\tw: ${3:320},",
+      "\t\th: ${4:480}",
+      "\t},",
+      "\tresource: '${5:resource}',",
+      "\tstyles: {",
+      "\t\tsearchBar: {",
+      "\t\t\tbgColor: '${6:bgColor}',",
+      "\t\t\tcancelColor: '${7:cancelColor}'",
+      "\t\t},",
+      "\t\tlocation: {",
+      "\t\t\tcolor: '${8:color}',",
+      "\t\t\tsize: ${9:12}",
+      "\t\t},",
+      "\t\tsectionTitle: {",
+      "\t\t\tbgColor: '${10:bgColor}', ",
+      "\t\t\tcolor: '${11:color}',",
+      "\t\t\tsize: ${12:12}",
+      "\t\t},",
+      "\t\titem: {",
+      "\t\t\tbgColor: '${13:bgColor}',",
+      "\t\t\tactiveBgColor: '${14:activeBgColor}',",
+      "\t\t\tcolor: '${15:color}',",
+      "\t\t\tsize: ${16:12},",
+      "\t\t\theight: ${17:25}",
+      "\t\t},",
+      "\t\tindicator: {",
+      "\t\t\tbgColor: '${18:bgColor}',",
+      "\t\t\tcolor: '${19:color}'",
+      "\t\t}",
+      "\t},",
+      "\tcurrentCity: '${20:currentCity}',",
+      "\tlocationWay: '${21:locationWay}',",
+      "\thotTitle: '${22:hotTitle}',",
+      "\tplaceholder: '${23:placeholder}'",
+      "}, function(ret, err) {",
+      "\tif(ret.eventType == 'selected'){",
+      "\t\talert(JSON.stringify(ret.cityInfo));",
+      "\t}",
+      "});"
+    ]
+  },
+  "uicitylist.show": {
+    "prefix": "uicitylist-show",
+    "description": "显示城市列表",
+    "body": [
+      "uicitylist.show();"
+    ]
+  },
+  "uicustompicker.close": {
+    "prefix": "uicustompicker-close",
+    "description": "关闭自定义选择器",
+    "body": [
+      "uicustompicker.close({id: ${1:0}});"
+    ]
+  },
+  "uicustompicker.hide": {
+    "prefix": "uicustompicker-hide",
+    "description": "隐藏自定义选择器",
+    "body": [
+      "uicustompicker.hide({id: ${1:0}});"
+    ]
+  },
+  "uicustompicker.open": {
+    "prefix": "uicustompicker-open",
+    "description": "打开自定义选择器",
+    "body": [
+      "uicustompicker.open({",
+      "\trect: {",
+      "\t\tx: ${1:0},",
+      "\t\ty: ${2:0},",
+      "\t\tw: ${3:320},",
+      "\t\th: ${4:480}",
+      "\t},",
+      "\tstyles: {",
+      "\t\tbg: '${5:bg}',",
+      "\t\tnormalColor: '${6:normalColor}',",
+      "\t\tselectedColor: '${7:selectedColor}',",
+      "\t\tselectedSize: ${8:selectedSize},",
+      "\t\ttagColor: '${9:tagColor}',",
+      "\t\ttagSize: ${10:12}",
+      "\t},",
+      "\tdata: [{",
+      "\t\ttag: '${11:tag}',",
+      "\t\tscope: '${12:0-23}'",
+      "\t}, {",
+      "\t\ttag: '${13:tag}',",
+      "\t\tscope: '${14:0-59}'",
+      "\t}],",
+      "\trows: ${15:rows},",
+      "\tfixedOn: '${16:FrameName}',",
+      "\tfixed: ${17:true}",
+      "}, function(ret, err){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "uicustompicker.setValue": {
+    "prefix": "uicustompicker-setValue",
+    "description": "设置自定义选择器当前选中的内容",
+    "body": [
+      "uicustompicker.setValue({",
+      "\tid:${1:0},",
+      "\tdata: ['${2:12}', '${3:13}']",
+      "});"
+    ]
+  },
+  "uicustompicker.show": {
+    "prefix": "uicustompicker-show",
+    "description": "显示自定义选择器",
+    "body": [
+      "uicustompicker.show({id: ${1:0}});"
+    ]
+  },
+  "uigraph.close": {
+    "prefix": "uigraph-close",
+    "description": "关闭曲线图模块",
+    "body": [
+      "uigraph.close({id:${1:1}});"
+    ]
+  },
+  "uigraph.hide": {
+    "prefix": "uigraph-hide",
+    "description": "隐藏曲线图模块",
+    "body": [
+      "uigraph.hide({id:${1:1}});"
+    ]
+  },
+  "uigraph.open": {
+    "prefix": "uigraph-open",
+    "description": "打开贝塞尔曲线模块",
+    "body": [
+      "uigraph.open({",
+      "\trect: {",
+      "\t\tx: ${1:0},",
+      "\t\ty: ${2:0},",
+      "\t\tw: ${3:320},",
+      "\t\th: ${4:220}",
+      "\t},",
+      "\tyAxis: {",
+      "\t\tmax: ${5:80},",
+      "\t\tmin: ${6:0},",
+      "\t\tstep: ${7:20},",
+      "\t\tunit: '${8:%}'",
+      "\t},",
+      "\tdata: [{",
+      "\t\txAxis: '${9:一月}',",
+      "\t\tyAxis: ${10:15}",
+      "\t},{",
+      "\t\txAxis: '${11:二月}',",
+      "\t\tyAxis: ${12:65}",
+      "\t},{",
+      "\t\txAxis: '${13:三月}',",
+      "\t\tyAxis: ${14:55}",
+      "\t},{",
+      "\t\txAxis: '${15:四月}',",
+      "\t\tyAxis: ${16:0}",
+      "\t}],",
+      "\tstyles: {",
+      "\t\tbg: '${17:#fff}',",
+      "\t\taxisColor: '${18:#A9A9A9}',",
+      "\t\tnodeColor: '${19:#000}',",
+      "\t\tlineColor: '${20:#1E90FF}',",
+      "\t\tlineWidth: ${21:1},",
+      "\t\tmarkColor: '${22:#000}',",
+      "\t\tmarkSize:  ${23:16},",
+      "\t\tbubble: {",
+      "\t\t\tbgImg: '${24:}',",
+      "\t\t\tsize:  ${25:14}",
+      "\t\t}",
+      "\t},",
+      "\tshowNode: ${26:true},",
+      "\tfixedOn: '${27:}',",
+      "\tfixed: ${28:true}",
+      "}, function(ret, err){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "uigraph.reloadData": {
+    "prefix": "uigraph-reloadData",
+    "description": "更新曲线图的数据",
+    "body": [
+      "uigraph.reloadData({",
+      "\tid: ${1:1},",
+      "\ttype:'${2:prepend}',",
+      "\tdata: [{",
+      "\t\txAxis:'${3:五月}',",
+      "\t\tyAxis:${4:45}",
+      "\t},{",
+      "\t\txAxis:'${5:六月}',",
+      "\t\tyAxis:${6:70}",
+      "\t},{",
+      "\t\txAxis:'${7:七月}',",
+      "\t\tyAxis:${8:20}",
+      "\t},{",
+      "\t\txAxis:'${9:八月}',",
+      "\t\tyAxis:${10:85}",
+      "\t}]",
+      "});"
+    ]
+  },
+  "uigraph.show": {
+    "prefix": "uigraph-show",
+    "description": "显示曲线图模块",
+    "body": [
+      "uigraph.show({id:${1:1}});"
+    ]
+  },
+  "uiinput.close": {
+    "prefix": "uiinput-close",
+    "description": "关闭输入框",
+    "body": [
+      "uiinput.close();"
+    ]
+  },
+  "uiinput.value": {
+    "prefix": "uiinput-value",
+    "description": "设置输入框的内容",
+    "body": [
+      "uiinput.value({",
+      "\tmsg: '${1:设置输入框的值}'",
+      "});"
+    ]
+  },
+  "uiinput.hide": {
+    "prefix": "uiinput-hide",
+    "description": "隐藏输入框",
+    "body": [
+      "uiinput.hide();"
+    ]
+  },
+  "uiinput.insertValue": {
+    "prefix": "uiinput-insertValue",
+    "description": "向输入框的指定位置插入内容",
+    "body": [
+      "uiinput.insertValue({",
+      "\tindex: ${1:10},",
+      "\tmsg: '${2:这里是插入的字符串}'",
+      "});"
+    ]
+  },
+  "uiinput.open": {
+    "prefix": "uiinput-open",
+    "description": "打开输入框，注意：调用 open 接口的元素，不能加 tapmode 属性",
+    "body": [
+      "\t\tuiinput.open({",
+      "\t\t\t rect: {",
+      "\t\t\t\tx: ${1:0},",
+      "\t\t\t\ty: ${2:0},",
+      "\t\t\t\tw: ${3:320},",
+      "\t\t\t\th: ${4:40}",
+      "\t\t\t},",
+      "\t\t\tstyles: {",
+      "\t\t\t\tbgColor:'${5:#fff}',",
+      "\t\t\t\tsize: ${6:14},",
+      "\t\t\t\tcolor:'${7:#000}'",
+      "\t\t\t\tplaceholder: {",
+      "\t\t\t\t\tcolor:'${8:#ccc}'",
+      "\t\t\t\t}",
+      "\t\t\t},",
+      "\t\t\tmaxRows: ${9:4},",
+      "\t\t\tplaceholder:'${10:这是一个输入框}',",
+      "\t\t\tkeyboardType:'${11:number}',",
+      "\t\t\tfixedOn: '${12:}'",
+      "\t\t}, function(ret){",
+      "\t\t\tif(ret.status){",
+      "\t\t\t\talert(ret.eventType);",
+      "\t\t\t}",
+      "\t\t});"
+    ]
+  },
+  "uiinput.show": {
+    "prefix": "uiinput-show",
+    "description": "显示输入框",
+    "body": [
+      "uiinput.show();"
+    ]
+  },
+  "uilistview.appendData": {
+    "prefix": "uilistview-appendData",
+    "description": "向列表末端追加数据",
+    "body": [
+      "uilistview.appendData({",
+      "\tdata:[{",
+      "\t\timgPath: '${1:image_path}',",
+      "\t\ttitle: '${2:title}',",
+      "\t\tsubTitle: '${3:sub_title}',",
+      "\t\tremark: '${4:remark_note}',",
+      "\t\ticon: '${5:icon_path}'",
+      "\t}]",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert('追加数据成功');",
+      "\t}",
+      "});"
+    ]
+  },
+  "uilistview.close": {
+    "prefix": "uilistview-close",
+    "description": "关闭数据列表模块",
+    "body": [
+      "uilistview.close();"
+    ]
+  },
+  "uilistview.deleteItem": {
+    "prefix": "uilistview-deleteItem",
+    "description": "根据索引删除某一条列表的数据",
+    "body": [
+      "uilistview.deleteItem({",
+      "\tindex: ${1:0}",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert('删除成功');",
+      "\t}",
+      "});"
+    ]
+  },
+  "uilistview.getDataByIndex": {
+    "prefix": "uilistview-getDataByIndex",
+    "description": "根据列表项的索引获取对应的数据",
+    "body": [
+      "uilistview.getDataByIndex({",
+      "\tindex: ${1:0}",
+      "}, function(ret, err){",
+      "\talert(JSON.stringify(ret.data));",
+      "});"
+    ]
+  },
+  "uilistview.getIndex": {
+    "prefix": "uilistview-getIndex",
+    "description": "根据开发者自定义的唯一标识查找列表项对应的数据",
+    "body": [
+      "uilistview.getIndex({",
+      "\tkey: '${1:key}',",
+      "\tvalue: '${2:value}'",
+      "}, function(ret, err){",
+      "\talert(JSON.stringify(ret));",
+      "});"
+    ]
+  },
+  "uilistview.hide": {
+    "prefix": "uilistview-hide",
+    "description": "隐藏 UIListView 模块",
+    "body": [
+      "uilistview.hide();"
+    ]
+  },
+  "uilistview.insertItem": {
+    "prefix": "uilistview-insertItem",
+    "description": "根据索引向某一条列表插入数据",
+    "body": [
+      "uilistview.insertItem({",
+      "\tindex: ${1:2},",
+      "\tdata:{",
+      "\t\timgPath: '${2:image_path}',",
+      "\t\ttitle: '${3:title}',",
+      "\t\tsubTitle: '${4:sub_title}',",
+      "\t\tremark: '${5:remark_note}'",
+      "\t}",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert('插入数据成功');",
+      "\t}",
+      "});"
+    ]
+  },
+  "uilistview.open": {
+    "prefix": "uilistview-open",
+    "description": "打开 UIListView 模块",
+    "body": [
+      "uilistview.open({",
+      "\trect: {",
+      "\t\tx: ${1:0},",
+      "\t\ty: ${2:0},",
+      "\t\tw: ${3:320},",
+      "\t\th: ${4:480}",
+      "\t},",
+      "\tdata: [{",
+      "\t\tuid: '${5:uid}',\t//开发者自定义的唯一标识",
+      "\t\timgPath: '${6:image_path}',",
+      "\t\ttitle: '${7:title}',",
+      "\t\tsubTitle: '${8:subtitle}',",
+      "\t\tremark: '${9:remark_note}',",
+      "\t\ticon: '${10:icon_path}'",
+      "\t},{",
+      "\t\timgPath: '${11:image_path}',",
+      "\t\ttitle: '${12:title}',",
+      "\t\tsubTitle: '${13:subtitle}',",
+      "\t\tremark: '${14:remark_note}',",
+      "\t\ticon: '${15:icon_path}'",
+      "\t}],",
+      "\trightBtns: [{",
+      "\t\tbgColor: '${16:bg_color}',",
+      "\t\tactiveBgColor: '${17:active_bg_color}',",
+      "\t\twidth: ${18:70},",
+      "\t\ttitle: '${19:title}',",
+      "\t\ttitleSize: ${20:12},",
+      "\t\ttitleColor: '${21:title_color}',",
+      "\t\ticon: '${22:icon_path}',",
+      "\t\ticonWidth: ${23:20}",
+      "\t}],",
+      "\tstyles: {",
+      "\t\tborderColor: '${24:border_color}',",
+      "\t\titem: {",
+      "\t\t\tbgColor: '${25:bg_color}',",
+      "\t\t\tactiveBgColor: '${26:active_color}',",
+      "\t\t\theight: ${27:55.0},",
+      "\t\t\timgWidth: ${28:40},",
+      "\t\t\timgHeight: ${29:40},",
+      "\t\t\tplaceholderImg: '${30:place_holder_path}',",
+      "\t\t\ttitleSize: ${31:12.0},",
+      "\t\t\ttitleColor: '${32:title_color}',",
+      "\t\t\tsubTitleSize: ${33:12.0},",
+      "\t\t\tsubTitleColor: '${34:sub_title_color}', ",
+      "\t\t\tremarkColor: '${35:remark_color}',",
+      "\t\t\tremarkSize: ${36:16},",
+      "\t\t\tremarkIconWidth: ${37:30}",
+      "\t\t}",
+      "\t}",
+      "}, function(ret, err){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}",
+      "});"
+    ]
+  },
+  "uilistview.reloadData": {
+    "prefix": "uilistview-reloadData",
+    "description": "刷新列表数据",
+    "body": [
+      "uilistview.reloadData({",
+      "\tdata:[{",
+      "\t\timgPath: '${1:image_path}',",
+      "\t\ttitle: '${2:title}',",
+      "\t\tsubTitle: '${3:sub_title}',",
+      "\t\tremark: '${4:remark_note}',",
+      "\t\ticon: '${5:icon_path}'",
+      "\t}]",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert('刷新数据成功');",
+      "\t}",
+      "});"
+    ]
+  },
+  "uilistview.setAttr": {
+    "prefix": "uilistview-setAttr",
+    "description": "设置列表的纵坐标和高度",
+    "body": [
+      "uilistview.setAttr({",
+      "\ty: ${1:40},",
+      "\th: ${2:200}",
+      "}, function(ret, err){",
+      "\talert('设置成功');",
+      "});"
+    ]
+  },
+  "uilistview.setRefreshFooter": {
+    "prefix": "uilistview-setRefreshFooter",
+    "description": "设置上拉加载",
+    "body": [
+      "uilistview.setRefreshFooter({",
+      "\tloadingImg: '${1:loading_image_path}',",
+      "\tbgColor: '${2:bg_color}',",
+      "\ttextColor: '${3:text_color}',",
+      "\ttextDown: '${4:text_down}',",
+      "\ttextUp: '${5:text_up}',",
+      "\tshowTime: ${6:true}",
+      "}, function(ret, err){",
+      "});"
+    ]
+  },
+  "uilistview.setRefreshHeader": {
+    "prefix": "uilistview-setRefreshHeader",
+    "description": "设置下拉刷新",
+    "body": [
+      "uilistview.setRefreshHeader({",
+      "\tloadingImg: '${1:loading_image_path}',",
+      "\tbgColor: '${2:bg_color}',",
+      "\ttextColor: '${3:text_color}',",
+      "\ttextDown: '${4:text_down}',",
+      "\ttextUp: '${5:text_up}',",
+      "\tshowTime: ${6:true}",
+      "}, function(ret, err){",
+      "});"
+    ]
+  },
+  "uilistview.setSwipeBtns": {
+    "prefix": "uilistview-setSwipeBtns",
+    "description": "设置侧滑显示出来的按钮",
+    "body": [
+      "uilistview.setSwipeBtns({",
+      "\tindex: ${1:0},",
+      "\tbtns: [{",
+      "\t\tbgColor: '${2:bg_color}',",
+      "\t\tactiveBgColor: '${3:active_color}',",
+      "\t\twidth: ${4:70},",
+      "\t\ttitle: '${5:title}',",
+      "\t\ttitleSize: ${6:12},",
+      "\t\ttitleColor: '${7:title_color}',",
+      "\t\ticon: '${8:icon_path}',",
+      "\t\ticonWidth: ${9:20}",
+      "\t}]",
+      "}, function(ret, err){",
+      "\talert(JSON.stringify(ret));",
+      "});"
+    ]
+  },
+  "uilistview.show": {
+    "prefix": "uilistview-show",
+    "description": "显示 UIListView 模块",
+    "body": [
+      "uilistview.show();"
+    ]
+  },
+  "uilistview.updateItem": {
+    "prefix": "uilistview-updateItem",
+    "description": "根据索引更新某一条列表的数据",
+    "body": [
+      "uilistview.updateItem({",
+      "\tindex: ${1:0},",
+      "\tdata:{",
+      "\t\timgPath: '${2:image_path}',",
+      "\t\ttitle: '${3:title}',",
+      "\t\tsubTitle: '${4:sub_title}',",
+      "\t\tremark: '${5:remark_note}',",
+      "\t\ticon: '${6:icon_path}'",
+      "\t}",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert('刷新列表数据成功');",
+      "\t}",
+      "});"
+    ]
+  },
+  "uimediascanner.fetch": {
+    "prefix": "uimediascanner-fetch",
+    "description": "获取指定数量的多媒体资源，没有更多资源则返回空数组",
+    "body": [
+      "uimediascanner.fetch(function(ret){",
+      "\talert(JSON.stringify(ret.list));",
+      "});"
+    ]
+  },
+  "uimediascanner.open": {
+    "prefix": "uimediascanner-open",
+    "description": "打开多媒体资源选择器，打开后会全屏显示",
+    "body": [
+      "uimediascanner.open({",
+      "\tcolumn: ${1:4},",
+      "\tclassify:${2:true},",
+      "\tmax: ${3:4},",
+      "\tsort: {",
+      "\t\tkey: '${4:time}',",
+      "\t\torder: '${5:desc}'",
+      "\t},",
+      "\ttexts: {",
+      "\t\tstateText: '${6:已选择*项}',",
+      "\t\tcancelText: '${7:取消}',",
+      "\t\tfinishText: '${8:完成}'",
+      "\t},",
+      "\tstyles: {",
+      "\t\tbg: '${9:bg}',",
+      "\t\tmark: {",
+      "\t\t\ticon: '${10:path}',",
+      "\t\t\tposition: '${11:positon}',",
+      "\t\t\tsize: ${12:20}",
+      "\t\t},",
+      "\t\tnav: {",
+      "\t\t\tbg: '${13:bg}',",
+      "\t\t\tstateColor: '${14:stateColor}',",
+      "\t\t\tstateSize: ${15:18},",
+      "\t\t\tcancleBg: '${16:cancleBg}',",
+      "\t\t\tcancelColor: '${17:cancelColor}',",
+      "\t\t\tcancelSize: ${18:18},",
+      "\t\t\tfinishBg: '${19:finishBg}',",
+      "\t\t\tfinishColor: '${20:finishColor}',",
+      "\t\t\tfinishSize: ${21:18}",
+      "\t\t}",
+      "\t}",
+      "}, function(ret){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret.list));",
+      "\t}",
+      "});"
+    ]
+  },
+  "uimediascanner.scan": {
+    "prefix": "uimediascanner-scan",
+    "description": "扫描系统多媒体资源，可以通过 Web 代码自定义多选界面",
+    "body": [
+      "uimediascanner.scan({",
+      "\ttype: '${1:type}',",
+      "\tcount: ${2:10},",
+      "\tsort: {",
+      "\t\tkey: '${3:time}',",
+      "\t\torder: '${4:desc}'",
+      "\t}",
+      "}, function(ret){",
+      "\tif(ret){",
+      "\t\talert(JSON.stringify(ret.list));",
+      "\t}",
+      "});"
+    ]
+  },
+  "uimediascanner.transPath": {
+    "prefix": "uimediascanner-transPath",
+    "description": "将相册图片地址转换为可以直接使用的本地路径地址",
+    "body": [
+      "uimediascanner.transPath({",
+      "\tpath: '${1:path}'",
+      "}, function(ret){",
+      "\talert(ret.path);",
+      "});"
+    ]
+  },
+  "uiscrollpicture.addEventListener": {
+    "prefix": "uiscrollpicture-addEventListener",
+    "description": "事件监听",
+    "body": [
+      "uiscrollpicture.addEventListener({",
+      "\tname: 'scroll'",
+      "}, function(ret, err){",
+      "\t//滑动图片时的回调",
+      "\tif(ret.status){",
+      "\t\talert(${1:ret.index});",
+      "\t}",
+      "});"
+    ]
+  },
+  "uiscrollpicture.close": {
+    "prefix": "uiscrollpicture-close",
+    "description": "关闭模块",
+    "body": [
+      "uiscrollpicture.close();"
+    ]
+  },
+  "uiscrollpicture.hide": {
+    "prefix": "uiscrollpicture-hide",
+    "description": "隐藏模块",
+    "body": [
+      "uiscrollpicture.hide();"
+    ]
+  },
+  "uiscrollpicture.open": {
+    "prefix": "uiscrollpicture-open",
+    "description": "打开模块",
+    "body": [
+      "uiscrollpicture.open({",
+      "\trect: {",
+      "\t\tx: ${1:0},",
+      "\t\ty: ${2:0},",
+      "\t\tw: ${3:320},",
+      "\t\th: ${4:480}",
+      "\t},",
+      "\tdata: {",
+      "\t\tpaths: ['${5:image_path1}', '${6:image_path2}', '${7:image_path3}'],",
+      "\t\tcaptions: ['${8:title1}', '${9:title2}', '${10:title3}']",
+      "\t},",
+      "\tstyles: {",
+      "\t\tcaption: {",
+      "\t\t\theight: ${11:35},",
+      "\t\t\tcolor: '${12:color}',",
+      "\t\t\tsize: ${13:13},",
+      "\t\t\tbgColor: '${14:bg_color}',",
+      "\t\t\tposition: '${15:position}'",
+      "\t\t},",
+      "\t\tindicator: {",
+      "\t\t\talign: '${16:align_mode}',",
+      "\t\t\tcolor: '${17:color}',",
+      "\t\t\tactiveColor: '${18:active_color}'",
+      "\t\t}",
+      "\t},",
+      "\tplaceholderImg: '${19:placeholder_image_path}',",
+      "\tcontentMode: '${20:content_mode}',",
+      "\tinterval: ${21:3},",
+      "\tloop: ${22:true},",
+      "\tfixedOn: '',",
+      "\tfixed: ${23:false}",
+      "}, function(ret, err){",
+      "\t if(ret.status){",
+      "\t\tif(ret.eventType == 'click'){",
+      "\t\t\t//点击图片的操作",
+      "\t\t\talert(ret.index);",
+      "\t\t}",
+      "\t }",
+      "});"
+    ]
+  },
+  "uiscrollpicture.reloadData": {
+    "prefix": "uiscrollpicture-reloadData",
+    "description": "更新模块数据",
+    "body": [
+      "uiscrollpicture.reloadData({",
+      "\tdata: {",
+      "\t\tpaths: ['${1:image_path1}', '${2:image_path2}', '${3:image_path3}'],",
+      "\t\tcaptions: ['${4:title1}', '${5:title2}', '${6:title3}']",
+      "\t}",
+      "});"
+    ]
+  },
+  "uiscrollpicture.setCurrentIndex": {
+    "prefix": "uiscrollpicture-setCurrentIndex",
+    "description": "指定当前项",
+    "body": [
+      "uiscrollpicture.setCurrentIndex({",
+      "\tindex: ${1:0}",
+      "});"
+    ]
+  },
+  "uiscrollpicture.show": {
+    "prefix": "uiscrollpicture-show",
+    "description": "显示模块",
+    "body": [
+      "uiscrollpicture.show();"
+    ]
+  },
+  "uisearchbar.clearHistory": {
+    "prefix": "uisearchbar-clearHistory",
+    "description": "清空搜索历史记录",
+    "body": [
+      "uisearchbar.clearHistory();"
+    ]
+  },
+  "uisearchbar.close": {
+    "prefix": "uisearchbar-close",
+    "description": "关闭搜索页面",
+    "body": [
+      "uisearchbar.close();"
+    ]
+  },
+  "uisearchbar.open": {
+    "prefix": "uisearchbar-open",
+    "description": "打开搜索页面",
+    "body": [
+      "uisearchbar.open({",
+      "\tplaceholder: '${1:请输入搜索关键字}',",
+      "\thistoryCount: ${2:10},",
+      "\tshowRecordBtn: ${3:true},",
+      "\ttexts: {",
+      "\t\tcancelText: '${4:取消}',",
+      "\t\tclearText: '${5:清除搜索记录}'",
+      "\t},",
+      "\tstyles: {",
+      "\t\tnavBar: {",
+      "\t\t\tbgColor: '${6:bg_color}',",
+      "\t\t\tborderColor: '${7:border_color}'",
+      "\t\t},",
+      "\t\tsearchBox: {",
+      "\t\t\tbgImg: '${8:bg_image_path}',",
+      "\t\t\tcolor: '${9:color}',",
+      "\t\t\theight: ${10:44}",
+      "\t\t},",
+      "\t\tcancel: {",
+      "\t\t\tbg: '${11:bg}',",
+      "\t\t\tcolor: '${12:color}',",
+      "\t\t\tsize: ${13:16} ",
+      "\t\t},",
+      "\t\tlist: {",
+      "\t\t\tcolor: '${14:color}',",
+      "\t\t\tbgColor: '${15:bg_color}',",
+      "\t\t\tborderColor: '${16:border_color}',",
+      "\t\t\tsize: ${17:16}",
+      "\t\t},",
+      "\t\tclear: {",
+      "\t\t\tcolor: '${18:color}',",
+      "\t\t\tborderColor: '${19:border_color}',",
+      "\t\t\tsize: ${17:16}",
+      "\t\t}",
+      "\t}",
+      "}, function(ret){",
+      "\tif(ret.eventType == 'record'){",
+      "\t\tapi.alert({msg: '点击了录音按钮'});",
+      "\t} else if(ret.eventType == 'search') {",
+      "\t\tapi.alert({msg: '点击了搜索按钮'});",
+      "\t} else if(ret.eventType == 'history') {",
+      "\t\tapi.alert({msg: '点击了历史记录'});",
+      "\t} else {",
+      "\t\talert(ret.text);",
+      "\t}",
+      "});"
+    ]
+  },
+  "uisearchbar.setText": {
+    "prefix": "uisearchbar-setText",
+    "description": "设置搜索框的文字",
+    "body": [
+      "uisearchbar.setText({",
+      "\ttext: '${1:设置语音识别的文本}'",
+      "});"
+    ]
+  },
+  "unionPay.pay": {
+    "prefix": "unionPay-pay",
+    "description": "按交易流水号支付订单",
+    "body": [
+      "api.ajax({",
+      "\turl: '${1:http://202.101.25.178:8080/sim/gettn}',//从银联测试服务器上获取tn号",
+      "\tmethod: '${2:post}',",
+      "\tdataType: '${3:text}',",
+      "\treturnAll: ${4:false},",
+      "\tdata:{",
+      "\t\tvalues: {OrderID: '${5:20150811000001}'}//提交商户后台生成的订单ID ",
+      "\t}",
+      "},function(ret,err){",
+      "\tif (ret) {",
+      "\t\tunionPay.pay({",
+      "\t\t\ttn: ret,",
+      "\t\t\tmode: ${6:true}",
+      "\t\t}, function(ret, err){",
+      "\t\t\tapi.alert({msg:JSON.stringify(ret)});",
+      "\t\t});",
+      "\t}",
+      "});"
+    ]
+  },
+  "weibo.auth": {
+    "prefix": "weibo-auth",
+    "description": "授权登录",
+    "body": [
+      "weibo.auth(function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "weibo.cancelAuth": {
+    "prefix": "weibo-cancelAuth",
+    "description": "取消授权，退出登录状态",
+    "body": [
+      "weibo.cancelAuth(function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert('登出成功');",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "weibo.getUserInfo": {
+    "prefix": "weibo-getUserInfo",
+    "description": "获取用户账户信息，调用本接口前，需要先调用 auth 接口授权",
+    "body": [
+      "weibo.getUserInfo({",
+      "\ttoken: '${1:token}',",
+      "\tuserId: '${2:user_id}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret.userInfo));",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "weibo.shareImage": {
+    "prefix": "weibo-shareImage",
+    "description": "分享图片内容",
+    "body": [
+      "weibo.shareImage({",
+      "\tapiKey: '${1:apikey}',",
+      "\ttext: '${2:share_text}',",
+      "\timageUrl: '${3:image_url}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(\"分享成功\");",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "weibo.shareMusic": {
+    "prefix": "weibo-shareMusic",
+    "description": "分享网络音频资源",
+    "body": [
+      "weibo.shareMusic({",
+      "\tapiKey: '${1:apikey}',",
+      "\ttext: '${2:share_text}',",
+      "\ttitle: '${3:share_title}',",
+      "\tdescription: '${4:description}',",
+      "\tthumb: '${5:image_path}',",
+      "\tcontentUrl: '${6:content_url}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(\"分享成功\");",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "weibo.shareText": {
+    "prefix": "weibo-shareText",
+    "description": "分享文本内容",
+    "body": [
+      "weibo.shareText({",
+      "\tapiKey: '${1:apikey}',",
+      "\ttext: '${2:share_text}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(\"分享成功\");",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "weibo.shareVideo": {
+    "prefix": "weibo-shareVideo",
+    "description": "分享网络视频资源",
+    "body": [
+      "weibo.shareVideo({",
+      "\tapiKey: '${1:apikey}',",
+      "\ttext: '${2:share_text}',",
+      "\ttitle: '${3:share_title}',",
+      "\tdescription: '${4:description}',",
+      "\tthumb: '${5:image_path}',",
+      "\tcontentUrl: '${6:content_url}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(\"分享成功\");",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "weibo.shareWebPage": {
+    "prefix": "weibo-shareWebPage",
+    "description": "分享网页",
+    "body": [
+      "weibo.shareWebPage({",
+      "\tapiKey: '${1:apikey}',",
+      "\ttext: '${2:share_text}',",
+      "\ttitle: '${3:share_title}',",
+      "\tdescription: '${4:description}',",
+      "\tthumb: '${5:image_path}',",
+      "\tcontentUrl: '${6:content_url}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(\"分享成功\");",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "wx.auth": {
+    "prefix": "wx-auth",
+    "description": "登录授权（用于实现第三方登录）",
+    "body": [
+      "wx.auth({",
+      "\tapiKey: '${1:apikey}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "wx.getToken": {
+    "prefix": "wx-getToken",
+    "description": "获取授权 accessToken（需要登录授权成功）",
+    "body": [
+      "wx.getToken({",
+      "\tapiKey: '${1:apikey}',",
+      "\tapiSecret: '${2:apisecret}',",
+      "\tcode: '${3:code}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "wx.getUserInfo": {
+    "prefix": "wx-getUserInfo",
+    "description": "获取用户信息（需要获取 accessToken 成功）",
+    "body": [
+      "wx.getUserInfo({",
+      "\taccessToken: '${1:access_token}',",
+      "\topenId: '${2:openid}',",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "wx.isInstalled": {
+    "prefix": "wx-isInstalled",
+    "description": "判断当前设备是否安装微信客户端",
+    "body": [
+      "wx.isInstalled(function(ret, err){",
+      "\tif(ret.installed){",
+      "\t\talert(\"当前设备已安装微信客户端\");",
+      "\t}else{",
+      "\t\talert('当前设备未安装微信客户端');",
+      "\t}",
+      "});"
+    ]
+  },
+  "wx.refreshToken": {
+    "prefix": "wx-refreshToken",
+    "description": "调用 getUserInfo 接口错误码返回1时，代表 accessToken 过期，调用此接口刷新 accessToken",
+    "body": [
+      "wx.refreshToken({",
+      "\tapiKey: '${1:apikey}',",
+      "\tdynamicToken: '${2:dynamic}',",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(JSON.stringify(ret));",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "wx.shareImage": {
+    "prefix": "wx-shareImage",
+    "description": "分享图片内容",
+    "body": [
+      "wx.shareImage({",
+      "\tapiKey: '${1:apikey}',",
+      "\tscene: '${2:scene_type}',",
+      "\tthumb: '${3:image_path}',",
+      "\tcontentUrl: '${4:content_url}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(\"分享成功\");",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "wx.shareMusic": {
+    "prefix": "wx-shareMusic",
+    "description": "分享网络音频资源",
+    "body": [
+      "wx.shareMusic({",
+      "\tapiKey: '${1:apikey}',",
+      "\tscene: '${2:scene_type}',",
+      "\ttitle: '${3:测试标题}',",
+      "\tdescription: '${4:分享内容的描述}',",
+      "\tthumb: '${5:image_path}',",
+      "\tcontentUrl: '${6:content_url}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(\"分享成功\");",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "wx.shareText": {
+    "prefix": "wx-shareText",
+    "description": "分享文本内容",
+    "body": [
+      "wx.shareText({",
+      "\tapiKey: '${1:apikey}',",
+      "\tscene: '${2:scene_type}',",
+      "\ttext: '${3:share_text}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(\"分享成功\");",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "wx.shareVideo": {
+    "prefix": "wx-shareVideo",
+    "description": "分享网络视频资源",
+    "body": [
+      "wx.shareVideo({",
+      "\tapiKey: '${1:apikey}',",
+      "\tscene: '${2:scene_type}',",
+      "\ttitle: '${3:测试标题}',",
+      "\tdescription: '${4:分享内容的描述}',",
+      "\tthumb: '${5:image_path}',",
+      "\tcontentUrl: '${6:content_url}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(\"分享成功\");",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "wx.shareWebpage": {
+    "prefix": "wx-shareWebpage",
+    "description": "分享网页",
+    "body": [
+      "wx.shareWebpage({",
+      "\tapiKey: '${1:apikey}',",
+      "\tscene: '${2:scene_type}',",
+      "\ttitle: '${3:测试标题}',",
+      "\tdescription: '${4:分享内容的描述}',",
+      "\tthumb: '${5:image_path}',",
+      "\tcontentUrl: '${6:content_url}'",
+      "}, function(ret, err){",
+      "\tif(ret.status){",
+      "\t\talert(\"分享成功\");",
+      "\t}else{",
+      "\t\talert(err.code);",
+      "\t}",
+      "});"
+    ]
+  },
+  "wxpay.config": {
+    "prefix": "wxpay-config",
+    "description": "配置模块内部处理签名时需要的参数",
+    "body": [
+      "wxPay.config({",
+      "\tapiKey: '${1:api_key}',",
+      "\tmchId: '${2:mch_id}',",
+      "\tpartnerKey: '${3:partner_key}',",
+      "\tnotifyUrl: '${4:notify_url}'",
+      "}, function(ret, err){",
+      "\t if(ret.status){",
+      "\t\talert('配置商户支付参数成功');",
+      "\t }else{",
+      "\t\t alert(err.code);",
+      "\t }",
+      "});"
+    ]
+  },
+  "wxpay.getOrderId": {
+    "prefix": "wxpay-getOrderId",
+    "description": "获取预支付订单号",
+    "body": [
+      "wxPay.getOrderId({",
+      "\tinfo: '${1:info_get_from_weixin}'",
+      "}, function(ret,err){",
+      "});"
+    ]
+  },
+  "wxpay.pay": {
+    "prefix": "wxpay-pay",
+    "description": "支付订单",
+    "body": [
+      "wxPay.pay({",
+      "\t description: '${1:description}',",
+      "\t totalFee: '${2:total_fee}',",
+      "\t tradeNo: '${3:trade_number}',",
+      "\t spbillCreateIP: '${4:spbill_create_ip}',",
+      "\t deviceInfo: '${5:device_info}',",
+      "\t detail: '${6:detail}',",
+      "\t attach: '${7:attach}',",
+      "\t feeType: '${8:fee_type}',",
+      "\t timeStart: '${9:time_start}',",
+      "\t timeExpire: '${10:time_expire}',",
+      "\t goodsTag: '${11:goods_tag}',",
+      "\t productId: '${12:product_id}',",
+      "\t openId: '${13:openid}'",
+      "},function(ret, err){",
+      "\t if(ret.status){",
+      "\t\t alert(ret.result);",
+      "\t }else{",
+      "\t\t alert(err.code);",
+      "\t }",
+      "});"
+    ]
+  },
+  "wxpay.payOrder": {
+    "prefix": "wxpay-payOrder",
+    "description": "支付订单",
+    "body": [
+      "wxPay.payOrder({",
+      "\tapiKey: '${1:api_key}',",
+      "\tapiSecret: '${2:api_secret}',",
+      "\torderId: '${3:order_id}',",
+      "\tmchId: '${4:mch_id}',",
+      "\tnonceStr: '${5:nonce_str}',",
+      "\ttimeStamp: '${6:timestamp}',",
+      "\tpackage: '${7:package}',",
+      "\tsign: '${8:sign}'",
+      "}, function(ret, err){",
+      "\t if(ret.status){",
+      "\t\t//支付成功",
+      "\t }else{",
+      "\t\talert(err.code);",
+      "\t }",
+      "});"
+    ]
+  },
+  "zip.archive": {
+    "prefix": "zip-archive",
+    "description": "压缩文件",
+    "body": [
+      "zip.archive({",
+      "\tpassword: '${1:123}',",
+      "\tfiles: ${2:['widget://res/1.docx','widget://res/test.pdf']},",
+      "\ttoPath: '${3:}'",
+      "}, function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'压缩成功'});",
+      "\t} else{",
+      "\t\tapi.alert({msg:err.msg});",
+      "\t}",
+      "});"
+    ]
+  },
+  "zip.unarchive": {
+    "prefix": "zip-unarchive",
+    "description": "解压文件",
+    "body": [
+      "zip.unarchive({",
+      "\tfile: '${1:widget://res/zipTest.zip}',",
+      "\tpassword: '${2:123}',",
+      "\ttoPath: '${3:}'",
+      "}, function(ret,err){",
+      "\tif (ret.status) {",
+      "\t\tapi.alert({msg:'解压成功'});",
+      "\t} else{",
+      "\t\tapi.alert(err.msg);",
+      "\t}",
+      "});"
+    ]
+  }
+}
